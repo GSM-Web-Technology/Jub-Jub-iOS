@@ -18,7 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="fqP-7u-l5q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="내 목록" id="S94-xl-X3S"/>
+                    <tabBarItem key="tabBarItem" title="내 목록" image="list.dash" catalog="system" id="S94-xl-X3S"/>
                     <navigationItem key="navigationItem" id="Vt4-qj-DZT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hV-dJ-sNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -35,7 +35,7 @@
                         <viewLayoutGuide key="safeArea" id="xNP-tI-iw5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="프로필" id="Hfl-MS-ZXz"/>
+                    <tabBarItem key="tabBarItem" title="프로필" image="person" catalog="system" id="Hfl-MS-ZXz"/>
                     <navigationItem key="navigationItem" id="3FU-G0-WeJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0t-v2-0VU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -95,13 +95,46 @@
                                 <rect key="frame" x="0.0" y="94" width="414" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WK6-Y1-ACs">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="120" id="WK6-Y1-ACs" customClass="HomeTableViewCell" customModule="Jup_Jup" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WK6-Y1-ACs" id="dYF-Cy-zQD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square.and.arrow.up.on.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mdp-f0-anW">
+                                                    <rect key="frame" x="16" y="18" width="88" height="81"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DC 모터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBY-aY-wBj">
+                                                    <rect key="frame" x="121" y="11" width="81" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="모터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4w-2X-1Lg">
+                                                    <rect key="frame" x="121" y="48" width="30" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수량 1개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ww-Hp-k2n">
+                                                    <rect key="frame" x="121" y="85" width="56" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="homeCount" destination="0ww-Hp-k2n" id="dbs-cA-8IY"/>
+                                            <outlet property="homeImgView" destination="mdp-f0-anW" id="u9t-Te-mVh"/>
+                                            <outlet property="homeSubName" destination="K4w-2X-1Lg" id="ugQ-mF-AtR"/>
+                                            <outlet property="homeTitleName" destination="BBY-aY-wBj" id="s1y-Oz-Hto"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -118,7 +151,7 @@
                             <constraint firstItem="y5h-SK-hPB" firstAttribute="leading" secondItem="us4-B2-Kh1" secondAttribute="leading" id="mLb-hz-Rys"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="6YT-vC-QNY"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="6YT-vC-QNY"/>
                     <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="never" id="9SS-5I-CyN"/>
                     <connections>
                         <outlet property="tableView" destination="Qc0-8U-sNY" id="YxH-Jn-eQK"/>
@@ -126,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8S-Q8-bgW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-430" y="1523"/>
+            <point key="canvasLocation" x="-430.43478260869568" y="1522.7678571428571"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zik-Jg-onm">
@@ -149,7 +182,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
