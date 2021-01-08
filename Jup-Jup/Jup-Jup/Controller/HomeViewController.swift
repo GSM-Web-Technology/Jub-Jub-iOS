@@ -48,6 +48,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+//        cell.backgroundColor = .black
+//        cell.homeTitleName.textColor = .white
+//        cell.homeSubName.textColor = .white
+//        cell.homeCount.textColor = .white
         return cell
     }
     
