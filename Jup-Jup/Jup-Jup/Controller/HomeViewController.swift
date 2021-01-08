@@ -9,11 +9,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet weak var homeTableView: UITableView! {
         didSet {
-            tableView.delegate = self
-            tableView.dataSource = self
-            tableView.tableFooterView = UIView()
+            homeTableView.delegate = self
+            homeTableView.dataSource = self
+            homeTableView.tableFooterView = UIView()
         }
     }
     override func viewDidLoad() {
@@ -48,10 +48,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
-//        cell.backgroundColor = .black
-//        cell.homeTitleName.textColor = .white
-//        cell.homeSubName.textColor = .white
-//        cell.homeCount.textColor = .white
+        
         return cell
     }
     

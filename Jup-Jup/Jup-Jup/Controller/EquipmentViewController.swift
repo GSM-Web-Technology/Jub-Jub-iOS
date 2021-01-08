@@ -21,6 +21,9 @@ class EquipmentViewController: UIViewController {
         rentalCount.text = "대여 수량: \(Int(sender.value))개"
     }
     
-   
+    @IBAction func doneBtn(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 
 }
