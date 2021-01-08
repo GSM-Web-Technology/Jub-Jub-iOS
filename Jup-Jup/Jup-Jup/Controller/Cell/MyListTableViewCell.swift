@@ -13,10 +13,10 @@ class MyListTableViewCell: UITableViewCell {
     @IBOutlet weak var myListTitleName: UILabel!
     @IBOutlet weak var myListSubName: UILabel!
     @IBOutlet weak var myListCount: UILabel!
-    @IBOutlet weak var statusLabel: UILabel! {
+    @IBOutlet weak var myListStatusLabel: UILabel! {
         didSet {
-            statusLabel.clipsToBounds = true
-            statusLabel.layer.cornerRadius = 10
+            myListStatusLabel.clipsToBounds = true
+            myListStatusLabel.layer.cornerRadius = 10
         }
     }
     override func awakeFromNib() {

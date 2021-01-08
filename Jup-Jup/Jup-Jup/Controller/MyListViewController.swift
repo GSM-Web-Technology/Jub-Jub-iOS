@@ -26,7 +26,7 @@ class MyListViewController: UIViewController {
 
 extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -35,8 +35,17 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyListTableViewCell", for: indexPath) as! MyListTableViewCell
-        
-        return cell
+        switch indexPath.row % 2{
+        case 1:
+            cell.myListStatusLabel.backgroundColor = .yellow
+            cell.myListStatusLabel.textColor = .black
+            cell.myListStatusLabel.layer.borderWidth = 1
+            cell.myListStatusLabel.text = "대여 중"
+            return cell
+        default:
+            return cell
+        }
+//        return cell
     }
     
     

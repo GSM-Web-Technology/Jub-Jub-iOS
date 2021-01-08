@@ -65,9 +65,9 @@
                                         <connections>
                                             <outlet property="myListCount" destination="C53-x8-tlS" id="ldD-DZ-mFg"/>
                                             <outlet property="myListImageView" destination="I5u-x1-1sv" id="YeH-3E-A5E"/>
+                                            <outlet property="myListStatusLabel" destination="efT-gN-ktd" id="xdm-UG-qag"/>
                                             <outlet property="myListSubName" destination="Yjs-eL-V6n" id="xtw-oo-p7G"/>
                                             <outlet property="myListTitleName" destination="WgP-9l-K8r" id="h7r-l1-5eT"/>
-                                            <outlet property="statusLabel" destination="efT-gN-ktd" id="5No-vN-xVc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
