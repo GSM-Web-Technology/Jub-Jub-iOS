@@ -16,6 +16,7 @@
 		BD9554FB25A08F8300DB23E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9554F925A08F8300DB23E3 /* Main.storyboard */; };
 		BD9554FD25A08F8400DB23E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9554FC25A08F8400DB23E3 /* Assets.xcassets */; };
 		BD95550025A08F8400DB23E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9554FE25A08F8400DB23E3 /* LaunchScreen.storyboard */; };
+		BDEB1F0B25A87B4B00D84ADC /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB1F0A25A87B4B00D84ADC /* EquipmentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BD9554FC25A08F8400DB23E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD9554FF25A08F8400DB23E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD95550125A08F8400DB23E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDEB1F0A25A87B4B00D84ADC /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 				BD41251625A7460D00264EC2 /* HomeViewController.swift */,
 				BD41251925A7463F00264EC2 /* MyListViewController.swift */,
 				BD41251C25A7465700264EC2 /* ProfileViewController.swift */,
+				BDEB1F0A25A87B4B00D84ADC /* EquipmentViewController.swift */,
 				BD41251F25A75B0D00264EC2 /* Cell */,
 			);
 			path = Controller;
@@ -167,6 +170,7 @@
 				BD9554F625A08F8300DB23E3 /* SceneDelegate.swift in Sources */,
 				BD41251D25A7465700264EC2 /* ProfileViewController.swift in Sources */,
 				BD41251A25A7463F00264EC2 /* MyListViewController.swift in Sources */,
+				BDEB1F0B25A87B4B00D84ADC /* EquipmentViewController.swift in Sources */,
 				BD41251725A7460D00264EC2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
