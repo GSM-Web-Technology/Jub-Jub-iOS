@@ -52,6 +52,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="반납" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efT-gN-ktd">
+                                                    <rect key="frame" x="311" y="35" width="74" height="46"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -59,6 +67,7 @@
                                             <outlet property="myListImageView" destination="I5u-x1-1sv" id="YeH-3E-A5E"/>
                                             <outlet property="myListSubName" destination="Yjs-eL-V6n" id="xtw-oo-p7G"/>
                                             <outlet property="myListTitleName" destination="WgP-9l-K8r" id="h7r-l1-5eT"/>
+                                            <outlet property="statusLabel" destination="efT-gN-ktd" id="5No-vN-xVc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -80,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hV-dJ-sNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="2210"/>
+            <point key="canvasLocation" x="647.82608695652175" y="2209.8214285714284"/>
         </scene>
         <!--프로필-->
         <scene sceneID="8YK-jI-uQf">
