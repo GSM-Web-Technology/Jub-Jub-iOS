@@ -18,12 +18,11 @@
                         <viewLayoutGuide key="safeArea" id="fqP-7u-l5q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="내 목록" image="list.dash" catalog="system" id="S94-xl-X3S"/>
-                    <navigationItem key="navigationItem" id="Vt4-qj-DZT"/>
+                    <navigationItem key="navigationItem" title="내 목록" id="Vt4-qj-DZT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hV-dJ-sNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="647.82608695652175" y="1522.7678571428571"/>
+            <point key="canvasLocation" x="648" y="2210"/>
         </scene>
         <!--프로필-->
         <scene sceneID="8YK-jI-uQf">
@@ -35,12 +34,11 @@
                         <viewLayoutGuide key="safeArea" id="xNP-tI-iw5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="프로필" image="person" catalog="system" id="Hfl-MS-ZXz"/>
-                    <navigationItem key="navigationItem" id="3FU-G0-WeJ"/>
+                    <navigationItem key="navigationItem" title="프로필" id="3FU-G0-WeJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0t-v2-0VU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="1523"/>
+            <point key="canvasLocation" x="1826" y="2210"/>
         </scene>
         <!--Home-->
         <scene sceneID="txr-E1-3dq">
@@ -51,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5h-SK-hPB">
-                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="검색" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFE-3c-4jy">
                                         <rect key="frame" x="56" y="0.0" width="333" height="50"/>
@@ -92,7 +90,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qc0-8U-sNY">
-                                <rect key="frame" x="0.0" y="94" width="414" height="719"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="675"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="120" id="WK6-Y1-ACs" customClass="HomeTableViewCell" customModule="Jup_Jup" customModuleProvider="target">
@@ -134,6 +132,7 @@
                                             <outlet property="homeImgView" destination="mdp-f0-anW" id="u9t-Te-mVh"/>
                                             <outlet property="homeSubName" destination="K4w-2X-1Lg" id="ugQ-mF-AtR"/>
                                             <outlet property="homeTitleName" destination="BBY-aY-wBj" id="s1y-Oz-Hto"/>
+                                            <segue destination="Jun-xJ-UVr" kind="show" id="idn-CN-0Vo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -151,15 +150,30 @@
                             <constraint firstItem="y5h-SK-hPB" firstAttribute="leading" secondItem="us4-B2-Kh1" secondAttribute="leading" id="mLb-hz-Rys"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="6YT-vC-QNY"/>
-                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="never" id="9SS-5I-CyN"/>
+                    <navigationItem key="navigationItem" title="Home" id="9SS-5I-CyN"/>
                     <connections>
                         <outlet property="tableView" destination="Qc0-8U-sNY" id="YxH-Jn-eQK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8S-Q8-bgW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-430.43478260869568" y="1522.7678571428571"/>
+            <point key="canvasLocation" x="-430" y="2210"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="awJ-Om-Vpv">
+            <objects>
+                <viewController id="Jun-xJ-UVr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cRa-21-PjF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6u8-uV-t2v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xGg-Gc-Uvc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zp5-ug-YJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430" y="2913"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zik-Jg-onm">
@@ -171,14 +185,71 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="AVP-xe-Qod" kind="relationship" relationship="viewControllers" id="3Bk-Zk-gQN"/>
-                        <segue destination="LSj-Ga-pHE" kind="relationship" relationship="viewControllers" id="SCQ-TC-EDt"/>
-                        <segue destination="Io0-0c-Qnr" kind="relationship" relationship="viewControllers" id="P57-5z-bCg"/>
+                        <segue destination="Qf7-M9-A1e" kind="relationship" relationship="viewControllers" id="3Bk-Zk-gQN"/>
+                        <segue destination="CeL-To-A5X" kind="relationship" relationship="viewControllers" id="SCQ-TC-EDt"/>
+                        <segue destination="bgu-s8-r2F" kind="relationship" relationship="viewControllers" id="P57-5z-bCg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbI-cX-Q91" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="648" y="723"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="tMJ-Ra-a8w">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qf7-M9-A1e" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="6YT-vC-QNY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L66-Q0-AzB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AVP-xe-Qod" kind="relationship" relationship="rootViewController" id="yg4-Qz-n67"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wjv-CJ-C5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430.43478260869568" y="1522.7678571428571"/>
+        </scene>
+        <!--내 목록-->
+        <scene sceneID="heL-uZ-C5O">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CeL-To-A5X" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="내 목록" image="list.dash" catalog="system" id="S94-xl-X3S"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="x5Y-j1-8lQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LSj-Ga-pHE" kind="relationship" relationship="rootViewController" id="rxy-Wy-VBJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qu8-FR-sxH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="1523"/>
+        </scene>
+        <!--프로필-->
+        <scene sceneID="9gX-Hd-bbR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bgu-s8-r2F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="프로필" image="person" catalog="system" id="Hfl-MS-ZXz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cg2-tO-Jz7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Io0-0c-Qnr" kind="relationship" relationship="rootViewController" id="uZg-oQ-WUh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysG-2h-5j7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1826" y="1523"/>
         </scene>
     </scenes>
     <resources>
