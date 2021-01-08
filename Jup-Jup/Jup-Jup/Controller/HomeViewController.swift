@@ -19,13 +19,22 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // navigationBar에 검색란 넣기
+//        let searchController = UISearchController(searchResultsController: nil)
+//        searchController.delegate = self
+//        self.navigationItem.searchController = searchController
+        
+        
+
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = false
@@ -51,6 +60,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
+
+
+//extension HomeViewController: UISearchControllerDelegate {
+//    func presentSearchController(_ searchController: UISearchController) {
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        if searchController.searchBar.searchTextField.isSelected == true {
+//            print("1")
+//        }
+//        select(true)
+//    }
+//    override func select(_ sender: Any?) {
+//        print("1")
+//    }
+//}
