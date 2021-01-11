@@ -1,5 +1,5 @@
 //
-//  EquipmentViewController.swift
+//  HomeEquipmentViewController.swift
 //  Jup-Jup
 //
 //  Created by 조주혁 on 2021/01/08.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EquipmentViewController: UIViewController {
+class HomeEquipmentViewController: UIViewController {
 
     
     @IBOutlet weak var rentalCount: UILabel!
