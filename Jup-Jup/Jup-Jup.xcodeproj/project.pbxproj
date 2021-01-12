@@ -73,8 +73,8 @@
 		BD5F66E725AC863B00F6BDC7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */,
 				BD5F66E225AC85E100F6BDC7 /* LoginViewController.swift */,
+				BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -127,13 +127,29 @@
 			children = (
 				BD9554F325A08F8300DB23E3 /* AppDelegate.swift */,
 				BD9554F525A08F8300DB23E3 /* SceneDelegate.swift */,
+				BDCC75BB25ADEC8200CB70EB /* Model */,
+				BDCC75BC25ADEC9400CB70EB /* View */,
 				BD41251425A7417600264EC2 /* Controller */,
-				BD9554F925A08F8300DB23E3 /* Main.storyboard */,
 				BD9554FC25A08F8400DB23E3 /* Assets.xcassets */,
-				BD9554FE25A08F8400DB23E3 /* LaunchScreen.storyboard */,
 				BD95550125A08F8400DB23E3 /* Info.plist */,
 			);
 			path = "Jup-Jup";
+			sourceTree = "<group>";
+		};
+		BDCC75BB25ADEC8200CB70EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BDCC75BC25ADEC9400CB70EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD9554F925A08F8300DB23E3 /* Main.storyboard */,
+				BD9554FE25A08F8400DB23E3 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
