@@ -384,7 +384,7 @@
                                     <constraint firstAttribute="height" constant="45" id="aaB-PC-Fa2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sGD-p6-Wac">
                                 <rect key="frame" x="20" y="217" width="374" height="45"/>
@@ -402,7 +402,7 @@
                                     <constraint firstAttribute="height" constant="45" id="YqW-KW-otS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SQe-b3-FDs"/>
@@ -432,12 +432,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="SignUpEmail" destination="sGD-p6-Wac" id="CGg-Oa-3v2"/>
-                        <outlet property="SignUpName" destination="8Be-48-NV8" id="NvE-he-xvl"/>
-                        <outlet property="SignUpPassword" destination="jNg-ve-dys" id="WKJ-oU-gAJ"/>
-                        <outlet property="SignUpPasswordCheck" destination="y3t-An-nML" id="tlQ-WN-r3b"/>
                         <outlet property="signUpBtn" destination="97D-t7-XfP" id="sSB-z6-Tj8"/>
                         <outlet property="signUpClassNumber" destination="ZmJ-Kg-Rvq" id="bup-vm-KTH"/>
+                        <outlet property="signUpEmail" destination="sGD-p6-Wac" id="MtH-h7-aqR"/>
+                        <outlet property="signUpName" destination="8Be-48-NV8" id="G80-CO-ezC"/>
+                        <outlet property="signUpPassword" destination="jNg-ve-dys" id="kgB-RM-DTw"/>
+                        <outlet property="signUpPasswordCheck" destination="y3t-An-nML" id="ggc-Hk-5Td"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L30-iD-9Mm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

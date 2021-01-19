@@ -9,34 +9,39 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var SignUpEmail: UITextField! {
+    @IBOutlet weak var signUpEmail: UITextField! {
         didSet {
-            SignUpEmail.layer.cornerRadius = 5
-            SignUpEmail.layer.borderWidth = 1
+            signUpEmail.layer.cornerRadius = 5
+            signUpEmail.layer.borderWidth = 1
+            signUpEmail.delegate = self
         }
     }
-    @IBOutlet weak var SignUpPassword: UITextField! {
+    @IBOutlet weak var signUpPassword: UITextField! {
         didSet {
-            SignUpPassword.layer.cornerRadius = 5
-            SignUpPassword.layer.borderWidth = 1
+            signUpPassword.layer.cornerRadius = 5
+            signUpPassword.layer.borderWidth = 1
+            signUpPassword.delegate = self
         }
     }
-    @IBOutlet weak var SignUpPasswordCheck: UITextField! {
+    @IBOutlet weak var signUpPasswordCheck: UITextField! {
         didSet {
-            SignUpPasswordCheck.layer.cornerRadius = 5
-            SignUpPasswordCheck.layer.borderWidth = 1
+            signUpPasswordCheck.layer.cornerRadius = 5
+            signUpPasswordCheck.layer.borderWidth = 1
+            signUpPasswordCheck.delegate = self
         }
     }
-    @IBOutlet weak var SignUpName: UITextField! {
+    @IBOutlet weak var signUpName: UITextField! {
         didSet {
-            SignUpName.layer.cornerRadius = 5
-            SignUpName.layer.borderWidth = 1
+            signUpName.layer.cornerRadius = 5
+            signUpName.layer.borderWidth = 1
+            signUpName.delegate = self
         }
     }
     @IBOutlet weak var signUpClassNumber: UITextField! {
         didSet {
             signUpClassNumber.layer.cornerRadius = 5
             signUpClassNumber.layer.borderWidth = 1
+            signUpClassNumber.delegate = self
         }
     }
     @IBOutlet weak var signUpBtn: UIButton! {
@@ -46,8 +51,27 @@ class SignUpViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
     }
     
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        signUpEmail.resignFirstResponder()
+        signUpPassword.resignFirstResponder()
+        signUpPasswordCheck.resignFirstResponder()
+        signUpName.resignFirstResponder()
+        signUpClassNumber.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        signUpEmail.resignFirstResponder()
+        signUpPassword.resignFirstResponder()
+        signUpPasswordCheck.resignFirstResponder()
+        signUpName.resignFirstResponder()
+        signUpClassNumber.resignFirstResponder()
+        return true
+    }
 }
