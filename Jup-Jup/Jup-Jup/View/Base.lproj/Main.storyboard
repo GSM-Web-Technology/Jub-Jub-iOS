@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KGh-b3-GRH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -434,6 +434,7 @@
                             <constraint firstItem="8Be-48-NV8" firstAttribute="leading" secondItem="SQe-b3-FDs" secondAttribute="leading" constant="20" id="vEo-bG-nLJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="v67-Vv-QTm"/>
                     <connections>
                         <outlet property="signUpBtn" destination="97D-t7-XfP" id="sSB-z6-Tj8"/>
                         <outlet property="signUpClassNumber" destination="ZmJ-Kg-Rvq" id="bup-vm-KTH"/>
@@ -445,12 +446,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L30-iD-9Mm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1904.3478260869567" y="414.50892857142856"/>
+            <point key="canvasLocation" x="-300" y="415"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zik-Jg-onm">
             <objects>
-                <tabBarController id="OjP-2N-S7c" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OjP-2N-S7c" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ssf-TU-7tZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -668,6 +669,9 @@
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logInButton:" destination="KGh-b3-GRH" eventType="touchUpInside" id="85L-IU-Kba"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JubJub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3s-6h-fFV">
                                 <rect key="frame" x="20" y="64" width="131" height="42"/>
@@ -719,6 +723,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="회원가입"/>
+                                <connections>
+                                    <segue destination="SC0-nd-hBV" kind="presentation" modalPresentationStyle="fullScreen" id="JdM-75-MG4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zHt-bx-NZm"/>
@@ -742,6 +749,11 @@
                             <constraint firstItem="0Ag-SW-vIQ" firstAttribute="top" secondItem="Dry-5M-p7J" secondAttribute="bottom" constant="50" id="zYy-L2-hv7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logInBtn" destination="NfV-GP-yb4" id="beK-rH-dbM"/>
+                        <outlet property="logInEmail" destination="0Ag-SW-vIQ" id="Tlr-YJ-Jxe"/>
+                        <outlet property="logInPassword" destination="GTp-OY-jzx" id="ISG-ob-Ihh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRv-vC-n3A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

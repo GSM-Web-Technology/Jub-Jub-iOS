@@ -7,23 +7,59 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
 
+
+class LoginViewController: UIViewController {
+    
+    
+    @IBOutlet weak var logInEmail: UITextField! {
+        didSet {
+            logInEmail.layer.cornerRadius = 5
+            logInEmail.layer.borderWidth = 1
+            logInEmail.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var logInPassword: UITextField! {
+        didSet {
+            logInPassword.layer.cornerRadius = 5
+            logInPassword.layer.borderWidth = 1
+            logInPassword.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var logInBtn: UIButton! {
+        didSet {
+            logInBtn.layer.cornerRadius = 5
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func logInButton(_ sender: UIButton) {
+        goMainPage()
+    }
+    
+    func goMainPage(){
+        guard let goMain = self.storyboard?.instantiateViewController(identifier: "MainPage") else { return }
+        goMain.modalPresentationStyle = .fullScreen
+        self.present(goMain, animated: true)
     }
     
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension LoginViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
-    */
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        logInEmail.resignFirstResponder()
+        logInPassword.resignFirstResponder()
+        
+        return true
+    }
 }

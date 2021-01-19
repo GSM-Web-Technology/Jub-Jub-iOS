@@ -53,7 +53,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func signUpButton(_ sender: UIButton) {
-        
+        dismiss(animated: true, completion: nil)
     }
     
     
