@@ -51,19 +51,17 @@ class SignUpViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    @IBAction func signUpButton(_ sender: UIButton) {
         
     }
+    
     
 }
 
 extension SignUpViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        signUpEmail.resignFirstResponder()
-        signUpPassword.resignFirstResponder()
-        signUpPasswordCheck.resignFirstResponder()
-        signUpName.resignFirstResponder()
-        signUpClassNumber.resignFirstResponder()
+        view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
