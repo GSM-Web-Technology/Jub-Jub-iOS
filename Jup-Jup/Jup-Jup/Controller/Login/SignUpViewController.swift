@@ -9,6 +9,12 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var signUpClassNumber: UITextField! {
+        didSet {
+            signUpClassNumber.layer.cornerRadius = 5
+            signUpClassNumber.layer.borderWidth = 1
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
