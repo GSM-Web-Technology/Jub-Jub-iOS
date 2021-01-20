@@ -49,10 +49,21 @@ class SignUpViewController: UIViewController {
             signUpBtn.layer.cornerRadius = 5
         }
     }
+    @IBOutlet weak var backBtn: UIButton! {
+        didSet {
+            backBtn.layer.cornerRadius = 5
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func signUpButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func backButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
