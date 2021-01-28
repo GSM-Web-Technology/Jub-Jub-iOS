@@ -314,6 +314,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="xGg-Gc-Uvc"/>
                     <connections>
+                        <outlet property="equipmentCount" destination="VDf-Fb-SWp" id="8o6-qB-ouG"/>
                         <outlet property="rentalCount" destination="j4S-Qx-xaP" id="XT5-MD-lNF"/>
                     </connections>
                 </viewController>

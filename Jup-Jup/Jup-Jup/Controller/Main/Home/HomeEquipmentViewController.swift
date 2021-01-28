@@ -9,8 +9,8 @@ import UIKit
 
 class HomeEquipmentViewController: UIViewController {
 
-    
     @IBOutlet weak var rentalCount: UILabel!
+    @IBOutlet weak var equipmentCount: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +18,9 @@ class HomeEquipmentViewController: UIViewController {
     }
     
     @IBAction func countStepper(_ sender: UIStepper) {
+        
         rentalCount.text = "대여 수량: \(Int(sender.value))개"
+        
     }
     
     @IBAction func doneBtn(_ sender: UIButton) {
