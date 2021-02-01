@@ -23,8 +23,24 @@ class HomeEquipmentViewController: UIViewController {
         
     }
     
+    func sucessAlert() {
+        let alert = UIAlertController(title: "대여 성공", message: "대여 성공!!", preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (_) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func failAlert() {
+        let alert = UIAlertController(title: "대여 실패", message: "대여 실패!!", preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func doneBtn(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        sucessAlert()
     }
     
 
