@@ -17,14 +17,19 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBOutlet weak var searchTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.searchController()
+    }
+    
+    func searchController() {
         // navigationBar에 검색란 넣기
         let searchController = UISearchController(searchResultsController: nil)
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
-
+        searchController.searchResultsUpdater = self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -58,17 +63,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
-//extension HomeViewController: UISearchControllerDelegate {
-//    func presentSearchController(_ searchController: UISearchController) {
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        if searchController.searchBar.searchTextField.isSelected == true {
-//            print("1")
-//        }
-//        select(true)
-//    }
-//
-//    override func select(_ sender: Any?) {
-//        print("1")
-//    }
-//}
+extension HomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print(searchController.searchBar.text ?? "")
+    }
+    
+    
+}
