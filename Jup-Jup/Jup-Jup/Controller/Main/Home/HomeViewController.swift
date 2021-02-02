@@ -22,10 +22,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 
         // navigationBar에 검색란 넣기
         let searchController = UISearchController(searchResultsController: nil)
-//        searchController.delegate = self
         self.navigationItem.searchController = searchController
-        
-//        searchTextField.delegate = self
+        self.navigationItem.hidesSearchBarWhenScrolling = false
 
     }
     
