@@ -53,7 +53,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.isFiltering ? self.filteredArr.count : self.arr.count
