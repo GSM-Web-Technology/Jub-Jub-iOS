@@ -33,25 +33,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     func apiCall() {
         let URL = "http://3.36.29.69:8080/v1/equipment/"
-//        let alamo = AF.request(URL, method: .get, headers: ["X-AUTH-TOKEN": token]).validate(statusCode: 200..<300)
-//        //결과값으로 문자열을 받을 때 사용
-//        alamo.responseString() { response in
-//            switch response.result
-//            {
-//            //통신성공
-//            case .success(let value):
-//                print("value: \(value)")
-////                }
-//                print("\(value)")
-//            //  self.sendImage(value: value)
-//
-//            //통신실패
-//            case .failure(let error):
-//                print("error: \(String(describing: error.errorDescription))")
-//                //  self.resultLabel.text = "\(error)"
-//                print("\(error)")
-//            }
-//        }
         let encodingURL = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         AF.request(encodingURL, headers: ["X-AUTH-TOKEN": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
@@ -81,7 +62,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return model?.list.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -91,6 +72,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
         cell.homeTitleName.text = model?.list[indexPath.row].name
+        cell.homeSubName.text = model?.list[indexPath.row].content
+        cell.homeCount.text = "수량: \(model?.list[indexPath.row].count ?? 0)개"
+        
         return cell
     }
 }

@@ -20,3 +20,4 @@ struct List: Codable {
     let img_equipment: String
     let name: String
 }
+

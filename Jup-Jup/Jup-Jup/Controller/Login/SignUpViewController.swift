@@ -101,8 +101,7 @@ class SignUpViewController: UIViewController {
             "password": password
         ]
         
-        let alamo = AF.request(URL, method: .post, parameters: PARAM,encoding: JSONEncoding.default).validate(statusCode: 200..<300)
-        
+        let alamo = AF.request(URL, method: .post, parameters: PARAM, encoding: JSONEncoding.default).validate(statusCode: 200..<300)
         
         alamo.responseString() { response in
             switch response.result
