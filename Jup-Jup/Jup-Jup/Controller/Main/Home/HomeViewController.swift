@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
+    
+    var model: Equipment?
     
     @IBOutlet weak var homeTableView: UITableView! {
         didSet {
@@ -20,19 +23,42 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     var arr = ["DC모터", "한성노트북", "삼성노트북", "모니터", "아두이노", "iPad", "갤럭시탭", "키보드", "마우스", "애플 매직마우스", "애플 매직키보드"]
     
-    var filteredArr: [String] = []
     
-    var isFiltering: Bool {
-        let searchController = self.navigationItem.searchController
-        let isActive = searchController?.isActive ?? false
-        let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
-        return isActive && isSearchBarHasText
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        apiCall()
         self.searchController()
+    }
+    
+    func apiCall() {
+        let URL = "http://3.36.29.69:8080/v1/equipment/"
+        let alamo = AF.request(URL, method: .get).validate(statusCode: 200..<300)
+        //결과값으로 문자열을 받을 때 사용
+        alamo.responseString() { response in
+            switch response.result
+            {
+            //통신성공
+            case .success(let value):
+                print("value: \(value)")
+//                }
+                print("\(value)")
+            //  self.sendImage(value: value)
+            
+            //통신실패
+            case .failure(let error):
+                print("error: \(String(describing: error.errorDescription))")
+                //  self.resultLabel.text = "\(error)"
+                print("\(error)")
+            }
+        }
+//        let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//        AF.request(encodingURL).responseData(completionHandler: { data in
+//            guard let data = data.data else { return }
+//            self.model = try? JSONDecoder().decode(Equipment.self, from: data)
+//            self.homeTableView.reloadData()
+//        })
+        
     }
     
     func searchController() {
@@ -55,7 +81,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.isFiltering ? self.filteredArr.count : self.arr.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -64,11 +90,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
-        if self.isFiltering {
-            cell.homeTitleName.text = self.filteredArr[indexPath.row]
-        } else {
-            cell.homeTitleName.text = self.arr[indexPath.row]
-        }
         
         return cell
     }
@@ -76,9 +97,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text?.lowercased() else { return }
-        self.filteredArr = self.arr.filter { $0.localizedCaseInsensitiveContains(text) }
-        self.homeTableView.reloadData()
+        print(searchController.searchBar.text!)
     }
     
     

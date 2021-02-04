@@ -19,6 +19,7 @@
 		BD9554FD25A08F8400DB23E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9554FC25A08F8400DB23E3 /* Assets.xcassets */; };
 		BD95550025A08F8400DB23E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9554FE25A08F8400DB23E3 /* LaunchScreen.storyboard */; };
 		BD9F78DF25CBCA850053852A /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9F78DE25CBCA850053852A /* LogInModel.swift */; };
+		BD9F78E325CBE4320053852A /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9F78E225CBE4320053852A /* EquipmentModel.swift */; };
 		BDDDDDEF25C420E20022C635 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDEE25C420E20022C635 /* Alamofire */; };
 		BDDDDDF325C421080022C635 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDF225C421080022C635 /* Kingfisher */; };
 		BDEB1F0B25A87B4B00D84ADC /* HomeEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB1F0A25A87B4B00D84ADC /* HomeEquipmentViewController.swift */; };
@@ -40,6 +41,7 @@
 		BD9554FF25A08F8400DB23E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD95550125A08F8400DB23E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD9F78DE25CBCA850053852A /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
+		BD9F78E225CBE4320053852A /* EquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentModel.swift; sourceTree = "<group>"; };
 		BDEB1F0A25A87B4B00D84ADC /* HomeEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEquipmentViewController.swift; sourceTree = "<group>"; };
 		BDEB1F0E25A88A1C00D84ADC /* MyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				BD9F78DE25CBCA850053852A /* LogInModel.swift */,
+				BD9F78E225CBE4320053852A /* EquipmentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9F78E325CBE4320053852A /* EquipmentModel.swift in Sources */,
 				BD41252125A75B7A00264EC2 /* HomeTableViewCell.swift in Sources */,
 				BDEB1F0F25A88A1C00D84ADC /* MyListTableViewCell.swift in Sources */,
 				BD9554F425A08F8300DB23E3 /* AppDelegate.swift in Sources */,
@@ -397,6 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YT86278469;
 				INFOPLIST_FILE = "Jup-Jup/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -416,6 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YT86278469;
 				INFOPLIST_FILE = "Jup-Jup/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

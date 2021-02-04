@@ -7,9 +7,7 @@
 
 import Foundation
 
-
-
-struct logInModel: Codable {
+struct LogInModel: Codable {
     let success: Bool
     let code: Int
     let msg: String
