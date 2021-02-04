@@ -7,14 +7,37 @@
 
 import UIKit
 
+var titleName = String()
+var content = String()
+var count = Int()
+
 class HomeEquipmentViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.text = titleName
+        }
+    }
+    @IBOutlet weak var contentLabel: UILabel! {
+        didSet {
+            contentLabel.text = content
+        }
+    }
+    @IBOutlet weak var equipmentCount: UILabel! {
+        didSet {
+            equipmentCount.text = "수량: \(count)개"
+        }
+    }
+    
     @IBOutlet weak var rentalCount: UILabel!
-    @IBOutlet weak var equipmentCount: UILabel!
+    @IBOutlet weak var stepper: UIStepper! {
+        didSet {
+            stepper.minimumValue = 1
+            stepper.maximumValue = Double(count)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
     }
     
     @IBAction func countStepper(_ sender: UIStepper) {

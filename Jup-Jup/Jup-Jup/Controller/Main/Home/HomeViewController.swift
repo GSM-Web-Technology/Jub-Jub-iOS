@@ -58,6 +58,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         searchTextField.resignFirstResponder()
         return true
     }
+    
+    func goMainPage(){
+        guard let goMain = self.storyboard?.instantiateViewController(identifier: "MainPage") else { return }
+        goMain.modalPresentationStyle = .fullScreen
+        self.present(goMain, animated: true)
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -76,6 +82,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.homeCount.text = "수량: \(model?.list[indexPath.row].count ?? 0)개"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        titleName = model?.list[indexPath.row].name ?? ""
+        content = model?.list[indexPath.row].content ?? ""
+        count = model?.list[indexPath.row].count ?? 0
+
     }
 }
 

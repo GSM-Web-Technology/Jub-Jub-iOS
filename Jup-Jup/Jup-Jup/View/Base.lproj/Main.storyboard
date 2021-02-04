@@ -203,7 +203,7 @@
                                             <outlet property="homeImageView" destination="mdp-f0-anW" id="BHC-XH-nyb"/>
                                             <outlet property="homeSubName" destination="K4w-2X-1Lg" id="ugQ-mF-AtR"/>
                                             <outlet property="homeTitleName" destination="BBY-aY-wBj" id="s1y-Oz-Hto"/>
-                                            <segue destination="Jun-xJ-UVr" kind="show" id="idn-CN-0Vo"/>
+                                            <segue destination="Jun-xJ-UVr" kind="show" id="6qQ-cW-nnN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -311,8 +311,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="xGg-Gc-Uvc"/>
                     <connections>
+                        <outlet property="contentLabel" destination="SEm-0o-1Fd" id="crH-qb-MVN"/>
                         <outlet property="equipmentCount" destination="VDf-Fb-SWp" id="8o6-qB-ouG"/>
                         <outlet property="rentalCount" destination="j4S-Qx-xaP" id="XT5-MD-lNF"/>
+                        <outlet property="stepper" destination="QsN-Cl-5je" id="EGc-fR-VeT"/>
+                        <outlet property="titleLabel" destination="8ho-bT-Z8j" id="tgC-rV-uBX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zp5-ug-YJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
