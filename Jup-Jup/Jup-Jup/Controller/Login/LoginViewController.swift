@@ -11,7 +11,7 @@ import Alamofire
 
 class LoginViewController: UIViewController {
     
-    var failMessages = "로그인 실패!!"
+   
     
     @IBOutlet weak var logInEmail: UITextField! {
         didSet {
@@ -54,8 +54,8 @@ class LoginViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func loginFailAlert() {
-        let alert = UIAlertController(title: "로그인 실패", message: "로그인 실패!!", preferredStyle: UIAlertController.Style.alert)
+    func loginFailAlert(messages: String) {
+        let alert = UIAlertController(title: "로그인 실패", message: messages, preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
@@ -63,7 +63,6 @@ class LoginViewController: UIViewController {
     
     func checkTextField() -> Bool {
         if (logInEmail.text == "") || (logInPassword.text == "") {
-            failMessages = "빈칸을 모두 입력해주세요!"
             return false
         }
         
@@ -78,23 +77,28 @@ class LoginViewController: UIViewController {
             "password": password
         ]
         
-        let alamo = AF.request(URL, method: .post, parameters: PARAM,encoding: JSONEncoding.default).validate(statusCode: 200..<300)
-        
-        
-        alamo.responseString() { response in
-            switch response.result
-            {
-            //통신성공
-            case .success(let value):
-                self.loginSucessAlert()
-                print("value: \(value)")
-            //통신실패
-            case .failure(let error):
+        AF.request(URL, method: .post, parameters: PARAM,encoding: JSONEncoding.default).responseJSON { (response) in
+            switch response.result{
+            case .success:
+                guard let result = response.data else {return}
+                do {
+                    let decoder = JSONDecoder()
+                    let json = try decoder.decode(logInModel.self, from: result)
+                    if json.success == true{
+                        self.loginSucessAlert()
+                    }
+                } catch {
+                    self.loginFailAlert(messages: "계정이 존재하지 않거나 이메일 또는 비밀번호가 정확하지 않습니다.")
+                    
+                }
+            default:
+                return
                 
-                print("error: \(String(describing: error.errorDescription))")
-                print("\(error)")
             }
+            
         }
+        
+        
         
     }
     
@@ -102,7 +106,7 @@ class LoginViewController: UIViewController {
         if (checkTextField()) {
             signInApi(email: logInEmail.text!, password: logInPassword.text!)
         } else {
-            loginFailAlert()
+            loginFailAlert(messages: "빈칸을 모두 채워주세요.")
         }
         
         
