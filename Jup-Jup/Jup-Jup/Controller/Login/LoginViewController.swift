@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 
+var token = String()
 
 class LoginViewController: UIViewController {
     
@@ -77,7 +78,7 @@ class LoginViewController: UIViewController {
             "password": password
         ]
         
-        AF.request(URL, method: .post, parameters: PARAM,encoding: JSONEncoding.default).responseJSON { (response) in
+        let alamo = AF.request(URL, method: .post, parameters: PARAM,encoding: JSONEncoding.default).responseJSON { (response) in
             switch response.result{
             case .success:
                 guard let result = response.data else {return}
@@ -85,6 +86,7 @@ class LoginViewController: UIViewController {
                     let decoder = JSONDecoder()
                     let json = try decoder.decode(LogInModel.self, from: result)
                     if json.success == true{
+                        token = json.data
                         self.loginSucessAlert()
                     }
                 } catch {
@@ -98,7 +100,23 @@ class LoginViewController: UIViewController {
             
         }
         
-        
+        alamo.responseString() { response in
+            switch response.result
+            {
+            //통신성공
+            case .success(let value):
+                print("value: \(value)")
+//                }
+                print("\(value)")
+            //  self.sendImage(value: value)
+            
+            //통신실패
+            case .failure(let error):
+                print("error: \(String(describing: error.errorDescription))")
+                //  self.resultLabel.text = "\(error)"
+                print("\(error)")
+            }
+        }
         
     }
     
