@@ -27,6 +27,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         apiCall()
         self.searchController()
     }
+    @IBAction func menuSegment(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            
+        } else {
+            
+        }
+    }
     
     var isFiltering: Bool {
         let searchController = self.navigationItem.searchController
@@ -111,7 +118,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         searchApiCall(word: searchController.searchBar.text!)
-        
     }
     
     

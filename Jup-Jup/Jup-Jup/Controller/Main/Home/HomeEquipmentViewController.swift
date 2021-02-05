@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 var titleName = String()
 var content = String()
@@ -41,9 +42,7 @@ class HomeEquipmentViewController: UIViewController {
     }
     
     @IBAction func countStepper(_ sender: UIStepper) {
-        
         rentalCount.text = "대여 수량: \(Int(sender.value))개"
-        
     }
     
     func sucessAlert() {

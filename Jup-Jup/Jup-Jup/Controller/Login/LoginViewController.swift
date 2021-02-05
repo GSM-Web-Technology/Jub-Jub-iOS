@@ -72,13 +72,12 @@ class LoginViewController: UIViewController {
     
     func signInApi(email: String,password: String) {
         let URL = "http://3.36.29.69:8080/v1/signin"
-        
         let PARAM: Parameters = [
             "email": email,
             "password": password
         ]
         
-        let alamo = AF.request(URL, method: .post, parameters: PARAM,encoding: JSONEncoding.default).responseJSON { (response) in
+        AF.request(URL, method: .post, parameters: PARAM,encoding: JSONEncoding.default).responseJSON { (response) in
             switch response.result{
             case .success:
                 guard let result = response.data else {return}
@@ -99,25 +98,6 @@ class LoginViewController: UIViewController {
             }
             
         }
-        
-        alamo.responseString() { response in
-            switch response.result
-            {
-            //통신성공
-            case .success(let value):
-                print("value: \(value)")
-//                }
-                print("\(value)")
-            //  self.sendImage(value: value)
-            
-            //통신실패
-            case .failure(let error):
-                print("error: \(String(describing: error.errorDescription))")
-                //  self.resultLabel.text = "\(error)"
-                print("\(error)")
-            }
-        }
-        
     }
     
     @IBAction func logInButton(_ sender: UIButton) {
@@ -126,11 +106,7 @@ class LoginViewController: UIViewController {
         } else {
             loginFailAlert(messages: "빈칸을 모두 채워주세요.")
         }
-        
-        
     }
-    
-    
 }
 
 extension LoginViewController: UITextFieldDelegate {

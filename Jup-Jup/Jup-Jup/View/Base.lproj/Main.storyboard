@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vLJ-es-eIm">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -146,8 +146,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xJ7-Hy-JTK">
+                                <rect key="frame" x="0.0" y="140" width="414" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="hCs-td-FDE"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="기자재"/>
+                                    <segment title="노트북"/>
+                                </segments>
+                                <connections>
+                                    <action selector="menuSegment:" destination="AVP-xe-Qod" eventType="valueChanged" id="VYn-fv-y74"/>
+                                </connections>
+                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qc0-8U-sNY">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="175" width="414" height="721"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -212,10 +225,13 @@
                         <viewLayoutGuide key="safeArea" id="us4-B2-Kh1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="us4-B2-Kh1" firstAttribute="bottom" secondItem="Qc0-8U-sNY" secondAttribute="bottom" id="Oh2-th-6uB"/>
-                            <constraint firstItem="Qc0-8U-sNY" firstAttribute="leading" secondItem="us4-B2-Kh1" secondAttribute="leading" id="PLp-kp-bXU"/>
-                            <constraint firstItem="Qc0-8U-sNY" firstAttribute="top" secondItem="us4-B2-Kh1" secondAttribute="top" id="RyT-pn-IOm"/>
-                            <constraint firstItem="us4-B2-Kh1" firstAttribute="trailing" secondItem="Qc0-8U-sNY" secondAttribute="trailing" id="l1a-KR-dfV"/>
+                            <constraint firstItem="Qc0-8U-sNY" firstAttribute="top" secondItem="xJ7-Hy-JTK" secondAttribute="bottom" id="7kl-Uu-QEX"/>
+                            <constraint firstItem="Qc0-8U-sNY" firstAttribute="trailing" secondItem="us4-B2-Kh1" secondAttribute="trailing" id="FSq-7f-Kab"/>
+                            <constraint firstItem="xJ7-Hy-JTK" firstAttribute="top" secondItem="us4-B2-Kh1" secondAttribute="top" id="M4Y-pM-LWc"/>
+                            <constraint firstItem="Qc0-8U-sNY" firstAttribute="leading" secondItem="us4-B2-Kh1" secondAttribute="leading" id="U83-XO-L71"/>
+                            <constraint firstItem="xJ7-Hy-JTK" firstAttribute="trailing" secondItem="us4-B2-Kh1" secondAttribute="trailing" id="i7i-b4-UwT"/>
+                            <constraint firstAttribute="bottom" secondItem="Qc0-8U-sNY" secondAttribute="bottom" id="naQ-m5-BrW"/>
+                            <constraint firstItem="xJ7-Hy-JTK" firstAttribute="leading" secondItem="us4-B2-Kh1" secondAttribute="leading" id="wLV-l5-Q6A"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="9SS-5I-CyN"/>
@@ -267,7 +283,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="대여"/>
+                                <state key="normal" title="대여 신청"/>
                                 <connections>
                                     <action selector="doneBtn:" destination="Jun-xJ-UVr" eventType="touchUpInside" id="6EZ-DY-yBN"/>
                                 </connections>
