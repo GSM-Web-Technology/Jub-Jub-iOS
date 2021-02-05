@@ -10,6 +10,7 @@ import Alamofire
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
+    var menu = Bool()
     var model: Equipment?
     var searchModel: Search?
     var filteredArr: [String] = []
@@ -26,13 +27,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         apiCall()
         self.searchController()
-    }
-    @IBAction func menuSegment(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            
-        } else {
-            
-        }
     }
     
     var isFiltering: Bool {
@@ -81,7 +75,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.isFiltering ? self.searchModel?.data.cellCount ?? 0 : self.model?.list.count ?? 0
+        if (isFiltering) {
+            return self.searchModel?.data.cellCount ?? 0
+        } else {
+            return self.model?.list.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
