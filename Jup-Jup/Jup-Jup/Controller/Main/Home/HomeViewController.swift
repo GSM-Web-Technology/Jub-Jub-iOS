@@ -11,6 +11,8 @@ import Alamofire
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
     var model: Equipment?
+    var searchModel: Search?
+    var filteredArr: [String] = []
     
     @IBOutlet weak var homeTableView: UITableView! {
         didSet {
@@ -19,17 +21,20 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             homeTableView.tableFooterView = UIView()
         }
     }
-    @IBOutlet weak var searchTextField: UITextField!
-    
-    var arr = ["DC모터", "한성노트북", "삼성노트북", "모니터", "아두이노", "iPad", "갤럭시탭", "키보드", "마우스", "애플 매직마우스", "애플 매직키보드"]
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         apiCall()
         self.searchController()
     }
+    
+    var isFiltering: Bool {
+        let searchController = self.navigationItem.searchController
+        let isActive = searchController?.isActive ?? false
+        let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
+        return isActive && isSearchBarHasText
+    }
+
     
     func apiCall() {
         let URL = "http://3.36.29.69:8080/v1/equipment/"
@@ -39,7 +44,17 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             self.model = try? JSONDecoder().decode(Equipment.self, from: data)
             self.homeTableView.reloadData()
         })
-        
+    }
+    
+    func searchApiCall(word: String) {
+        let URL = "http://3.36.29.69:8080/v1/equipment/\(word)"
+        let encodingURL = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        AF.request(encodingURL, headers: ["X-AUTH-TOKEN": token]).responseData(completionHandler: { data in
+            guard let data = data.data else { return }
+            self.searchModel = try? JSONDecoder().decode(Search.self, from: data)
+            print(data)
+            self.homeTableView.reloadData()
+        })
     }
     
     func searchController() {
@@ -48,15 +63,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.hidesSearchBarWhenScrolling = false
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        searchTextField.resignFirstResponder()
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchTextField.resignFirstResponder()
-        return true
     }
     
     func goMainPage(){
@@ -68,7 +74,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model?.list.count ?? 0
+        return self.isFiltering ? self.searchModel?.data.cellCount ?? 0 : self.model?.list.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -77,24 +83,35 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
-        cell.homeTitleName.text = model?.list[indexPath.row].name
-        cell.homeSubName.text = model?.list[indexPath.row].content
-        cell.homeCount.text = "수량: \(model?.list[indexPath.row].count ?? 0)개"
-        
+        if self.isFiltering {
+            cell.homeTitleName.text = searchModel?.data.name ?? ""
+            cell.homeSubName.text = searchModel?.data.content ?? ""
+            cell.homeCount.text = "수량: \(searchModel?.data.count ?? 0)개"
+        } else {
+            cell.homeTitleName.text = model?.list[indexPath.row].name ?? ""
+            cell.homeSubName.text = model?.list[indexPath.row].content ?? ""
+            cell.homeCount.text = "수량: \(model?.list[indexPath.row].count ?? 0)개"
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        titleName = model?.list[indexPath.row].name ?? ""
-        content = model?.list[indexPath.row].content ?? ""
-        count = model?.list[indexPath.row].count ?? 0
-
+        if self.isFiltering {
+            titleName = searchModel?.data.name ?? ""
+            content = searchModel?.data.content ?? ""
+            count = searchModel?.data.count ?? 0
+        } else {
+            titleName = model?.list[indexPath.row].name ?? ""
+            content = model?.list[indexPath.row].content ?? ""
+            count = model?.list[indexPath.row].count ?? 0
+        }
     }
 }
 
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        print(searchController.searchBar.text!)
+        searchApiCall(word: searchController.searchBar.text!)
+        
     }
     
     
