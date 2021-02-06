@@ -106,11 +106,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             content = searchModel?.data.content ?? ""
             count = searchModel?.data.count ?? 0
         } else {
+//            let a = self.storyboard?.instantiateViewController(withIdentifier: "a") as! HomeEquipmentViewController
+//            self.navigationController?.pushViewController(a, animated: true)
             titleName = model?.list[indexPath.row].name ?? ""
             content = model?.list[indexPath.row].content ?? ""
             count = model?.list[indexPath.row].count ?? 0
         }
+        
     }
+    
 }
 
 extension HomeViewController: UISearchResultsUpdating {
