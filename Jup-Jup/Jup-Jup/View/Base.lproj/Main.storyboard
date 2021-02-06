@@ -203,7 +203,7 @@
                                             <outlet property="homeImageView" destination="mdp-f0-anW" id="BHC-XH-nyb"/>
                                             <outlet property="homeSubName" destination="K4w-2X-1Lg" id="ugQ-mF-AtR"/>
                                             <outlet property="homeTitleName" destination="BBY-aY-wBj" id="s1y-Oz-Hto"/>
-                                            <segue destination="Jun-xJ-UVr" kind="show" trigger="accessoryAction" id="JgT-js-I8A"/>
+                                            <segue destination="Jun-xJ-UVr" kind="show" id="zXA-cw-hfC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -230,7 +230,7 @@
         <!--Home Equipment View Controller-->
         <scene sceneID="awJ-Om-Vpv">
             <objects>
-                <viewController storyboardIdentifier="a" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jun-xJ-UVr" customClass="HomeEquipmentViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Jun-xJ-UVr" customClass="HomeEquipmentViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cRa-21-PjF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
