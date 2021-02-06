@@ -29,20 +29,29 @@ class HomeEquipmentViewController: UIViewController {
             equipmentCount.text = "수량: \(count)개"
         }
     }
-    
-    @IBOutlet weak var rentalCount: UILabel!
+    @IBOutlet weak var doneButton: UIButton! {
+        didSet {
+            doneButton.layer.cornerRadius = 5
+        }
+    }
     @IBOutlet weak var stepper: UIStepper! {
         didSet {
             stepper.minimumValue = 1
             stepper.maximumValue = Double(count)
         }
     }
+    @IBOutlet weak var rentalCount: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func countStepper(_ sender: UIStepper) {
         rentalCount.text = "대여 수량: \(Int(sender.value))개"
+    }
+    
+    @IBAction func doneBtn(_ sender: UIButton) {
+        sucessAlert()
     }
     
     func sucessAlert() {
@@ -60,10 +69,4 @@ class HomeEquipmentViewController: UIViewController {
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
-    
-    @IBAction func doneBtn(_ sender: UIButton) {
-        sucessAlert()
-    }
-    
-
 }

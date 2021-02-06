@@ -312,6 +312,7 @@
                     <navigationItem key="navigationItem" id="xGg-Gc-Uvc"/>
                     <connections>
                         <outlet property="contentLabel" destination="SEm-0o-1Fd" id="crH-qb-MVN"/>
+                        <outlet property="doneButton" destination="8pM-8E-Xsw" id="pmp-Iy-Dmq"/>
                         <outlet property="equipmentCount" destination="VDf-Fb-SWp" id="8o6-qB-ouG"/>
                         <outlet property="rentalCount" destination="j4S-Qx-xaP" id="XT5-MD-lNF"/>
                         <outlet property="stepper" destination="QsN-Cl-5je" id="EGc-fR-VeT"/>
