@@ -67,22 +67,21 @@ class HomeEquipmentViewController: UIViewController {
             "amount": amount,
             "reason": reason
         ]
-        print(token)
-        let alamo = AF.request(encodingURL, method: .post, parameters: PARAM, encoding: JSONEncoding.default, headers: ["X-AUTH-TOKEN": token]).validate(statusCode: 200...300)
         
-        alamo.responseString() { response in
-            switch response.result
-            {
-            //통신성공
-            case .success(let value):
-                print("value: \(value)")
-                print("\(value)")
-            
-            //통신실패
-            case .failure(let error):
-                print("error: \(String(describing: error.errorDescription))")
-                //  self.resultLabel.text = "\(error)"
-                print("\(error)")
+        AF.request(encodingURL, method: .post, parameters: PARAM, encoding: JSONEncoding.default, headers: ["X-AUTH-TOKEN": token]).responseJSON { (response) in
+            switch response.result{
+            case .success:
+                guard let result = response.data else {return}
+                do {
+                    let json = try JSONDecoder().decode(ResponseModel.self, from: result)
+                    if json.success == true{
+                        self.sucessAlert()
+                    }
+                } catch {
+                    self.failAlert(message: "대여 실패!")
+                }
+            default:
+                return
             }
         }
 
