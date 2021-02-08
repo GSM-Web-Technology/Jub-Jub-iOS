@@ -101,20 +101,23 @@ class SignUpViewController: UIViewController {
             "password": password
         ]
         
-        let alamo = AF.request(URL, method: .post, parameters: PARAM, encoding: JSONEncoding.default).validate(statusCode: 200..<300)
-        
-        alamo.responseString() { response in
-            switch response.result
-            {
-            //통신성공
-            case .success(let value):
-                self.sucessAlert()
-                print("value: \(value)")
-            //통신실패
-            case .failure(let error):
-                self.failAlert(messages: self.failMessages)
-                print("error: \(String(describing: error.errorDescription))")
-                print("\(error)")
+        AF.request(URL, method: .post, parameters: PARAM, encoding: JSONEncoding.default).responseJSON { (response) in
+            switch response.result{
+            case .success:
+                guard let result = response.data else {return}
+                do {
+                    let decoder = JSONDecoder()
+                    let json = try decoder.decode(SignUpModel.self, from: result)
+                    if json.success == true{
+                        self.sucessAlert()
+                    } else {
+                        self.failAlert(messages: "이메일 중복.")
+                    }
+                } catch {
+                    
+                }
+            default:
+                return
             }
         }
         

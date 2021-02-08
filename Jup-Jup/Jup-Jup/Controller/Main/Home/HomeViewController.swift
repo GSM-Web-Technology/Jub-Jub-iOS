@@ -103,11 +103,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.isFiltering {
             titleName = searchModel?.data.name ?? ""
-            content = searchModel?.data.content ?? ""
             count = searchModel?.data.count ?? 0
         } else {
             titleName = model?.list[indexPath.row].name ?? ""
-            content = model?.list[indexPath.row].content ?? ""
             count = model?.list[indexPath.row].count ?? 0
         }
         

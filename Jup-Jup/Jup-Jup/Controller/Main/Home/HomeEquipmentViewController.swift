@@ -14,16 +14,6 @@ var count = Int()
 
 class HomeEquipmentViewController: UIViewController {
 
-//    @IBOutlet weak var titleLabel: UILabel! {
-//        didSet {
-//            titleLabel.text = titleName
-//        }
-//    }
-//    @IBOutlet weak var contentLabel: UILabel! {
-//        didSet {
-//            contentLabel.text = content
-//        }
-//    }
     @IBOutlet weak var equipmentCount: UILabel! {
         didSet {
             equipmentCount.text = "수량: \(count)개"
