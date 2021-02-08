@@ -107,7 +107,7 @@ class SignUpViewController: UIViewController {
                 guard let result = response.data else {return}
                 do {
                     let decoder = JSONDecoder()
-                    let json = try decoder.decode(SignUpModel.self, from: result)
+                    let json = try decoder.decode(ResponseModel.self, from: result)
                     if json.success == true{
                         self.sucessAlert()
                     } else {

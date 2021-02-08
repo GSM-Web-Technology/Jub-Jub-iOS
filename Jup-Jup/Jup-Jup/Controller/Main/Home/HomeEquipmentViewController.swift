@@ -13,6 +13,8 @@ var content = String()
 var count = Int()
 
 class HomeEquipmentViewController: UIViewController {
+    
+    var rentalAmount = 1
 
     @IBOutlet weak var equipmentCount: UILabel! {
         didSet {
@@ -44,11 +46,46 @@ class HomeEquipmentViewController: UIViewController {
     }
     
     @IBAction func countStepper(_ sender: UIStepper) {
-        rentalCount.text = "대여 수량: \(Int(sender.value))개"
+        rentalAmount = Int(sender.value)
+        rentalCount.text = "대여 수량: \(rentalAmount)개"
     }
     
     @IBAction func doneBtn(_ sender: UIButton) {
-        sucessAlert()
+        if reasonTextView.text == "" {
+            failAlert(message: "대여 사유를 적으십시오.")
+        } else {
+            equipmentAllowAPI(amount: rentalAmount, reason: reasonTextView.text, name: titleName)
+        }
+        
+        
+    }
+    
+    func equipmentAllowAPI(amount: Int, reason: String, name: String) {
+        let URL = "http://3.36.29.69:8080/v1/equipmentallow/\(name)"
+        let encodingURL = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let PARAM: Parameters = [
+            "amount": amount,
+            "reason": reason
+        ]
+        print(token)
+        let alamo = AF.request(encodingURL, method: .post, parameters: PARAM, encoding: JSONEncoding.default, headers: ["X-AUTH-TOKEN": token]).validate(statusCode: 200...300)
+        
+        alamo.responseString() { response in
+            switch response.result
+            {
+            //통신성공
+            case .success(let value):
+                print("value: \(value)")
+                print("\(value)")
+            
+            //통신실패
+            case .failure(let error):
+                print("error: \(String(describing: error.errorDescription))")
+                //  self.resultLabel.text = "\(error)"
+                print("\(error)")
+            }
+        }
+
     }
     
     func sucessAlert() {
@@ -60,8 +97,8 @@ class HomeEquipmentViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func failAlert() {
-        let alert = UIAlertController(title: "대여 실패", message: "대여 실패!!", preferredStyle: UIAlertController.Style.alert)
+    func failAlert(message: String) {
+        let alert = UIAlertController(title: "대여 실패", message: message, preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
