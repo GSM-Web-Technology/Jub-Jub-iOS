@@ -14,16 +14,16 @@ var count = Int()
 
 class HomeEquipmentViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel! {
-        didSet {
-            titleLabel.text = titleName
-        }
-    }
-    @IBOutlet weak var contentLabel: UILabel! {
-        didSet {
-            contentLabel.text = content
-        }
-    }
+//    @IBOutlet weak var titleLabel: UILabel! {
+//        didSet {
+//            titleLabel.text = titleName
+//        }
+//    }
+//    @IBOutlet weak var contentLabel: UILabel! {
+//        didSet {
+//            contentLabel.text = content
+//        }
+//    }
     @IBOutlet weak var equipmentCount: UILabel! {
         didSet {
             equipmentCount.text = "수량: \(count)개"
@@ -40,10 +40,17 @@ class HomeEquipmentViewController: UIViewController {
             stepper.maximumValue = Double(count)
         }
     }
+    @IBOutlet weak var reasonTextView: UITextView! {
+        didSet {
+            reasonTextView.layer.cornerRadius = 5
+            reasonTextView.delegate = self
+        }
+    }
     @IBOutlet weak var rentalCount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = titleName
     }
     
     @IBAction func countStepper(_ sender: UIStepper) {
@@ -68,5 +75,11 @@ class HomeEquipmentViewController: UIViewController {
         let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension HomeEquipmentViewController: UITextViewDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }

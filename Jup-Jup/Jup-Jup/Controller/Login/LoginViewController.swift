@@ -12,7 +12,7 @@ var token = String()
 
 class LoginViewController: UIViewController {
     
-   
+    
     
     @IBOutlet weak var logInEmail: UITextField! {
         didSet {
@@ -90,13 +90,10 @@ class LoginViewController: UIViewController {
                     }
                 } catch {
                     self.loginFailAlert(messages: "계정이 존재하지 않거나 이메일 또는 비밀번호가 정확하지 않습니다.")
-                    
                 }
             default:
                 return
-                
             }
-            
         }
     }
     
