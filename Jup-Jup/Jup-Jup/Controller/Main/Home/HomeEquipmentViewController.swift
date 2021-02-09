@@ -54,10 +54,8 @@ class HomeEquipmentViewController: UIViewController {
         if reasonTextView.text == "" {
             failAlert(message: "대여 사유를 적으십시오.")
         } else {
-            equipmentAllowAPI(amount: rentalAmount, reason: reasonTextView.text, name: titleName)
+            checkAlert(name: titleName, count: rentalAmount)
         }
-        
-        
     }
     
     func equipmentAllowAPI(amount: Int, reason: String, name: String) {
@@ -88,11 +86,23 @@ class HomeEquipmentViewController: UIViewController {
     }
     
     func sucessAlert() {
-        let alert = UIAlertController(title: "대여 성공", message: "대여 성공!!", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "대여 신청 완료", message: "대여 신청되었습니다.", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (_) in
             self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func checkAlert(name: String, count: Int) {
+        let alert = UIAlertController(title: "\(name) \(count)개", message: "대여 신청하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (_) in
+            self.equipmentAllowAPI(amount: self.rentalAmount, reason: self.reasonTextView.text, name: titleName)
+        }
+        let cancel = UIAlertAction(title: "취소", style: .destructive)
+        alert.addAction(ok)
+        alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
     

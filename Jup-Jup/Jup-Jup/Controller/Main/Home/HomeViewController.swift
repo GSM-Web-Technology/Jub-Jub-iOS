@@ -65,12 +65,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
     }
-    
-    func goMainPage(){
-        guard let goMain = self.storyboard?.instantiateViewController(identifier: "MainPage") else { return }
-        goMain.modalPresentationStyle = .fullScreen
-        self.present(goMain, animated: true)
-    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
