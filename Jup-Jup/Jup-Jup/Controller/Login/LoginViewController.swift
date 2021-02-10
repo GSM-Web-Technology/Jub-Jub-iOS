@@ -66,7 +66,6 @@ class LoginViewController: UIViewController {
         if (logInEmail.text == "") || (logInPassword.text == "") {
             return false
         }
-        
         return true
     }
     

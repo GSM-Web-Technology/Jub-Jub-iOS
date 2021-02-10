@@ -35,12 +35,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
         return isActive && isSearchBarHasText
     }
-
     
     func apiCall() {
         let URL = "http://3.36.29.69:8080/v1/equipment/"
-        let encodingURL = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        AF.request(encodingURL, headers: ["X-AUTH-TOKEN": token]).responseData(completionHandler: { data in
+        AF.request(URL, headers: ["X-AUTH-TOKEN": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.model = try? JSONDecoder().decode(Equipment.self, from: data)
             self.homeTableView.reloadData()
@@ -102,15 +100,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             titleName = model?.list[indexPath.row].name ?? ""
             count = model?.list[indexPath.row].count ?? 0
         }
-        
     }
-    
 }
 
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         searchApiCall(word: searchController.searchBar.text!)
     }
-    
-    
 }
