@@ -38,7 +38,14 @@ class HomeEquipmentViewController: UIViewController {
             reasonTextView.delegate = self
         }
     }
-    @IBOutlet weak var rentalCount: UILabel!
+    @IBOutlet weak var rentalCount: UILabel! {
+        didSet {
+            if count == 0 {
+                rentalAmount = 0
+            }
+            rentalCount.text = "대여 수량: \(rentalAmount)개"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
