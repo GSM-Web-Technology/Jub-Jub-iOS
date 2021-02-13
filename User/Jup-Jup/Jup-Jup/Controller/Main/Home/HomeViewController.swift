@@ -9,10 +9,7 @@ import UIKit
 import Alamofire
 import Kingfisher
 
-    var titleName: String?
-    var content: String?
-    var imgURL: URL?
-    var count: Int?
+    
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
