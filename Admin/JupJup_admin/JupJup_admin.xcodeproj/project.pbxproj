@@ -58,13 +58,37 @@
 			children = (
 				BD29575225D806BC006764E1 /* AppDelegate.swift */,
 				BD29575425D806BC006764E1 /* SceneDelegate.swift */,
-				BD29575625D806BC006764E1 /* ViewController.swift */,
-				BD29575825D806BC006764E1 /* Main.storyboard */,
+				BD29576A25D8075F006764E1 /* Model */,
+				BD29576925D80757006764E1 /* View */,
+				BD29576825D8074E006764E1 /* Controller */,
 				BD29575B25D806BE006764E1 /* Assets.xcassets */,
-				BD29575D25D806BE006764E1 /* LaunchScreen.storyboard */,
 				BD29576025D806BE006764E1 /* Info.plist */,
 			);
 			path = JupJup_admin;
+			sourceTree = "<group>";
+		};
+		BD29576825D8074E006764E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BD29575625D806BC006764E1 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BD29576925D80757006764E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD29575825D806BC006764E1 /* Main.storyboard */,
+				BD29575D25D806BE006764E1 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BD29576A25D8075F006764E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -27,6 +27,8 @@
 		BDDDDDF325C421080022C635 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDF225C421080022C635 /* Kingfisher */; };
 		BDEB1F0B25A87B4B00D84ADC /* HomeEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB1F0A25A87B4B00D84ADC /* HomeEquipmentViewController.swift */; };
 		BDEB1F0F25A88A1C00D84ADC /* MyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB1F0E25A88A1C00D84ADC /* MyListTableViewCell.swift */; };
+		BDF8E5ED25D80ADE008C4DA1 /* LaptopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8E5EC25D80ADE008C4DA1 /* LaptopTableViewCell.swift */; };
+		BDF8E5F025D80AF0008C4DA1 /* LaptopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8E5EF25D80AF0008C4DA1 /* LaptopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		BD9F78E225CBE4320053852A /* EquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentModel.swift; sourceTree = "<group>"; };
 		BDEB1F0A25A87B4B00D84ADC /* HomeEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEquipmentViewController.swift; sourceTree = "<group>"; };
 		BDEB1F0E25A88A1C00D84ADC /* MyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListTableViewCell.swift; sourceTree = "<group>"; };
+		BDF8E5EC25D80ADE008C4DA1 /* LaptopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaptopTableViewCell.swift; sourceTree = "<group>"; };
+		BDF8E5EF25D80AF0008C4DA1 /* LaptopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaptopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				BD41251625A7460D00264EC2 /* HomeViewController.swift */,
 				BD41252025A75B7900264EC2 /* HomeTableViewCell.swift */,
 				BDEB1F0A25A87B4B00D84ADC /* HomeEquipmentViewController.swift */,
+				BDF8E5EF25D80AF0008C4DA1 /* LaptopViewController.swift */,
+				BDF8E5EC25D80ADE008C4DA1 /* LaptopTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -250,12 +256,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD39BA1225CD6B1C00F97107 /* SearchModel.swift in Sources */,
+				BDF8E5F025D80AF0008C4DA1 /* LaptopViewController.swift in Sources */,
 				BD80CFFB25D7D72200AA4DC6 /* MyPageTableViewCell.swift in Sources */,
 				BD05556225D1607C00528F03 /* ResponseModel.swift in Sources */,
 				BD9F78E325CBE4320053852A /* EquipmentModel.swift in Sources */,
 				BD41252125A75B7A00264EC2 /* HomeTableViewCell.swift in Sources */,
 				BDEB1F0F25A88A1C00D84ADC /* MyListTableViewCell.swift in Sources */,
 				BD9554F425A08F8300DB23E3 /* AppDelegate.swift in Sources */,
+				BDF8E5ED25D80ADE008C4DA1 /* LaptopTableViewCell.swift in Sources */,
 				BD9554F625A08F8300DB23E3 /* SceneDelegate.swift in Sources */,
 				BD9F78DF25CBCA850053852A /* LogInModel.swift in Sources */,
 				BD41251D25A7465700264EC2 /* MyPageViewController.swift in Sources */,

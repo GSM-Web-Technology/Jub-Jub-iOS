@@ -20,6 +20,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     var model: Equipment?
     var searchModel: Search?
     var filteredArr: [String] = []
+    var selectedMenu: Bool = true
     
     @IBOutlet weak var homeTableView: UITableView! {
         didSet {
@@ -33,6 +34,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(true)
         apiCall()
         self.searchController()
+    }
+    @IBAction func selectMenu(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            selectedMenu = true
+        } else {
+            selectedMenu = false
+        }
     }
     
     var isFiltering: Bool {
