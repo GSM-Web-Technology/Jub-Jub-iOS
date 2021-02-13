@@ -7,10 +7,7 @@
 
 import UIKit
 import Alamofire
-
-var titleName = String()
-var content = String()
-var count = Int()
+import Kingfisher
 
 class HomeEquipmentViewController: UIViewController {
     
@@ -18,7 +15,7 @@ class HomeEquipmentViewController: UIViewController {
 
     @IBOutlet weak var equipmentCount: UILabel! {
         didSet {
-            equipmentCount.text = "수량: \(count)개"
+            equipmentCount.text = "수량: \(count!)개"
         }
     }
     @IBOutlet weak var doneButton: UIButton! {
@@ -29,7 +26,7 @@ class HomeEquipmentViewController: UIViewController {
     @IBOutlet weak var stepper: UIStepper! {
         didSet {
             stepper.minimumValue = 1
-            stepper.maximumValue = Double(count)
+            stepper.maximumValue = Double(count!)
         }
     }
     @IBOutlet weak var reasonTextView: UITextView! {
@@ -46,10 +43,12 @@ class HomeEquipmentViewController: UIViewController {
             rentalCount.text = "대여 수량: \(rentalAmount)개"
         }
     }
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = titleName
+//        imageView.kf.setImage(with: imgURL)
     }
     
     @IBAction func countStepper(_ sender: UIStepper) {
@@ -61,7 +60,7 @@ class HomeEquipmentViewController: UIViewController {
         if reasonTextView.text == "" {
             failAlert(message: "대여 사유를 적으십시오.")
         } else {
-            checkAlert(name: titleName, count: rentalAmount)
+            checkAlert(name: titleName!, count: rentalAmount)
         }
     }
     
@@ -105,7 +104,7 @@ class HomeEquipmentViewController: UIViewController {
     func checkAlert(name: String, count: Int) {
         let alert = UIAlertController(title: "\(name) \(count)개", message: "대여 신청하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (_) in
-            self.equipmentAllowAPI(amount: self.rentalAmount, reason: self.reasonTextView.text, name: titleName)
+            self.equipmentAllowAPI(amount: self.rentalAmount, reason: self.reasonTextView.text, name: titleName!)
         }
         let cancel = UIAlertAction(title: "취소", style: .destructive)
         alert.addAction(ok)

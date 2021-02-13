@@ -110,17 +110,27 @@
             </objects>
             <point key="canvasLocation" x="647.82608695652175" y="2209.8214285714284"/>
         </scene>
-        <!--프로필-->
+        <!--마이페이지-->
         <scene sceneID="8YK-jI-uQf">
             <objects>
-                <viewController id="Io0-0c-Qnr" customClass="ProfileViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Io0-0c-Qnr" customClass="MyPageViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jHW-4Q-7PO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KrN-4j-79y">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="W0X-nG-g8A">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W0X-nG-g8A" id="Gro-mx-z5N">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xNP-tI-iw5"/>
@@ -132,7 +142,7 @@
                             <constraint firstItem="xNP-tI-iw5" firstAttribute="bottom" secondItem="KrN-4j-79y" secondAttribute="bottom" id="yZE-bG-Nsk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="프로필" id="3FU-G0-WeJ"/>
+                    <navigationItem key="navigationItem" title="마이페이지" id="3FU-G0-WeJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0t-v2-0VU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -326,6 +336,7 @@
                     <connections>
                         <outlet property="doneButton" destination="8pM-8E-Xsw" id="pmp-Iy-Dmq"/>
                         <outlet property="equipmentCount" destination="VDf-Fb-SWp" id="8o6-qB-ouG"/>
+                        <outlet property="imageView" destination="Nhx-v9-4RD" id="xVM-8w-gDA"/>
                         <outlet property="reasonTextView" destination="xId-hK-2O6" id="TSM-N2-a7e"/>
                         <outlet property="rentalCount" destination="j4S-Qx-xaP" id="XT5-MD-lNF"/>
                         <outlet property="stepper" destination="QsN-Cl-5je" id="EGc-fR-VeT"/>
