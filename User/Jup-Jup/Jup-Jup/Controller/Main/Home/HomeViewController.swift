@@ -32,13 +32,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         apiCall()
         self.searchController()
     }
-    @IBAction func selectMenu(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            selectedMenu = true
-        } else {
-            selectedMenu = false
-        }
-    }
     
     var isFiltering: Bool {
         let searchController = self.navigationItem.searchController

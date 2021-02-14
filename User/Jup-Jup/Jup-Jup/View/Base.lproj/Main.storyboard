@@ -156,21 +156,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ExZ-Ib-lmO">
-                                <rect key="frame" x="0.0" y="140" width="414" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="fjm-X2-IPs"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="기자재"/>
-                                    <segment title="노트북"/>
-                                </segments>
-                                <connections>
-                                    <action selector="selectMenu:" destination="AVP-xe-Qod" eventType="valueChanged" id="pyG-h4-hjE"/>
-                                </connections>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qc0-8U-sNY">
-                                <rect key="frame" x="0.0" y="180" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -229,50 +216,16 @@
                                             <segue destination="Jun-xJ-UVr" kind="show" id="zXA-cw-hfC"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="144" id="KcG-jO-qul" customClass="LaptopTableViewCell" customModule="Jup_Jup" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="148" width="414" height="144"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KcG-jO-qul" id="MSc-J5-UCy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="삼성노트북" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH4-X1-usO">
-                                                    <rect key="frame" x="20" y="30" width="104" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="삼성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWR-Pu-H9P">
-                                                    <rect key="frame" x="20" y="67" width="30" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2419" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVa-xd-SrS">
-                                                    <rect key="frame" x="20" y="104" width="38" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="us4-B2-Kh1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Qc0-8U-sNY" firstAttribute="top" secondItem="ExZ-Ib-lmO" secondAttribute="bottom" id="2KE-DY-fDQ"/>
-                            <constraint firstItem="us4-B2-Kh1" firstAttribute="trailing" secondItem="ExZ-Ib-lmO" secondAttribute="trailing" id="7H0-9O-VG0"/>
+                            <constraint firstItem="Qc0-8U-sNY" firstAttribute="top" secondItem="us4-B2-Kh1" secondAttribute="top" id="KY3-eb-GUZ"/>
                             <constraint firstAttribute="bottom" secondItem="Qc0-8U-sNY" secondAttribute="bottom" id="Mht-f2-6Gx"/>
                             <constraint firstItem="Qc0-8U-sNY" firstAttribute="leading" secondItem="us4-B2-Kh1" secondAttribute="leading" id="OMe-2E-Qqd"/>
                             <constraint firstItem="Qc0-8U-sNY" firstAttribute="trailing" secondItem="us4-B2-Kh1" secondAttribute="trailing" id="Rcw-Xe-IFM"/>
-                            <constraint firstItem="ExZ-Ib-lmO" firstAttribute="leading" secondItem="us4-B2-Kh1" secondAttribute="leading" id="SuQ-BQ-5zr"/>
-                            <constraint firstItem="ExZ-Ib-lmO" firstAttribute="top" secondItem="us4-B2-Kh1" secondAttribute="top" id="Ttu-Fj-mZ7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="9SS-5I-CyN"/>
