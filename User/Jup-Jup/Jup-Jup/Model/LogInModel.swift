@@ -11,5 +11,10 @@ struct LogInModel: Codable {
     let success: Bool
     let code: Int
     let msg: String
-    let data: String
+    let data: Token
+}
+
+struct Token: Codable {
+    let accessToken: String
+    let refreshToken: String
 }
