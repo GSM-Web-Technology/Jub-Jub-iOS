@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
                     let json = try decoder.decode(LogInModel.self, from: result)
                     print(json.data)
                     if json.success == true{
-                        token = json.data
+                        token = json.data.accessToken
                         self.loginSucessAlert()
                     }
                 } catch {

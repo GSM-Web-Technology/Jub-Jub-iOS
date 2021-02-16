@@ -75,8 +75,13 @@ class SignUpViewController: UIViewController {
         return true
     }
     
+    func emailCheck() -> Bool {
+        let regex = "s[0-9]+@gsm.hs.kr"
+        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: signUpEmail.text)
+    }
+    
     func sucessAlert() {
-        let alert = UIAlertController(title: "회원가입 성공", message: "회원가입 성공!!", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "회원가입 성공", message: "이메일 인증을 해야 로그인이 가능합니다.", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (_) in
             self.dismiss(animated: true, completion: nil)
         }
@@ -124,10 +129,15 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: UIButton) {
-        if (checkTextField()) {
+        if (checkTextField() && emailCheck()) {
             signUpApi(classNumber: signUpClassNumber.text!, email: signUpEmail.text!, name: signUpName.text!, password: signUpPassword.text!)
         } else {
-            failAlert(messages: failMessages)
+            if !(checkTextField()) {
+                failAlert(messages: failMessages)
+            } else {
+                failAlert(messages: "이메일 형식이 잘못되었습니다.")
+            }
+            
         }
     }
     
@@ -151,3 +161,4 @@ extension SignUpViewController: UITextFieldDelegate {
         return true
     }
 }
+
