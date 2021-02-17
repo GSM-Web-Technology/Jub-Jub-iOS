@@ -81,17 +81,20 @@ class LoginViewController: UIViewController {
             case .success(let a):
                 if let dic = a as? NSDictionary {
                     if let code = dic["code"] as? Int {
-                        if code == 0 {
+                        switch code {
+                        case 0:
                             if let allToken = dic["data"] as? NSDictionary {
                                 if let accessToken = allToken["accessToken"] as? String {
                                     token = accessToken
                                 }
                             }
                             self.loginSucessAlert()
-                        } else if code == -1001 {
+                        case -1001:
                             self.loginFailAlert(messages: "계정이 존재하지 않거나 이메일 또는 비밀번호가 정확하지 않습니다.")
-                        } else if code == -947 {
+                        case -947:
                             self.loginFailAlert(messages: "이메일 인증을 해주세요!")
+                        default:
+                            return
                         }
                     }
                 }
