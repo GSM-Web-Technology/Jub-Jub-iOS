@@ -11,7 +11,7 @@ import Alamofire
 var token = String()
 
 class LoginViewController: UIViewController {
-    
+
     
     
     @IBOutlet weak var logInEmail: UITextField! {
@@ -76,25 +76,49 @@ class LoginViewController: UIViewController {
             "password": password
         ]
         
-        AF.request(URL, method: .post, parameters: PARAM,encoding: JSONEncoding.default).responseJSON { (response) in
-            switch response.result{
-            case .success:
-                guard let result = response.data else {return}
-                let decoder = JSONDecoder()
-                do {
-                    let json = try decoder.decode(LogInModel.self, from: result)
-                    if json.success == true{
-                        token = json.data.accessToken
-                        self.loginSucessAlert()
+        AF.request(URL, method: .post, parameters: PARAM,encoding: JSONEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success(let a):
+                if let dic = a as? NSDictionary {
+                    if let code = dic["code"] as? Int {
+                        if code == 0 {
+                            if let allToken = dic["data"] as? NSDictionary {
+                                if let accessToken = allToken["accessToken"] as? String {
+                                    token = accessToken
+                                }
+                            }
+                            self.loginSucessAlert()
+                        } else if code == -1001 {
+                            self.loginFailAlert(messages: "계정이 존재하지 않거나 이메일 또는 비밀번호가 정확하지 않습니다.")
+                        } else if code == -947 {
+                            self.loginFailAlert(messages: "이메일 인증을 해주세요!")
+                        }
                     }
-                    if json.code == -947 {
-                        self.loginFailAlert(messages: "이메일 인증하세요.")
-                    }
-                } catch {
-                    self.loginFailAlert(messages: "계정이 존재하지 않거나 이메일 또는 비밀번호가 정확하지 않습니다.")
                 }
-            default:
-                return
+                
+//                guard let result = response.data else {return}
+//                do {
+//                    let json = try JSONDecoder().decode(LogInModel.self, from: result)
+//                    print("0")
+//                    if json.code == 0 {
+//                        token = json.data.accessToken
+//                        self.loginSucessAlert()
+//                    }
+//                    if json.code == -947 {
+//                        print("1")
+//                        self.loginFailAlert(messages: "이메일 인증하세요.")
+//                    }
+//                    if json.code == -1001 {
+//                        self.loginFailAlert(messages: "")
+//                    }
+//                    print("2")
+//
+//                } catch  {
+//                    print("3")
+//                    self.loginFailAlert(messages: "계정이 존재하지 않거나 이메일 또는 비밀번호가 정확하지 않습니다.")
+//                }
+            case .failure(let e):
+                print(e.localizedDescription)
             }
         }
     }
