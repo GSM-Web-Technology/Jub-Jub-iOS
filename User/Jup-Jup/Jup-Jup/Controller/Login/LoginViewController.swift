@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
     }
     
     func signInApi(email: String,password: String) {
-        let URL = "http://3.36.29.69:8080/v1/signin"
+        let URL = "http://3.36.29.69:8080/v2/signin"
         let PARAM: Parameters = [
             "email": email,
             "password": password
@@ -80,13 +80,15 @@ class LoginViewController: UIViewController {
             switch response.result{
             case .success:
                 guard let result = response.data else {return}
+                let decoder = JSONDecoder()
                 do {
-                    let decoder = JSONDecoder()
                     let json = try decoder.decode(LogInModel.self, from: result)
-                    print(json.data)
                     if json.success == true{
                         token = json.data.accessToken
                         self.loginSucessAlert()
+                    }
+                    if json.code == -947 {
+                        self.loginFailAlert(messages: "이메일 인증하세요.")
                     }
                 } catch {
                     self.loginFailAlert(messages: "계정이 존재하지 않거나 이메일 또는 비밀번호가 정확하지 않습니다.")
