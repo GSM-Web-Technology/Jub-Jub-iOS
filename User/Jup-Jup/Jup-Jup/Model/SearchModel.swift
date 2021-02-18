@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Search: Codable {
+struct SearchModel: Codable {
     let code: Int
     let msg: String
     let success: Bool

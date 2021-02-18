@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class MyListViewController: UIViewController {
 
+    var model: MyListModel?
+    
     @IBOutlet weak var myListTableView: UITableView! {
         didSet {
             myListTableView.delegate = self
@@ -18,10 +21,17 @@ class MyListViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
 
+    func apiCall() {
+        let URL = "http://3.36.29.69:8080/v2/myequipment/"
+        AF.request(URL, headers: ["X-AUTH-TOKEN": token]).responseData(completionHandler: { data in
+            guard let data = data.data else { return }
+            self.model = try? JSONDecoder().decode(MyListModel.self, from: data)
+            self.myListTableView.reloadData()
+        })
+    }
+    
 }
 
 extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -35,17 +45,7 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyListTableViewCell", for: indexPath) as! MyListTableViewCell
-        switch indexPath.row % 2{
-        case 1:
-            cell.myListStatusLabel.backgroundColor = .yellow
-            cell.myListStatusLabel.textColor = .black
-            cell.myListStatusLabel.layer.borderWidth = 1
-            cell.myListStatusLabel.text = "대여 중"
-            return cell
-        default:
-            return cell
-        }
-//        return cell
+        return cell
     }
     
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Equipment: Codable {
+struct EquipmentModel: Codable {
     let code: Int
     let list: [List]
     let msg: String

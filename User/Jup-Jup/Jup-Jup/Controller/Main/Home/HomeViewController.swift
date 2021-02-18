@@ -11,8 +11,8 @@ import Kingfisher
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
-    var model: Equipment?
-    var searchModel: Search?
+    var model: EquipmentModel?
+    var searchModel: SearchModel?
     
     @IBOutlet weak var homeTableView: UITableView! {
         didSet {
@@ -39,7 +39,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         let URL = "http://3.36.29.69:8080/v2/equipment/"
         AF.request(URL, headers: ["X-AUTH-TOKEN": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
-            self.model = try? JSONDecoder().decode(Equipment.self, from: data)
+            self.model = try? JSONDecoder().decode(EquipmentModel.self, from: data)
             self.homeTableView.reloadData()
         })
     }
@@ -49,7 +49,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         let encodingURL = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         AF.request(encodingURL, method: .get, headers: ["X-AUTH-TOKEN": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
-            self.searchModel = try? JSONDecoder().decode(Search.self, from: data)
+            self.searchModel = try? JSONDecoder().decode(SearchModel.self, from: data)
             self.homeTableView.reloadData()
             print(data)
         })
