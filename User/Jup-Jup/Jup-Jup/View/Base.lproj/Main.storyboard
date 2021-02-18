@@ -148,7 +148,7 @@
             </objects>
             <point key="canvasLocation" x="1826" y="2210"/>
         </scene>
-        <!--Home-->
+        <!--홈-->
         <scene sceneID="txr-E1-3dq">
             <objects>
                 <viewController id="AVP-xe-Qod" customClass="HomeViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
@@ -228,7 +228,7 @@
                             <constraint firstItem="Qc0-8U-sNY" firstAttribute="trailing" secondItem="us4-B2-Kh1" secondAttribute="trailing" id="Rcw-Xe-IFM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="9SS-5I-CyN"/>
+                    <navigationItem key="navigationItem" title="홈" id="9SS-5I-CyN"/>
                     <connections>
                         <outlet property="homeTableView" destination="Qc0-8U-sNY" id="py1-6E-yfl"/>
                     </connections>
@@ -548,11 +548,11 @@
             </objects>
             <point key="canvasLocation" x="648" y="1523"/>
         </scene>
-        <!--프로필-->
+        <!--마이페이지-->
         <scene sceneID="9gX-Hd-bbR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bgu-s8-r2F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="프로필" image="person" catalog="system" id="Hfl-MS-ZXz"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="person" catalog="system" id="Hfl-MS-ZXz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cg2-tO-Jz7">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
