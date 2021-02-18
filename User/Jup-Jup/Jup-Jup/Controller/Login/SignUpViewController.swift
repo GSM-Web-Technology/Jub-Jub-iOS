@@ -108,21 +108,22 @@ class SignUpViewController: UIViewController {
         
         AF.request(URL, method: .post, parameters: PARAM, encoding: JSONEncoding.default).responseJSON { (response) in
             switch response.result{
-            case .success:
-                guard let result = response.data else {return}
-                do {
-                    let decoder = JSONDecoder()
-                    let json = try decoder.decode(ResponseModel.self, from: result)
-                    if json.success == true{
-                        self.sucessAlert()
-                    } else {
-                        self.failAlert(messages: "이메일 중복.")
+            case .success(let value):
+                if let dic = value as? NSDictionary {
+                    if let code = dic["code"] as? Int {
+                        switch code {
+                        case 0:
+                            self.sucessAlert()
+                        case -1000:
+                            self.failAlert(messages: "이미 가입된 이메일입니다.")
+                        default:
+                            return
+                        }
                     }
-                } catch {
-                    
                 }
-            default:
-                return
+            case .failure(let e):
+                self.failAlert(messages: "네트워크가 원활하지 않습니다.")
+                print(e.localizedDescription)
             }
         }
         

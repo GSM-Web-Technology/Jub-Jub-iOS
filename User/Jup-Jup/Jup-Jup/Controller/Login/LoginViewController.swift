@@ -78,8 +78,8 @@ class LoginViewController: UIViewController {
         
         AF.request(URL, method: .post, parameters: PARAM,encoding: JSONEncoding.default).responseJSON { response in
             switch response.result {
-            case .success(let a):
-                if let dic = a as? NSDictionary {
+            case .success(let value):
+                if let dic = value as? NSDictionary {
                     if let code = dic["code"] as? Int {
                         switch code {
                         case 0:
@@ -98,29 +98,8 @@ class LoginViewController: UIViewController {
                         }
                     }
                 }
-                
-//                guard let result = response.data else {return}
-//                do {
-//                    let json = try JSONDecoder().decode(LogInModel.self, from: result)
-//                    print("0")
-//                    if json.code == 0 {
-//                        token = json.data.accessToken
-//                        self.loginSucessAlert()
-//                    }
-//                    if json.code == -947 {
-//                        print("1")
-//                        self.loginFailAlert(messages: "이메일 인증하세요.")
-//                    }
-//                    if json.code == -1001 {
-//                        self.loginFailAlert(messages: "")
-//                    }
-//                    print("2")
-//
-//                } catch  {
-//                    print("3")
-//                    self.loginFailAlert(messages: "계정이 존재하지 않거나 이메일 또는 비밀번호가 정확하지 않습니다.")
-//                }
             case .failure(let e):
+                self.loginFailAlert(messages: "네트워크가 원활하지 않습니다.")
                 print(e.localizedDescription)
             }
         }
