@@ -9,15 +9,10 @@ import UIKit
 import Alamofire
 import Kingfisher
 
-    
-
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
-    var menu = Bool()
     var model: Equipment?
     var searchModel: Search?
-    var filteredArr: [String] = []
-    var selectedMenu: Bool = true
     
     @IBOutlet weak var homeTableView: UITableView! {
         didSet {
@@ -52,11 +47,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     func searchApiCall(word: String) {
         let URL = "http://3.36.29.69:8080/v2/equipment/\(word)"
         let encodingURL = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        AF.request(encodingURL, headers: ["X-AUTH-TOKEN": token]).responseData(completionHandler: { data in
+        AF.request(encodingURL, method: .get, headers: ["X-AUTH-TOKEN": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.searchModel = try? JSONDecoder().decode(Search.self, from: data)
-            print(data)
             self.homeTableView.reloadData()
+            print(data)
         })
     }
     
@@ -88,15 +83,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.homeTitleName.text = searchModel?.data.name ?? ""
             cell.homeSubName.text = searchModel?.data.content ?? ""
             cell.homeCount.text = "수량: \(searchModel?.data.count ?? 0)개"
-//            let url = URL(string: searchModel?.data.img_equipment ?? "")
-//            cell.homeImageView.kf.setImage(with: url)
-            
+            let url = URL(string: searchModel?.data.img_equipmentLocation ?? "")
+            cell.homeImageView.kf.setImage(with: url)
         } else {
             cell.homeTitleName.text = model?.list[indexPath.row].name ?? ""
             cell.homeSubName.text = model?.list[indexPath.row].content ?? ""
             cell.homeCount.text = "수량: \(model?.list[indexPath.row].count ?? 0)개"
-//            let url = URL(string: model?.list[indexPath.row].img_equipment ?? "")
-//            cell.homeImageView.kf.setImage(with: url)
+            let url = URL(string: model?.list[indexPath.row].img_equipment ?? "")
+            cell.homeImageView.kf.setImage(with: url)
         }
         return cell
     }
@@ -105,13 +99,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if self.isFiltering {
             titleName = searchModel?.data.name ?? ""
             count = searchModel?.data.count ?? 0
-//            let url = URL(string: searchModel?.data.img_equipment ?? "")
-//            imgURL = url
+            let url = URL(string: searchModel?.data.img_equipmentLocation ?? "")
+            imgURL = url
         } else {
             titleName = model?.list[indexPath.row].name ?? ""
             count = model?.list[indexPath.row].count ?? 0
-//            let url = URL(string: model?.list[indexPath.row].img_equipment ?? "")
-//            imgURL = url
+            let url = URL(string: model?.list[indexPath.row].img_equipment ?? "")
+            imgURL = url
         }
     }
 }

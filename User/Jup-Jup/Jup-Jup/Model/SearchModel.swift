@@ -18,7 +18,7 @@ struct Search: Codable {
 struct Data: Codable {
     let content: String
     let count: Int
-    let img_equipment: String
+    let img_equipmentLocation: String
     let name: String
     let cellCount: Int = 1
 }

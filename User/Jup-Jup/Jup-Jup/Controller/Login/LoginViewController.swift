@@ -85,6 +85,7 @@ class LoginViewController: UIViewController {
                         case 0:
                             if let allToken = dic["data"] as? NSDictionary {
                                 if let accessToken = allToken["accessToken"] as? String {
+                                    print(accessToken)
                                     token = accessToken
                                 }
                             }

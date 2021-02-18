@@ -53,7 +53,7 @@ class HomeEquipmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = titleName
-//        imageView.kf.setImage(with: imgURL)
+        imageView.kf.setImage(with: imgURL)
     }
     
     @IBAction func countStepper(_ sender: UIStepper) {
