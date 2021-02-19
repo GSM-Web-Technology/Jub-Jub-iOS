@@ -13,6 +13,7 @@ class MyPageViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    
-
+    @IBAction func signOutButton(_ sender: Any) {
+        
+    }
 }

@@ -79,6 +79,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+        let cellCount = (model?.list.count)! - 1
         if self.isFiltering {
             cell.homeTitleName.text = searchModel?.data.name ?? ""
             cell.homeSubName.text = searchModel?.data.content ?? ""
@@ -86,25 +87,26 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let url = URL(string: searchModel?.data.img_equipmentLocation ?? "")
             cell.homeImageView.kf.setImage(with: url)
         } else {
-            cell.homeTitleName.text = model?.list[indexPath.row].name ?? ""
-            cell.homeSubName.text = model?.list[indexPath.row].content ?? ""
-            cell.homeCount.text = "수량: \(model?.list[indexPath.row].count ?? 0)개"
-            let url = URL(string: model?.list[indexPath.row].img_equipment ?? "")
+            cell.homeTitleName.text = model?.list[cellCount - indexPath.row].name ?? ""
+            cell.homeSubName.text = model?.list[cellCount - indexPath.row].content ?? ""
+            cell.homeCount.text = "수량: \(model?.list[cellCount - indexPath.row].count ?? 0)개"
+            let url = URL(string: model?.list[cellCount - indexPath.row].img_equipment ?? "")
             cell.homeImageView.kf.setImage(with: url)
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellCount = (model?.list.count)! - 1
         if self.isFiltering {
             titleName = searchModel?.data.name ?? ""
             count = searchModel?.data.count ?? 0
             let url = URL(string: searchModel?.data.img_equipmentLocation ?? "")
             imgURL = url
         } else {
-            titleName = model?.list[indexPath.row].name ?? ""
-            count = model?.list[indexPath.row].count ?? 0
-            let url = URL(string: model?.list[indexPath.row].img_equipment ?? "")
+            titleName = model?.list[cellCount - indexPath.row].name ?? ""
+            count = model?.list[cellCount - indexPath.row].count ?? 0
+            let url = URL(string: model?.list[cellCount - indexPath.row].img_equipment ?? "")
             imgURL = url
         }
     }

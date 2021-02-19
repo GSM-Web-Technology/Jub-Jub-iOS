@@ -52,20 +52,21 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyListTableViewCell", for: indexPath) as! MyListTableViewCell
-        cell.myListTitleName.text = model?.list[indexPath.row].equipment.name ?? ""
-        cell.myListSubName.text = model?.list[indexPath.row].equipment.content ?? ""
-        cell.myListCount.text = "대여 수량: \(model?.list[indexPath.row].amount ?? 0)개"
-        let url = URL(string: model?.list[indexPath.row].equipment.img_equipment ?? "")
+        let cellCount = (model?.list.count)! - 1
+        cell.myListTitleName.text = model?.list[cellCount - indexPath.row].equipment.name ?? ""
+        cell.myListSubName.text = model?.list[cellCount - indexPath.row].equipment.content ?? ""
+        cell.myListCount.text = "대여 수량: \(model?.list[cellCount - indexPath.row].amount ?? 0)개"
+        let url = URL(string: model?.list[cellCount - indexPath.row].equipment.img_equipment ?? "")
         cell.myListImageView.kf.setImage(with: url)
-       
-        switch model?.list[indexPath.row].equipmentEnum {
+
+        switch model?.list[cellCount - indexPath.row].equipmentEnum {
         case "ROLE_Waiting":
             cell.myListStatusLabel.text = "승인 대기"
             cell.myListStatusLabel.backgroundColor = .yellow
             cell.myListStatusLabel.textColor = .black
             cell.myListStatusLabel.layer.borderWidth = 1
         case "ROLE_Accept":
-            switch model?.list[indexPath.row].isReturn {
+            switch model?.list[cellCount - indexPath.row].isReturn {
             case true:
                 cell.myListStatusLabel.text = "반납"
                 cell.myListStatusLabel.backgroundColor = .white
@@ -80,7 +81,6 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
-        
         return cell
     }
     
