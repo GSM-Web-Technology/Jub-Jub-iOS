@@ -8,7 +8,8 @@
 import UIKit
 import Alamofire
 
-var token = String()
+var accessToken = String()
+var refreshToken = String()
 
 class LoginViewController: UIViewController {
 
@@ -84,9 +85,13 @@ class LoginViewController: UIViewController {
                         switch code {
                         case 0:
                             if let allToken = dic["data"] as? NSDictionary {
-                                if let accessToken = allToken["accessToken"] as? String {
-                                    print(accessToken)
-                                    token = accessToken
+                                if let token = allToken["accessToken"] as? String {
+                                    print(token)
+                                    accessToken = token
+                                }
+                                if let token = allToken["refreshToken"] as? String {
+                                    print(token)
+                                    refreshToken = token
                                 }
                             }
                             self.loginSucessAlert()

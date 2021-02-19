@@ -77,7 +77,7 @@ class HomeEquipmentViewController: UIViewController {
             "reason": reason
         ]
         
-        AF.request(encodingURL, method: .post, parameters: PARAM, encoding: JSONEncoding.default, headers: ["X-AUTH-TOKEN": token]).responseJSON { (response) in
+        AF.request(encodingURL, method: .post, parameters: PARAM, encoding: JSONEncoding.default, headers: ["X-AUTH-TOKEN": accessToken]).responseJSON { (response) in
             switch response.result{
             case .success:
                 guard let result = response.data else {return}

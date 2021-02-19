@@ -37,7 +37,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     func apiCall() {
         let URL = "http://15.165.97.179:8080/v2/equipment/"
-        AF.request(URL, headers: ["X-AUTH-TOKEN": token]).responseData(completionHandler: { data in
+        AF.request(URL, headers: ["X-AUTH-TOKEN": accessToken]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.model = try? JSONDecoder().decode(EquipmentModel.self, from: data)
             self.homeTableView.reloadData()
@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     func searchApiCall(word: String) {
         let URL = "http://15.165.97.179:8080/v2/equipment/\(word)"
         let encodingURL = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        AF.request(encodingURL, method: .get, headers: ["X-AUTH-TOKEN": token]).responseData(completionHandler: { data in
+        AF.request(encodingURL, method: .get, headers: ["X-AUTH-TOKEN": accessToken]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.searchModel = try? JSONDecoder().decode(SearchModel.self, from: data)
             self.homeTableView.reloadData()
