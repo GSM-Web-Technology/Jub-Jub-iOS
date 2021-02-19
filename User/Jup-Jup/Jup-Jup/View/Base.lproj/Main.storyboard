@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--내 목록-->
+        <!--대여 목록-->
         <scene sceneID="yhd-AR-yFi">
             <objects>
                 <viewController id="LSj-Ga-pHE" customClass="MyListViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
@@ -101,7 +101,7 @@
                             <constraint firstItem="vLJ-es-eIm" firstAttribute="leading" secondItem="fqP-7u-l5q" secondAttribute="leading" id="yOi-gy-u7Q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="내 목록" id="Vt4-qj-DZT"/>
+                    <navigationItem key="navigationItem" title="대여 목록" id="Vt4-qj-DZT"/>
                     <connections>
                         <outlet property="myListTableView" destination="vLJ-es-eIm" id="X0K-1V-Fsu"/>
                     </connections>
@@ -548,11 +548,11 @@
             </objects>
             <point key="canvasLocation" x="-430.43478260869568" y="1522.7678571428571"/>
         </scene>
-        <!--내 목록-->
+        <!--대여 목록-->
         <scene sceneID="heL-uZ-C5O">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CeL-To-A5X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="내 목록" image="list.dash" catalog="system" id="S94-xl-X3S"/>
+                    <tabBarItem key="tabBarItem" title="대여 목록" image="list.dash" catalog="system" id="S94-xl-X3S"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="x5Y-j1-8lQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
