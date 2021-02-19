@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
     }
     
     func signInApi(email: String,password: String) {
-        let URL = "http://3.36.29.69:8080/v2/signin"
+        let URL = "http://15.165.97.179:8080/v2/signin"
         let PARAM: Parameters = [
             "email": email,
             "password": password

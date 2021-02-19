@@ -97,7 +97,7 @@ class SignUpViewController: UIViewController {
     }
     
     func signUpApi(classNumber: String, email: String, name: String, password: String) {
-        let URL = "http://3.36.29.69:8080/v2/signup"
+        let URL = "http://15.165.97.179:8080/v2/signup"
         
         let PARAM: Parameters = [
             "classNumber": classNumber,
