@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		BD1F46CC25E15C55001D4868 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BD1F46CB25E15C55001D4868 /* Alamofire */; };
 		BD1F46D025E15CCE001D4868 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BD1F46CF25E15CCE001D4868 /* Kingfisher */; };
+		BD1F46D925E15EAE001D4868 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F46D825E15EAE001D4868 /* HomeViewController.swift */; };
+		BD1F46DD25E15EBE001D4868 /* AllowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F46DC25E15EBE001D4868 /* AllowListViewController.swift */; };
+		BD1F46E025E15EC9001D4868 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F46DF25E15EC9001D4868 /* MyPageViewController.swift */; };
+		BD1F46E325E160AA001D4868 /* HomeEquipmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F46E225E160AA001D4868 /* HomeEquipmentTableViewCell.swift */; };
+		BD1F46E625E160DF001D4868 /* HomeLaptopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F46E525E160DF001D4868 /* HomeLaptopTableViewCell.swift */; };
 		BD29575325D806BC006764E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29575225D806BC006764E1 /* AppDelegate.swift */; };
 		BD29575525D806BC006764E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29575425D806BC006764E1 /* SceneDelegate.swift */; };
 		BD29575A25D806BC006764E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD29575825D806BC006764E1 /* Main.storyboard */; };
@@ -19,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD1F46D825E15EAE001D4868 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BD1F46DC25E15EBE001D4868 /* AllowListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowListViewController.swift; sourceTree = "<group>"; };
+		BD1F46DF25E15EC9001D4868 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		BD1F46E225E160AA001D4868 /* HomeEquipmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEquipmentTableViewCell.swift; sourceTree = "<group>"; };
+		BD1F46E525E160DF001D4868 /* HomeLaptopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLaptopTableViewCell.swift; sourceTree = "<group>"; };
 		BD29574F25D806BC006764E1 /* JupJup_admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JupJup_admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD29575225D806BC006764E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD29575425D806BC006764E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +53,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD1F46D225E15D52001D4868 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BD29575825D806BC006764E1 /* Main.storyboard */,
+				BD29575D25D806BE006764E1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		BD1F46D325E15D7E001D4868 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BD1F46D525E15E10001D4868 /* Home */,
+				BD1F46D625E15E41001D4868 /* AllowList */,
+				BD1F46D725E15E66001D4868 /* MyPage */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BD1F46D425E15D84001D4868 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BD79E8A025DEB9A3009DB301 /* SignUpViewController.swift */,
+				BD79E89D25DEB995009DB301 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BD1F46D525E15E10001D4868 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BD1F46D825E15EAE001D4868 /* HomeViewController.swift */,
+				BD1F46E225E160AA001D4868 /* HomeEquipmentTableViewCell.swift */,
+				BD1F46E525E160DF001D4868 /* HomeLaptopTableViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BD1F46D625E15E41001D4868 /* AllowList */ = {
+			isa = PBXGroup;
+			children = (
+				BD1F46DC25E15EBE001D4868 /* AllowListViewController.swift */,
+			);
+			path = AllowList;
+			sourceTree = "<group>";
+		};
+		BD1F46D725E15E66001D4868 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				BD1F46DF25E15EC9001D4868 /* MyPageViewController.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		BD29574625D806BC006764E1 = {
 			isa = PBXGroup;
 			children = (
@@ -76,8 +140,8 @@
 		BD29576825D8074E006764E1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BD79E89D25DEB995009DB301 /* LoginViewController.swift */,
-				BD79E8A025DEB9A3009DB301 /* SignUpViewController.swift */,
+				BD1F46D325E15D7E001D4868 /* Main */,
+				BD1F46D425E15D84001D4868 /* Login */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -85,8 +149,7 @@
 		BD29576925D80757006764E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BD29575825D806BC006764E1 /* Main.storyboard */,
-				BD29575D25D806BE006764E1 /* LaunchScreen.storyboard */,
+				BD1F46D225E15D52001D4868 /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,9 +239,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1F46D925E15EAE001D4868 /* HomeViewController.swift in Sources */,
 				BD79E89E25DEB995009DB301 /* LoginViewController.swift in Sources */,
+				BD1F46E025E15EC9001D4868 /* MyPageViewController.swift in Sources */,
+				BD1F46DD25E15EBE001D4868 /* AllowListViewController.swift in Sources */,
 				BD29575325D806BC006764E1 /* AppDelegate.swift in Sources */,
 				BD29575525D806BC006764E1 /* SceneDelegate.swift in Sources */,
+				BD1F46E625E160DF001D4868 /* HomeLaptopTableViewCell.swift in Sources */,
+				BD1F46E325E160AA001D4868 /* HomeEquipmentTableViewCell.swift in Sources */,
 				BD79E8A125DEB9A3009DB301 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
