@@ -6,12 +6,48 @@
 //
 
 import UIKit
+import Alamofire
 
 class MyPageViewController: UIViewController {
+    
+    var model: LogOutModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    func apiCall() {
+        let URL = "http://15.165.97.179:8080/v2/logout"
+        AF.request(URL, method: .get, headers: ["X-AUTH-TOKEN": refreshToken]).responseData(completionHandler: { data in
+            guard let data = data.data else { return }
+            self.model = try? JSONDecoder().decode(LogOutModel.self, from: data)
+            if self.model?.success == true {
+                UserDefaults.standard.removeObject(forKey: "refreshToken")
+                self.goLoginPage()
+            } else {
+                self.logOutFailAlert()
+            }
+        })
+    }
+    
+    func logOutAlert() {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        let ok = UIAlertAction(title: "로그아웃", style: .default) { (_) in
+            self.apiCall()
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func logOutFailAlert() {
+        let alert = UIAlertController(title: "로그아웃 실패!", message: "네트워크가 원활하지 않습니다.", preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
     }
     
     func goLoginPage(){
@@ -21,8 +57,7 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func signOutButton(_ sender: Any) {
-        UserDefaults.standard.removeObject(forKey: "refreshToken")
-        goLoginPage()
+        logOutAlert()
     }
 }
 
