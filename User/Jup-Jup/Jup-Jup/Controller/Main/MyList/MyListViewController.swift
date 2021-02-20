@@ -31,7 +31,7 @@ class MyListViewController: UIViewController {
 
     func apiCall() {
         let URL = "http://15.165.97.179:8080/v2/myequipment/"
-        AF.request(URL, headers: ["X-AUTH-TOKEN": accessToken]).responseData(completionHandler: { data in
+        AF.request(URL, headers: ["X-AUTH-TOKEN": refreshToken]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.model = try? JSONDecoder().decode(MyListModel.self, from: data)
             self.myListTableView.reloadData()

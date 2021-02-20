@@ -16,12 +16,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainPage")
-//        self.window?.rootViewController = initialViewController
-//        self.window?.makeKeyAndVisible()
-//        window?.windowScene = windowScene
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if UserDefaults.standard.string(forKey: "refreshToken")?.isEmpty == false {
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainPage")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            window?.windowScene = windowScene
+        } else {
+            print("1")
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            window?.windowScene = windowScene
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

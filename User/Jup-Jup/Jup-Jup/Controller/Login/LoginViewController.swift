@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 var accessToken = String()
-var refreshToken = String()
+var refreshToken = UserDefaults.standard.string(forKey: "refreshToken")!
 
 class LoginViewController: UIViewController {
 
@@ -91,7 +91,7 @@ class LoginViewController: UIViewController {
                                 }
                                 if let token = allToken["refreshToken"] as? String {
                                     print(token)
-                                    refreshToken = token
+                                    UserDefaults.standard.setValue(token, forKey: "refreshToken")
                                 }
                             }
                             self.loginSucessAlert()
