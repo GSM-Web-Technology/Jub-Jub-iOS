@@ -88,10 +88,7 @@ class LoginViewController: UIViewController {
                                 if let token = allToken["accessToken"] as? String {
                                     print(token)
                                     accessToken = token
-                                }
-                                if let token = allToken["refreshToken"] as? String {
-                                    print(token)
-                                    UserDefaults.standard.setValue(token, forKey: "refreshToken")
+                                    UserDefaults.standard.setValue(token, forKey: "accessToken")
                                 }
                             }
                             self.loginSucessAlert()

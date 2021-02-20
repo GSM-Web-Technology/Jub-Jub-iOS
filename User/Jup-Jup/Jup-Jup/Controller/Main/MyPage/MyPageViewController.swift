@@ -11,29 +11,28 @@ import Alamofire
 class MyPageViewController: UIViewController {
     
     var model: LogOutModel?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     func apiCall() {
         let URL = "http://15.165.97.179:8080/v2/logout"
-        AF.request(URL, method: .get, headers: ["X-AUTH-TOKEN": refreshToken]).responseData(completionHandler: { data in
-            guard let data = data.data else { return }
-            self.model = try? JSONDecoder().decode(LogOutModel.self, from: data)
-            if self.model?.success == true {
-                UserDefaults.standard.removeObject(forKey: "refreshToken")
-                self.goLoginPage()
-            } else {
-                self.logOutFailAlert()
-            }
-        })
+                AF.request(URL, method: .get, headers: ["Authorization": accessToken]).responseData(completionHandler: { data in
+                    guard let data = data.data else { return }
+                    self.model = try? JSONDecoder().decode(LogOutModel.self, from: data)
+                    if (self.model?.success)! == true {
+                        UserDefaults.standard.removeObject(forKey: "accessToken")
+                        self.goLoginPage()
+                    } else {
+                        self.logOutFailAlert()
+                    }
+                })
     }
     
     func logOutAlert() {
         let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
-        let ok = UIAlertAction(title: "로그아웃", style: .default) { (_) in
+        let ok = UIAlertAction(title: "로그아웃", style: .destructive) { (_) in
             self.apiCall()
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel)

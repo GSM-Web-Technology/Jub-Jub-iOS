@@ -118,15 +118,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zt-Gm-a9F">
-                                <rect key="frame" x="0.0" y="140" width="414" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="bY3-K3-2cq"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1i-iX-ZHy">
-                                <rect key="frame" x="0.0" y="141" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="f63-ON-Kaw"/>
                                 </constraints>
@@ -139,27 +132,13 @@
                                     <action selector="signOutButton:" destination="Io0-0c-Qnr" eventType="touchUpInside" id="e3B-r0-R74"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFY-Ul-dfr">
-                                <rect key="frame" x="0.0" y="191" width="414" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="4lH-SS-ROH"/>
-                                    <constraint firstAttribute="height" constant="1" id="YXc-BI-AG7"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xNP-tI-iw5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="t1i-iX-ZHy" firstAttribute="top" secondItem="4zt-Gm-a9F" secondAttribute="bottom" id="8Xb-I8-lGb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4zt-Gm-a9F" secondAttribute="trailing" constant="-20" id="MjU-aj-QIS"/>
                             <constraint firstItem="t1i-iX-ZHy" firstAttribute="trailing" secondItem="xNP-tI-iw5" secondAttribute="trailing" id="c9f-HV-LLK"/>
-                            <constraint firstItem="UFY-Ul-dfr" firstAttribute="top" secondItem="t1i-iX-ZHy" secondAttribute="bottom" id="fd3-lj-Zyf"/>
                             <constraint firstItem="t1i-iX-ZHy" firstAttribute="leading" secondItem="xNP-tI-iw5" secondAttribute="leading" id="hai-HZ-Kl4"/>
-                            <constraint firstItem="UFY-Ul-dfr" firstAttribute="leading" secondItem="jHW-4Q-7PO" secondAttribute="leading" id="nDo-3r-wLF"/>
-                            <constraint firstItem="4zt-Gm-a9F" firstAttribute="top" secondItem="xNP-tI-iw5" secondAttribute="top" id="nvh-GV-nuQ"/>
-                            <constraint firstAttribute="trailing" secondItem="UFY-Ul-dfr" secondAttribute="trailing" id="tjq-89-uRy"/>
-                            <constraint firstItem="4zt-Gm-a9F" firstAttribute="leading" secondItem="jHW-4Q-7PO" secondAttribute="leadingMargin" constant="-20" id="u4j-3F-Iy4"/>
+                            <constraint firstItem="t1i-iX-ZHy" firstAttribute="top" secondItem="xNP-tI-iw5" secondAttribute="top" id="xFw-Hc-jIb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="마이페이지" id="3FU-G0-WeJ"/>
