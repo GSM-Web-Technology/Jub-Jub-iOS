@@ -8,6 +8,9 @@
 import UIKit
 import Alamofire
 
+
+
+
 class MyPageViewController: UIViewController {
     
     var model: LogOutModel?
