@@ -6,3 +6,22 @@
 //
 
 import Foundation
+import Security
+
+class TokenManager {
+    
+    static let shared = TokenManager()
+    private init() {}
+    
+    func getToken() {
+        
+    }
+    
+    func setToken() {
+        
+    }
+    
+    func removeToken() {
+        
+    }
+}
