@@ -8,9 +8,12 @@
 import UIKit
 import Alamofire
 
+var check = false
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+   
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -20,12 +23,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if KeychainManager.keychain["email"] != nil {
+            check = false
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainPage")
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
             window?.windowScene = windowScene
         } else {
-            print("1")
+            check = true
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()

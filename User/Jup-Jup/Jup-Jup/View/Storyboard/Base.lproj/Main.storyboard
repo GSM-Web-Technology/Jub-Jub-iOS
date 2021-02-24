@@ -550,7 +550,7 @@
         <!--마이페이지-->
         <scene sceneID="9gX-Hd-bbR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bgu-s8-r2F" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="a" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bgu-s8-r2F" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="마이페이지" image="person" catalog="system" id="Hfl-MS-ZXz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cg2-tO-Jz7">
