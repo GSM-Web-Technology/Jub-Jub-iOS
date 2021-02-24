@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if UserDefaults.standard.string(forKey: "accessToken")?.isEmpty == false {
+        if KeychainManager.keychain["email"] != nil {
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainPage")
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()

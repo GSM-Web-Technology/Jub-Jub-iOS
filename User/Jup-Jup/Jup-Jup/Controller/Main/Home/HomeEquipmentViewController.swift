@@ -76,8 +76,8 @@ class HomeEquipmentViewController: UIViewController {
             "amount": amount,
             "reason": reason
         ]
-        
-        AF.request(encodingURL, method: .post, parameters: PARAM, encoding: JSONEncoding.default, headers: ["Authorization": accessToken]).responseJSON { (response) in
+        let token = KeychainManager.getToken()
+        AF.request(encodingURL, method: .post, parameters: PARAM, encoding: JSONEncoding.default, headers: ["Authorization": token]).responseJSON { (response) in
             switch response.result{
             case .success:
                 guard let result = response.data else {return}

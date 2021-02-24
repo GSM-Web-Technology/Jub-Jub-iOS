@@ -8,9 +8,6 @@
 import UIKit
 import Alamofire
 
-var accessToken = String()
-var refreshToken = UserDefaults.standard.string(forKey: "refreshToken")!
-
 class LoginViewController: UIViewController {
 
     
@@ -76,8 +73,7 @@ class LoginViewController: UIViewController {
             "email": email,
             "password": password
         ]
-        
-        AF.request(URL, method: .post, parameters: PARAM,encoding: JSONEncoding.default).responseJSON { response in
+        AF.request(URL, method: .post, parameters: PARAM, encoding: JSONEncoding.default).responseJSON { response in
             switch response.result {
             case .success(let value):
                 if let dic = value as? NSDictionary {
@@ -87,10 +83,11 @@ class LoginViewController: UIViewController {
                             if let allToken = dic["data"] as? NSDictionary {
                                 if let token = allToken["accessToken"] as? String {
                                     print(token)
-                                    accessToken = token
-                                    UserDefaults.standard.setValue(token, forKey: "accessToken")
+                                    KeychainManager.saveToken(token: token)
                                 }
                             }
+                            KeychainManager.saveEmail(email: self.logInEmail.text!)
+                            KeychainManager.savePassword(password: self.logInPassword.text!)
                             self.loginSucessAlert()
                         case -1001:
                             self.loginFailAlert(messages: "계정이 존재하지 않거나 이메일 또는 비밀번호가 정확하지 않습니다.")

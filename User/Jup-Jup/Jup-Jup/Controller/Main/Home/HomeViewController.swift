@@ -24,8 +24,20 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        if loginError == true {
+            failAlert()
+        }
         apiCall()
         self.searchController()
+    }
+    
+    func failAlert() {
+        let alert = UIAlertController(title: "네트워크가 원활하지 않습니다.", message: "네트워크 확인 후 다시 접속해주세요.", preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (_) in
+            exit(0)
+        }
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
     }
     
     var isFiltering: Bool {
@@ -37,7 +49,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     func apiCall() {
         let URL = "http://15.165.97.179:8080/v2/equipment/"
-        AF.request(URL, headers: ["Authorization": accessToken]).responseData(completionHandler: { data in
+        let token = KeychainManager.getToken()
+        AF.request(URL, headers: ["Authorization": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.model = try? JSONDecoder().decode(EquipmentModel.self, from: data)
             self.homeTableView.reloadData()
@@ -47,7 +60,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     func searchApiCall(word: String) {
         let URL = "http://15.165.97.179:8080/v2/equipment/\(word)"
         let encodingURL = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        AF.request(encodingURL, method: .get, headers: ["Authorization": accessToken]).responseData(completionHandler: { data in
+        let token = KeychainManager.getToken()
+        AF.request(encodingURL, method: .get, headers: ["Authorization": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.searchModel = try? JSONDecoder().decode(SearchModel.self, from: data)
             self.homeTableView.reloadData()

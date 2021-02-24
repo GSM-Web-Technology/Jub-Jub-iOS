@@ -8,9 +8,6 @@
 import UIKit
 import Alamofire
 
-
-
-
 class MyPageViewController: UIViewController {
     
     var model: LogOutModel?
@@ -21,16 +18,19 @@ class MyPageViewController: UIViewController {
     
     func apiCall() {
         let URL = "http://15.165.97.179:8080/v2/logout"
-                AF.request(URL, method: .get, headers: ["Authorization": accessToken]).responseData(completionHandler: { data in
-                    guard let data = data.data else { return }
-                    self.model = try? JSONDecoder().decode(LogOutModel.self, from: data)
-                    if (self.model?.success)! == true {
-                        UserDefaults.standard.removeObject(forKey: "accessToken")
-                        self.goLoginPage()
-                    } else {
-                        self.logOutFailAlert()
-                    }
-                })
+        let token = KeychainManager.getToken()
+        AF.request(URL, method: .get, headers: ["Authorization": token]).responseData(completionHandler: { data in
+            guard let data = data.data else { return }
+            self.model = try? JSONDecoder().decode(LogOutModel.self, from: data)
+            if (self.model?.success)! == true {
+                KeychainManager.removeToken()
+                KeychainManager.removeEmail()
+                KeychainManager.removePassword()
+                self.goLoginPage()
+            } else {
+                self.logOutFailAlert()
+            }
+        })
     }
     
     func logOutAlert() {
