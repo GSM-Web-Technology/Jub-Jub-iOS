@@ -10,8 +10,6 @@ import Alamofire
 
 class LoginViewController: UIViewController {
 
-    
-    
     @IBOutlet weak var logInEmail: UITextField! {
         didSet {
             logInEmail.layer.cornerRadius = 5

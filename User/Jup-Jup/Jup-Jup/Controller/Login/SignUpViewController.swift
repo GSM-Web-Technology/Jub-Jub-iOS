@@ -11,8 +11,7 @@ import Alamofire
 class SignUpViewController: UIViewController {
     
     var failMessages = ""
-    
-    
+
     @IBOutlet weak var signUpEmail: UITextField! {
         didSet {
             signUpEmail.layer.cornerRadius = 5
