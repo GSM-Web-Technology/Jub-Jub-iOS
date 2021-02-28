@@ -16,5 +16,4 @@ struct LogInModel: Codable {
 
 struct Token: Codable {
     let accessToken: String
-    let refreshToken: String
 }
