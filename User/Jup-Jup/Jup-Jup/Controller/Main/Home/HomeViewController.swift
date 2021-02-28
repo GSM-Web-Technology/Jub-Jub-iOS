@@ -8,6 +8,8 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import SkeletonView
+
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
@@ -31,12 +33,13 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+        super.viewDidAppear(animated)
+        homeTableView.isSkeletonable = true
+        homeTableView.showSkeleton(usingColor: .wetAsphalt, transition: .crossDissolve(0.25))
         if check == false {
             self.searchController()
             apiCall()
         }
-        
     }
     
     func failAlert() {
@@ -86,7 +89,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, SkeletonTableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (isFiltering) {
             return self.searchModel?.data.cellCount ?? 0
@@ -116,6 +119,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.homeImageView.kf.setImage(with: url)
         }
         return cell
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "HomeTableViewCell"
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

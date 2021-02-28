@@ -9,4 +9,6 @@ import Foundation
 
 struct LogOutModel: Codable {
     let success: Bool
+    let code: Int
+    let msg: String
 }
