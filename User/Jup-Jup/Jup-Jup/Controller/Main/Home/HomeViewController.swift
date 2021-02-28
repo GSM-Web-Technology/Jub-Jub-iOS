@@ -26,20 +26,30 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if check == true {
-            self.searchController()
-            apiCall()
-        }
+        //        if check == true {
+        //            self.searchController()
+        //            apiCall()
+        //        }
+        homeTableView.rowHeight = 120
+        homeTableView.estimatedRowHeight = 120
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        homeTableView.isSkeletonable = true
-        homeTableView.showSkeleton(usingColor: .wetAsphalt, transition: .crossDissolve(0.25))
-        if check == false {
-            self.searchController()
-            apiCall()
+        self.homeTableView.isSkeletonable = true
+        self.homeTableView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .link), animation: nil, transition: .crossDissolve(0.25))
+        
+        self.apiCall()
+        self.searchController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.homeTableView.stopSkeletonAnimation()
+            self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.5))
         }
+        
+        
+        
     }
     
     func failAlert() {
@@ -89,7 +99,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-extension HomeViewController: UITableViewDelegate, SkeletonTableViewDataSource {
+extension HomeViewController: SkeletonTableViewDelegate, SkeletonTableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (isFiltering) {
             return self.searchModel?.data.cellCount ?? 0
