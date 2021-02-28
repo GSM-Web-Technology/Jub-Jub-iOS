@@ -25,16 +25,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         if check == true {
-            apiCall()
             self.searchController()
+            apiCall()
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         if check == false {
-            apiCall()
             self.searchController()
+            apiCall()
         }
         
     }

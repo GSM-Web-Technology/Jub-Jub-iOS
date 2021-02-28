@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double ViewAnimatorVersionNumber;
-FOUNDATION_EXPORT const unsigned char ViewAnimatorVersionString[];
+FOUNDATION_EXPORT double LoadingShimmerVersionNumber;
+FOUNDATION_EXPORT const unsigned char LoadingShimmerVersionString[];
 

@@ -1,16 +1,16 @@
 PODS:
-  - ViewAnimator (3.0.2)
+  - LoadingShimmer (1.0.3)
 
 DEPENDENCIES:
-  - ViewAnimator
+  - LoadingShimmer
 
 SPEC REPOS:
   trunk:
-    - ViewAnimator
+    - LoadingShimmer
 
 SPEC CHECKSUMS:
-  ViewAnimator: 16435576cd44fca0b0d63147d5031fd3e91d295a
+  LoadingShimmer: dd681218498ec9648f572b845a7299b9c62e8e30
 
-PODFILE CHECKSUM: 10d98fa97232c76a994866b7fc77557009a264bc
+PODFILE CHECKSUM: 8a8d8865387a08d9098219394b23d3fd62ea919e
 
 COCOAPODS: 1.9.3

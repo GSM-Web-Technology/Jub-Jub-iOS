@@ -7,124 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		081AD2D7A4E79B029748CBBDD242D524 /* ViewAnimator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C46F91BDD10014A725B903B4635F4D /* ViewAnimator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A8B29BB4BCE3400452C0B82176F13C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		16277F2E3455133F45D6BA9B3E89C891 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1366886A84648582DB522CE5A375B0 /* ViewAnimator.swift */; };
-		1A96D3CA2EDE2FC4A1E3ED0D8369D719 /* Pods-Jup-Jup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D323E635BC79DFD2B377A01546E165 /* Pods-Jup-Jup-dummy.m */; };
-		3FD16B601F57FC15298B2C38DD872C2D /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A235264025238B0138D048B23C17C02 /* ViewAnimatorConfig.swift */; };
-		4A668A831CC56A8703854F7F21C093CB /* UICollectionView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB83ADA7D05A2CBB80CB1C276F045F60 /* UICollectionView + ViewAnimator.swift */; };
-		6E1EE6D9A5C6AC9E9EF98D2D334E9851 /* Pods-Jup-Jup-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1191BC4B411FA89DA9DFFE71D867810 /* Pods-Jup-Jup-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7654D9CA761CE5A7E9CDE4000D6FE329 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		7D0B7903FBA88703938682451BD70993 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63FBC7E9272F773159CF46AA4FD176 /* Animation.swift */; };
-		99E3008173F04A293F02EAF2F9F58883 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829D58F94F4A4E53F21F930261C2B1E2 /* AnimationType.swift */; };
-		A1F89DD6B4B27A794C54D3415822DBE2 /* UITableView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303C06AEF5E6E6F0190D5447A9F3950 /* UITableView + ViewAnimator.swift */; };
-		D814CDB6E25BF890490D9E0B46CE7593 /* ViewAnimator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A18CD5DD56E13DE7AD88ED8D0B2B590F /* ViewAnimator-dummy.m */; };
+		07809A699EA5DD99020DD99046BF07AD /* LoadingShimmer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF750EF074E3B01805BDA61D09A1E55 /* LoadingShimmer-dummy.m */; };
+		30A9337D06E6B85B0B09BAD0E839960F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		34CF10B49BEC21BA4D791D4AC1389F32 /* LoadingShimmer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 121AED3B34EB687E1840FF6D1C69FDD1 /* LoadingShimmer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75777ABC9F98F3E09D391C51CF1C36F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		A251EB71D1795A35560448C9A9F3E735 /* Pods-Jup-Jup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D323E635BC79DFD2B377A01546E165 /* Pods-Jup-Jup-dummy.m */; };
+		DB88FC63B07C435B0C0237409F3CB8ED /* LoadingShimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B087CA92D49BF371274AF776215604 /* LoadingShimmer.swift */; };
+		EDB023C4629FA8A4BE8EB46526394F6A /* Pods-Jup-Jup-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1191BC4B411FA89DA9DFFE71D867810 /* Pods-Jup-Jup-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		329298E9BF4D2E9BCF100DEC3C019D33 /* PBXContainerItemProxy */ = {
+		84AF6DCFEF189F83E94F218BD27229BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 91BFC2827E7E6E2B51AB2CFF58AC6317;
-			remoteInfo = ViewAnimator;
+			remoteGlobalIDString = 1841110C37EE3A283BD4133B584480DE;
+			remoteInfo = LoadingShimmer;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03C46F91BDD10014A725B903B4635F4D /* ViewAnimator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-umbrella.h"; sourceTree = "<group>"; };
 		07832F2A0019B97BA79DD995943ADE4D /* Pods-Jup-Jup-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Jup-Jup-Info.plist"; sourceTree = "<group>"; };
-		0A235264025238B0138D048B23C17C02 /* ViewAnimatorConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimatorConfig.swift; path = Sources/ViewAnimatorConfig.swift; sourceTree = "<group>"; };
+		0FAF207219B9AB080EDF4745EBC4533C /* LoadingShimmer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LoadingShimmer.debug.xcconfig; sourceTree = "<group>"; };
 		11D323E635BC79DFD2B377A01546E165 /* Pods-Jup-Jup-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Jup-Jup-dummy.m"; sourceTree = "<group>"; };
-		1B4513D265BA130666E4253CFC8D1BF0 /* ViewAnimator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ViewAnimator-Info.plist"; sourceTree = "<group>"; };
+		121AED3B34EB687E1840FF6D1C69FDD1 /* LoadingShimmer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoadingShimmer-umbrella.h"; sourceTree = "<group>"; };
 		1F5E73BEA5536B5E6E90CA2C328765FE /* Pods-Jup-Jup-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Jup-Jup-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2303C06AEF5E6E6F0190D5447A9F3950 /* UITableView + ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView + ViewAnimator.swift"; path = "Sources/Extensions/UITableView + ViewAnimator.swift"; sourceTree = "<group>"; };
+		2BA76AC5AC15206EB63516E712988394 /* LoadingShimmer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoadingShimmer-prefix.pch"; sourceTree = "<group>"; };
 		2CB527EF87AABDC605F34A402FC04799 /* Pods-Jup-Jup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Jup-Jup.debug.xcconfig"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		58D79ED13E87EA5D8C95537B69657B8C /* ViewAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ViewAnimator.modulemap; sourceTree = "<group>"; };
+		3B80FFB4AEDA016B526D84B5D648A898 /* LoadingShimmer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LoadingShimmer.modulemap; sourceTree = "<group>"; };
+		46576388678E830BEB349CCE079380D0 /* LoadingShimmer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LoadingShimmer-Info.plist"; sourceTree = "<group>"; };
+		46B087CA92D49BF371274AF776215604 /* LoadingShimmer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingShimmer.swift; path = LoadingShimmer/Classes/LoadingShimmer.swift; sourceTree = "<group>"; };
+		4AF750EF074E3B01805BDA61D09A1E55 /* LoadingShimmer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LoadingShimmer-dummy.m"; sourceTree = "<group>"; };
+		59F113CD8092105DF15EA6A248174EE7 /* LoadingShimmer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LoadingShimmer.framework; path = LoadingShimmer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDFADF85D44E6C445FE33DDFC0A4E3A /* Pods-Jup-Jup-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Jup-Jup-acknowledgements.plist"; sourceTree = "<group>"; };
-		765B688D72EF79F9CE2040E60D413B59 /* ViewAnimator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewAnimator.release.xcconfig; sourceTree = "<group>"; };
-		829D58F94F4A4E53F21F930261C2B1E2 /* AnimationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = Sources/Models/AnimationType.swift; sourceTree = "<group>"; };
 		8865378E6020BD8BCC591E87A901B7A8 /* Pods-Jup-Jup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Jup-Jup.release.xcconfig"; sourceTree = "<group>"; };
-		8A9B9DD33B019E5F2AB8869C7B05E516 /* ViewAnimator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-prefix.pch"; sourceTree = "<group>"; };
 		8C6092723701595C4B61EC4A4630925C /* Pods-Jup-Jup.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Jup-Jup.modulemap"; sourceTree = "<group>"; };
 		8F03F8E4B2262A3E5B695183AC070B82 /* Pods-Jup-Jup-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Jup-Jup-frameworks.sh"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A18CD5DD56E13DE7AD88ED8D0B2B590F /* ViewAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewAnimator-dummy.m"; sourceTree = "<group>"; };
-		A76921F7329D552AD6FA723972B6337A /* ViewAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ViewAnimator.framework; path = ViewAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B672EB5248F85B7A56DB572AA5D877CB /* ViewAnimator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewAnimator.debug.xcconfig; sourceTree = "<group>"; };
 		C1191BC4B411FA89DA9DFFE71D867810 /* Pods-Jup-Jup-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Jup-Jup-umbrella.h"; sourceTree = "<group>"; };
-		DA63FBC7E9272F773159CF46AA4FD176 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = Sources/Protocols/Animation.swift; sourceTree = "<group>"; };
+		D349E0D2D7309E212A0DC8FD345BAE19 /* LoadingShimmer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LoadingShimmer.release.xcconfig; sourceTree = "<group>"; };
 		DDC7B96060752F29D612B44EFE346011 /* Pods_Jup_Jup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Jup_Jup.framework; path = "Pods-Jup-Jup.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB1366886A84648582DB522CE5A375B0 /* ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimator.swift; path = Sources/ViewAnimator.swift; sourceTree = "<group>"; };
-		FB83ADA7D05A2CBB80CB1C276F045F60 /* UICollectionView + ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView + ViewAnimator.swift"; path = "Sources/Extensions/UICollectionView + ViewAnimator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0893875A9A8956AA0A27B5100FA56C7D /* Frameworks */ = {
+		6EB74E5CF466E0A503C10662820719A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A8B29BB4BCE3400452C0B82176F13C8 /* Foundation.framework in Frameworks */,
+				75777ABC9F98F3E09D391C51CF1C36F1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6118079B4FF1B5035B422EF7C984C661 /* Frameworks */ = {
+		E472212C2637C7783B73931FDE1E0DAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7654D9CA761CE5A7E9CDE4000D6FE329 /* Foundation.framework in Frameworks */,
+				30A9337D06E6B85B0B09BAD0E839960F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		61FE7B82A3EE5535833D4A04930910AA /* Pods */ = {
+		20DDE68BFB4A2C13B463D993DEFC6FDF /* LoadingShimmer */ = {
 			isa = PBXGroup;
 			children = (
-				9487E7F1DA767DE33E02706760B0AB1F /* ViewAnimator */,
+				46B087CA92D49BF371274AF776215604 /* LoadingShimmer.swift */,
+				BD0AF50A29FE987D507F638A6F983948 /* Support Files */,
 			);
-			name = Pods;
+			name = LoadingShimmer;
+			path = LoadingShimmer;
 			sourceTree = "<group>";
 		};
-		70527F8B6233A4040795283E578A2ABB /* Products */ = {
+		4E0BFC156331620E6BE340DA3DC7A79A /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				59F113CD8092105DF15EA6A248174EE7 /* LoadingShimmer.framework */,
 				DDC7B96060752F29D612B44EFE346011 /* Pods_Jup_Jup.framework */,
-				A76921F7329D552AD6FA723972B6337A /* ViewAnimator.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9487E7F1DA767DE33E02706760B0AB1F /* ViewAnimator */ = {
-			isa = PBXGroup;
-			children = (
-				DA63FBC7E9272F773159CF46AA4FD176 /* Animation.swift */,
-				829D58F94F4A4E53F21F930261C2B1E2 /* AnimationType.swift */,
-				FB83ADA7D05A2CBB80CB1C276F045F60 /* UICollectionView + ViewAnimator.swift */,
-				2303C06AEF5E6E6F0190D5447A9F3950 /* UITableView + ViewAnimator.swift */,
-				FB1366886A84648582DB522CE5A375B0 /* ViewAnimator.swift */,
-				0A235264025238B0138D048B23C17C02 /* ViewAnimatorConfig.swift */,
-				949A54A71A9EEF8BB4EE87D230EFAA1C /* Support Files */,
-			);
-			name = ViewAnimator;
-			path = ViewAnimator;
-			sourceTree = "<group>";
-		};
-		949A54A71A9EEF8BB4EE87D230EFAA1C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				58D79ED13E87EA5D8C95537B69657B8C /* ViewAnimator.modulemap */,
-				A18CD5DD56E13DE7AD88ED8D0B2B590F /* ViewAnimator-dummy.m */,
-				1B4513D265BA130666E4253CFC8D1BF0 /* ViewAnimator-Info.plist */,
-				8A9B9DD33B019E5F2AB8869C7B05E516 /* ViewAnimator-prefix.pch */,
-				03C46F91BDD10014A725B903B4635F4D /* ViewAnimator-umbrella.h */,
-				B672EB5248F85B7A56DB572AA5D877CB /* ViewAnimator.debug.xcconfig */,
-				765B688D72EF79F9CE2040E60D413B59 /* ViewAnimator.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ViewAnimator";
 			sourceTree = "<group>";
 		};
 		9F1AFE39BB4473F7D2ED972A76D2678D /* Pods-Jup-Jup */ = {
@@ -144,6 +106,21 @@
 			path = "Target Support Files/Pods-Jup-Jup";
 			sourceTree = "<group>";
 		};
+		BD0AF50A29FE987D507F638A6F983948 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B80FFB4AEDA016B526D84B5D648A898 /* LoadingShimmer.modulemap */,
+				4AF750EF074E3B01805BDA61D09A1E55 /* LoadingShimmer-dummy.m */,
+				46576388678E830BEB349CCE079380D0 /* LoadingShimmer-Info.plist */,
+				2BA76AC5AC15206EB63516E712988394 /* LoadingShimmer-prefix.pch */,
+				121AED3B34EB687E1840FF6D1C69FDD1 /* LoadingShimmer-umbrella.h */,
+				0FAF207219B9AB080EDF4745EBC4533C /* LoadingShimmer.debug.xcconfig */,
+				D349E0D2D7309E212A0DC8FD345BAE19 /* LoadingShimmer.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LoadingShimmer";
+			sourceTree = "<group>";
+		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,8 +134,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				61FE7B82A3EE5535833D4A04930910AA /* Pods */,
-				70527F8B6233A4040795283E578A2ABB /* Products */,
+				DC3F6CCDF55AA50A05FF95693C4A10D7 /* Pods */,
+				4E0BFC156331620E6BE340DA3DC7A79A /* Products */,
 				F0E8134DD97863AC6F2A1BB3FFF0B73D /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -169,6 +146,14 @@
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC3F6CCDF55AA50A05FF95693C4A10D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20DDE68BFB4A2C13B463D993DEFC6FDF /* LoadingShimmer */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		F0E8134DD97863AC6F2A1BB3FFF0B73D /* Targets Support Files */ = {
@@ -182,56 +167,56 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A32CE74D33B63657BF3877C7A83F2A03 /* Headers */ = {
+		469301E06DB19EC6CCDF6802A276350A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				081AD2D7A4E79B029748CBBDD242D524 /* ViewAnimator-umbrella.h in Headers */,
+				34CF10B49BEC21BA4D791D4AC1389F32 /* LoadingShimmer-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE9993878C1769BBC8B9F5442C2BDDA3 /* Headers */ = {
+		F79C4B1F3AE3CCCF252B7B8046C5B639 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1EE6D9A5C6AC9E9EF98D2D334E9851 /* Pods-Jup-Jup-umbrella.h in Headers */,
+				EDB023C4629FA8A4BE8EB46526394F6A /* Pods-Jup-Jup-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		91BFC2827E7E6E2B51AB2CFF58AC6317 /* ViewAnimator */ = {
+		1841110C37EE3A283BD4133B584480DE /* LoadingShimmer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF2E1D529B7CACC3CFBA54A93344A897 /* Build configuration list for PBXNativeTarget "ViewAnimator" */;
+			buildConfigurationList = 321FA17AF9A744DE9E1D66C38F797B4C /* Build configuration list for PBXNativeTarget "LoadingShimmer" */;
 			buildPhases = (
-				A32CE74D33B63657BF3877C7A83F2A03 /* Headers */,
-				A376F6DFEC81B7C0BB8122174C629798 /* Sources */,
-				6118079B4FF1B5035B422EF7C984C661 /* Frameworks */,
-				99FE6CDA15A6BA42AE56304CE727C549 /* Resources */,
+				469301E06DB19EC6CCDF6802A276350A /* Headers */,
+				EE82C2CA99BE1BB52D3FBE0F92634AF9 /* Sources */,
+				E472212C2637C7783B73931FDE1E0DAD /* Frameworks */,
+				174471187E7376D00DD71FEFBC4C43C7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ViewAnimator;
-			productName = ViewAnimator;
-			productReference = A76921F7329D552AD6FA723972B6337A /* ViewAnimator.framework */;
+			name = LoadingShimmer;
+			productName = LoadingShimmer;
+			productReference = 59F113CD8092105DF15EA6A248174EE7 /* LoadingShimmer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C0518D892AF930C9DBF2C81494A3B97A /* Pods-Jup-Jup */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3EE7E3DD7E4D469BA9D0DB16EB5B381 /* Build configuration list for PBXNativeTarget "Pods-Jup-Jup" */;
+			buildConfigurationList = 86D0FE006A61CC6D378F6D64A474903A /* Build configuration list for PBXNativeTarget "Pods-Jup-Jup" */;
 			buildPhases = (
-				EE9993878C1769BBC8B9F5442C2BDDA3 /* Headers */,
-				0A943646BE84E9540366FF3DB0C125A6 /* Sources */,
-				0893875A9A8956AA0A27B5100FA56C7D /* Frameworks */,
-				54360F15E370D9CCC05DC125329D2E46 /* Resources */,
+				F79C4B1F3AE3CCCF252B7B8046C5B639 /* Headers */,
+				4CF5F82DEA98528B52F79033C76CF58B /* Sources */,
+				6EB74E5CF466E0A503C10662820719A0 /* Frameworks */,
+				6B9999EF23EA14383781B0EEB5EA97E6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5498691863F33F7849B0308AD87636E1 /* PBXTargetDependency */,
+				4AEB4E3F1FE6594B35DBAAC3F4EC4791 /* PBXTargetDependency */,
 			);
 			name = "Pods-Jup-Jup";
 			productName = "Pods-Jup-Jup";
@@ -256,25 +241,25 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 70527F8B6233A4040795283E578A2ABB /* Products */;
+			productRefGroup = 4E0BFC156331620E6BE340DA3DC7A79A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				1841110C37EE3A283BD4133B584480DE /* LoadingShimmer */,
 				C0518D892AF930C9DBF2C81494A3B97A /* Pods-Jup-Jup */,
-				91BFC2827E7E6E2B51AB2CFF58AC6317 /* ViewAnimator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		54360F15E370D9CCC05DC125329D2E46 /* Resources */ = {
+		174471187E7376D00DD71FEFBC4C43C7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99FE6CDA15A6BA42AE56304CE727C549 /* Resources */ = {
+		6B9999EF23EA14383781B0EEB5EA97E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,41 +269,73 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0A943646BE84E9540366FF3DB0C125A6 /* Sources */ = {
+		4CF5F82DEA98528B52F79033C76CF58B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A96D3CA2EDE2FC4A1E3ED0D8369D719 /* Pods-Jup-Jup-dummy.m in Sources */,
+				A251EB71D1795A35560448C9A9F3E735 /* Pods-Jup-Jup-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A376F6DFEC81B7C0BB8122174C629798 /* Sources */ = {
+		EE82C2CA99BE1BB52D3FBE0F92634AF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D0B7903FBA88703938682451BD70993 /* Animation.swift in Sources */,
-				99E3008173F04A293F02EAF2F9F58883 /* AnimationType.swift in Sources */,
-				4A668A831CC56A8703854F7F21C093CB /* UICollectionView + ViewAnimator.swift in Sources */,
-				A1F89DD6B4B27A794C54D3415822DBE2 /* UITableView + ViewAnimator.swift in Sources */,
-				D814CDB6E25BF890490D9E0B46CE7593 /* ViewAnimator-dummy.m in Sources */,
-				16277F2E3455133F45D6BA9B3E89C891 /* ViewAnimator.swift in Sources */,
-				3FD16B601F57FC15298B2C38DD872C2D /* ViewAnimatorConfig.swift in Sources */,
+				07809A699EA5DD99020DD99046BF07AD /* LoadingShimmer-dummy.m in Sources */,
+				DB88FC63B07C435B0C0237409F3CB8ED /* LoadingShimmer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5498691863F33F7849B0308AD87636E1 /* PBXTargetDependency */ = {
+		4AEB4E3F1FE6594B35DBAAC3F4EC4791 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ViewAnimator;
-			target = 91BFC2827E7E6E2B51AB2CFF58AC6317 /* ViewAnimator */;
-			targetProxy = 329298E9BF4D2E9BCF100DEC3C019D33 /* PBXContainerItemProxy */;
+			name = LoadingShimmer;
+			target = 1841110C37EE3A283BD4133B584480DE /* LoadingShimmer */;
+			targetProxy = 84AF6DCFEF189F83E94F218BD27229BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		507EEA0FF84107D9FB294526DFC71686 /* Release */ = {
+		280B6D7C3E724AC1498ACB6CDED2F381 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D349E0D2D7309E212A0DC8FD345BAE19 /* LoadingShimmer.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LoadingShimmer/LoadingShimmer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LoadingShimmer/LoadingShimmer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LoadingShimmer/LoadingShimmer.modulemap";
+				PRODUCT_MODULE_NAME = LoadingShimmer;
+				PRODUCT_NAME = LoadingShimmer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4CAFFFEFF73518F6560EC13DB4B32FF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8865378E6020BD8BCC591E87A901B7A8 /* Pods-Jup-Jup.release.xcconfig */;
 			buildSettings = {
@@ -421,7 +438,7 @@
 			};
 			name = Debug;
 		};
-		9B4DD24851480BDE8CF6291779FFC481 /* Debug */ = {
+		BBD8A5B3F73FBEE886DD7796D141DF79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CB527EF87AABDC605F34A402FC04799 /* Pods-Jup-Jup.debug.xcconfig */;
 			buildSettings = {
@@ -459,10 +476,11 @@
 			};
 			name = Debug;
 		};
-		BE6791824CFF41E78A5C2275D0E0E46C /* Debug */ = {
+		BD1F60444F60CBAF54B32789E00888D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B672EB5248F85B7A56DB572AA5D877CB /* ViewAnimator.debug.xcconfig */;
+			baseConfigurationReference = 0FAF207219B9AB080EDF4745EBC4533C /* LoadingShimmer.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -472,18 +490,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ViewAnimator/ViewAnimator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ViewAnimator/ViewAnimator-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/LoadingShimmer/LoadingShimmer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LoadingShimmer/LoadingShimmer-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/ViewAnimator/ViewAnimator.modulemap";
-				PRODUCT_MODULE_NAME = ViewAnimator;
-				PRODUCT_NAME = ViewAnimator;
+				MODULEMAP_FILE = "Target Support Files/LoadingShimmer/LoadingShimmer.modulemap";
+				PRODUCT_MODULE_NAME = LoadingShimmer;
+				PRODUCT_NAME = LoadingShimmer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -493,42 +511,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		D71A42BD1F5825EC1CD0BA8567C92E5A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 765B688D72EF79F9CE2040E60D413B59 /* ViewAnimator.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ViewAnimator/ViewAnimator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ViewAnimator/ViewAnimator-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ViewAnimator/ViewAnimator.modulemap";
-				PRODUCT_MODULE_NAME = ViewAnimator;
-				PRODUCT_NAME = ViewAnimator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		D832C8FC372204ACDCC9FE9C0FC41919 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -593,6 +575,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		321FA17AF9A744DE9E1D66C38F797B4C /* Build configuration list for PBXNativeTarget "LoadingShimmer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD1F60444F60CBAF54B32789E00888D3 /* Debug */,
+				280B6D7C3E724AC1498ACB6CDED2F381 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -602,20 +593,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF2E1D529B7CACC3CFBA54A93344A897 /* Build configuration list for PBXNativeTarget "ViewAnimator" */ = {
+		86D0FE006A61CC6D378F6D64A474903A /* Build configuration list for PBXNativeTarget "Pods-Jup-Jup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BE6791824CFF41E78A5C2275D0E0E46C /* Debug */,
-				D71A42BD1F5825EC1CD0BA8567C92E5A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E3EE7E3DD7E4D469BA9D0DB16EB5B381 /* Build configuration list for PBXNativeTarget "Pods-Jup-Jup" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B4DD24851480BDE8CF6291779FFC481 /* Debug */,
-				507EEA0FF84107D9FB294526DFC71686 /* Release */,
+				BBD8A5B3F73FBEE886DD7796D141DF79 /* Debug */,
+				4CAFFFEFF73518F6560EC13DB4B32FF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

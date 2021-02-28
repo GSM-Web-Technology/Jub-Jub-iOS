@@ -7,6 +7,6 @@ target 'Jup-Jup' do
 
   # Pods for Jup-Jup
 
-  pod "ViewAnimator"
+  pod "LoadingShimmer"
 
 end
