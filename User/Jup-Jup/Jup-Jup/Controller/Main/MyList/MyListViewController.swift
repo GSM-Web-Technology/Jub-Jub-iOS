@@ -8,9 +8,10 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import SemiModalViewController
 
 class MyListViewController: UIViewController {
-
+    
     var model: MyListModel?
     
     @IBOutlet weak var myListTableView: UITableView! {
@@ -28,7 +29,7 @@ class MyListViewController: UIViewController {
         super.viewWillAppear(true)
         apiCall()
     }
-
+    
     func apiCall() {
         let URL = "http://15.165.97.179:8080/v2/myequipment/"
         let token = KeychainManager.getToken()
@@ -59,7 +60,7 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.myListCount.text = "대여 수량: \(model?.list[cellCount - indexPath.row].amount ?? 0)개"
         let url = URL(string: model?.list[cellCount - indexPath.row].equipment.img_equipment ?? "")
         cell.myListImageView.kf.setImage(with: url)
-
+        
         switch model?.list[cellCount - indexPath.row].equipmentEnum {
         case "ROLE_Waiting":
             cell.myListStatusLabel.text = "승인 대기"
@@ -83,6 +84,25 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
             break
         }
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let options: [SemiModalOption : Any] = [
+            SemiModalOption.pushParentBack: false
+        ]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let identifier = String(describing: MyListReasonViewController.self)
+        let controller = storyboard.instantiateViewController(withIdentifier: identifier)
+        let cellCount = (model?.list.count)! - 1
+        controller.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200)
+        
+        reason = self.model?.list[cellCount - indexPath.row].reason ?? ""
+        presentSemiViewController(controller, options: options, completion: {
+            
+            print("Completed!")
+        }, dismissBlock: {
+            print("Dismissed!")
+        })
+        
     }
     
     

@@ -17,6 +17,7 @@ struct MyList: Codable {
     let equipmentEnum: String
     let isReturn: Bool
     let equipment: Equipment
+    let reason: String
 }
 
 struct Equipment: Codable {

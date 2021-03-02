@@ -29,12 +29,12 @@
         }
       },
       {
-        "package": "SkeletonView",
-        "repositoryURL": "https://github.com/Juanpe/SkeletonView",
+        "package": "SemiModalViewController",
+        "repositoryURL": "https://github.com/muyexi/SemiModalViewController",
         "state": {
           "branch": null,
-          "revision": "32ab6d3852e91312dcbfc3f3a749cfc691da75fe",
-          "version": "1.13.0"
+          "revision": "5bf314853a9c926c695f03d2cf8c9a7a6a95b945",
+          "version": "1.0.2"
         }
       }
     ]

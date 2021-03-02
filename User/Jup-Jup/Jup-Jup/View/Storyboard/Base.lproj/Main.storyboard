@@ -173,36 +173,24 @@
                                                         <constraint firstAttribute="width" constant="88" id="9pp-MZ-9k6"/>
                                                         <constraint firstAttribute="height" constant="76" id="egF-2A-0yj"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DC 모터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBY-aY-wBj">
                                                     <rect key="frame" x="121" y="11" width="263" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4w-2X-1Lg">
                                                     <rect key="frame" x="121" y="48" width="263" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수량 1개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ww-Hp-k2n">
                                                     <rect key="frame" x="121" y="85" width="223" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -218,13 +206,7 @@
                                                 <constraint firstItem="mdp-f0-anW" firstAttribute="leading" secondItem="dYF-Cy-zQD" secondAttribute="leading" constant="16" id="gtP-FE-UqY"/>
                                                 <constraint firstItem="BBY-aY-wBj" firstAttribute="top" secondItem="dYF-Cy-zQD" secondAttribute="topMargin" id="qT8-bL-epO"/>
                                             </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="homeCount" destination="0ww-Hp-k2n" id="dbs-cA-8IY"/>
                                             <outlet property="homeImageView" destination="mdp-f0-anW" id="BHC-XH-nyb"/>
@@ -362,6 +344,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zp5-ug-YJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-431.19999999999999" y="2912.2938530734637"/>
+        </scene>
+        <!--My List Reason View Controller-->
+        <scene sceneID="BE3-AZ-Ox8">
+            <objects>
+                <viewController storyboardIdentifier="MyListReasonViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ubM-Zp-gT6" customClass="MyListReasonViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vMn-Gt-OEb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대여 사유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuO-g7-C89">
+                                <rect key="frame" x="166.5" y="20" width="81" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iig-iI-VkA">
+                                <rect key="frame" x="72" y="56" width="270" height="103"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsE-SQ-QDN">
+                                        <rect key="frame" x="3" y="3" width="264" height="97"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="92Y-aD-bwK"/>
+                                    <constraint firstAttribute="width" constant="270" id="TtX-a8-9qg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7nB-GY-vAX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Iig-iI-VkA" firstAttribute="top" secondItem="AuO-g7-C89" secondAttribute="bottom" constant="9" id="0DN-m7-oRS"/>
+                            <constraint firstItem="Iig-iI-VkA" firstAttribute="centerX" secondItem="vMn-Gt-OEb" secondAttribute="centerX" id="CxK-IW-0nB"/>
+                            <constraint firstItem="AuO-g7-C89" firstAttribute="centerX" secondItem="vMn-Gt-OEb" secondAttribute="centerX" id="LOM-0P-w4e"/>
+                            <constraint firstItem="AuO-g7-C89" firstAttribute="top" secondItem="vMn-Gt-OEb" secondAttribute="top" constant="20" id="ob4-ah-SJk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tji-wE-o5X"/>
+                    <connections>
+                        <outlet property="reasonLabel" destination="lsE-SQ-QDN" id="BGc-Xc-fT2"/>
+                        <outlet property="reasonView" destination="Iig-iI-VkA" id="mNG-Ua-fPi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTv-Lv-iJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647.82608695652175" y="2911.6071428571427"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="xf4-DD-4Cp">

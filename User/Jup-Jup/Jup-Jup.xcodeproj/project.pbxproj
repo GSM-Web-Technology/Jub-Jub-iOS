@@ -15,6 +15,8 @@
 		BD41251A25A7463F00264EC2 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41251925A7463F00264EC2 /* MyListViewController.swift */; };
 		BD41251D25A7465700264EC2 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41251C25A7465700264EC2 /* MyPageViewController.swift */; };
 		BD41252125A75B7A00264EC2 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41252025A75B7900264EC2 /* HomeTableViewCell.swift */; };
+		BD5053AE25EE2A04002CE4E7 /* SemiModalViewController in Frameworks */ = {isa = PBXBuildFile; productRef = BD5053AD25EE2A04002CE4E7 /* SemiModalViewController */; };
+		BD5053B125EE2A80002CE4E7 /* MyListReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5053B025EE2A80002CE4E7 /* MyListReasonViewController.swift */; };
 		BD5F66E025AC85D300F6BDC7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */; };
 		BD5F66E325AC85E100F6BDC7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F66E225AC85E100F6BDC7 /* LoginViewController.swift */; };
 		BD79E8A525DEC035009DB301 /* MyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E8A425DEC035009DB301 /* MyListModel.swift */; };
@@ -25,7 +27,6 @@
 		BD95550025A08F8400DB23E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9554FE25A08F8400DB23E3 /* LaunchScreen.storyboard */; };
 		BD9F78DF25CBCA850053852A /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9F78DE25CBCA850053852A /* LogInModel.swift */; };
 		BD9F78E325CBE4320053852A /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9F78E225CBE4320053852A /* EquipmentModel.swift */; };
-		BDD0AB5625EBF28A00BF0BF1 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = BDD0AB5525EBF28A00BF0BF1 /* SkeletonView */; };
 		BDDDDDEF25C420E20022C635 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDEE25C420E20022C635 /* Alamofire */; };
 		BDDDDDF325C421080022C635 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDF225C421080022C635 /* Kingfisher */; };
 		BDE6798B25E2B7C70086168B /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE6798A25E2B7C70086168B /* KeychainManager.swift */; };
@@ -41,6 +42,7 @@
 		BD41251925A7463F00264EC2 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		BD41251C25A7465700264EC2 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		BD41252025A75B7900264EC2 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		BD5053B025EE2A80002CE4E7 /* MyListReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListReasonViewController.swift; sourceTree = "<group>"; };
 		BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BD5F66E225AC85E100F6BDC7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BD79E8A425DEC035009DB301 /* MyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListModel.swift; sourceTree = "<group>"; };
@@ -63,10 +65,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDD0AB5625EBF28A00BF0BF1 /* SkeletonView in Frameworks */,
 				BDDDDDF325C421080022C635 /* Kingfisher in Frameworks */,
 				BDDDDDEF25C420E20022C635 /* Alamofire in Frameworks */,
 				BD0D5E3925E6831500E1CE32 /* KeychainAccess in Frameworks */,
+				BD5053AE25EE2A04002CE4E7 /* SemiModalViewController in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +134,7 @@
 			children = (
 				BD41251925A7463F00264EC2 /* MyListViewController.swift */,
 				BDEB1F0E25A88A1C00D84ADC /* MyListTableViewCell.swift */,
+				BD5053B025EE2A80002CE4E7 /* MyListReasonViewController.swift */,
 			);
 			path = MyList;
 			sourceTree = "<group>";
@@ -225,7 +228,7 @@
 				BDDDDDEE25C420E20022C635 /* Alamofire */,
 				BDDDDDF225C421080022C635 /* Kingfisher */,
 				BD0D5E3825E6831500E1CE32 /* KeychainAccess */,
-				BDD0AB5525EBF28A00BF0BF1 /* SkeletonView */,
+				BD5053AD25EE2A04002CE4E7 /* SemiModalViewController */,
 			);
 			productName = "Jup-Jup";
 			productReference = BD9554F025A08F8300DB23E3 /* Jup-Jup.app */;
@@ -258,7 +261,7 @@
 				BDDDDDED25C420E20022C635 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				BDDDDDF125C421080022C635 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				BD0D5E3725E6831500E1CE32 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
-				BDD0AB5425EBF28A00BF0BF1 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				BD5053AC25EE2A04002CE4E7 /* XCRemoteSwiftPackageReference "SemiModalViewController" */,
 			);
 			productRefGroup = BD9554F125A08F8300DB23E3 /* Products */;
 			projectDirPath = "";
@@ -303,6 +306,7 @@
 				BDEB1F0B25A87B4B00D84ADC /* HomeEquipmentViewController.swift in Sources */,
 				BD5F66E325AC85E100F6BDC7 /* LoginViewController.swift in Sources */,
 				BD41251725A7460D00264EC2 /* HomeViewController.swift in Sources */,
+				BD5053B125EE2A80002CE4E7 /* MyListReasonViewController.swift in Sources */,
 				BD79E8A525DEC035009DB301 /* MyListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,12 +521,12 @@
 				minimumVersion = 4.2.1;
 			};
 		};
-		BDD0AB5425EBF28A00BF0BF1 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+		BD5053AC25EE2A04002CE4E7 /* XCRemoteSwiftPackageReference "SemiModalViewController" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			repositoryURL = "https://github.com/muyexi/SemiModalViewController";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.13.0;
+				minimumVersion = 1.0.2;
 			};
 		};
 		BDDDDDED25C420E20022C635 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -549,10 +553,10 @@
 			package = BD0D5E3725E6831500E1CE32 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
 		};
-		BDD0AB5525EBF28A00BF0BF1 /* SkeletonView */ = {
+		BD5053AD25EE2A04002CE4E7 /* SemiModalViewController */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BDD0AB5425EBF28A00BF0BF1 /* XCRemoteSwiftPackageReference "SkeletonView" */;
-			productName = SkeletonView;
+			package = BD5053AC25EE2A04002CE4E7 /* XCRemoteSwiftPackageReference "SemiModalViewController" */;
+			productName = SemiModalViewController;
 		};
 		BDDDDDEE25C420E20022C635 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
