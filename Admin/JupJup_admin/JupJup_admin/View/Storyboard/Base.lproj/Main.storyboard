@@ -346,7 +346,7 @@
         <!--홈-->
         <scene sceneID="Oct-1g-ihx">
             <objects>
-                <viewController id="aTi-vK-yxX" sceneMemberID="viewController">
+                <viewController id="aTi-vK-yxX" customClass="HomeViewController" customModule="JupJup_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VSX-8T-o1t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -413,19 +413,65 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="homeCount" destination="qnh-Dh-ftZ" id="eI5-rU-dF2"/>
-                                            <outlet property="homeImageView" destination="PQS-oV-ijH" id="HOq-9G-eTW"/>
-                                            <outlet property="homeSubName" destination="A2e-Od-hrT" id="nHl-VO-frg"/>
-                                            <outlet property="homeTitleName" destination="BjQ-gC-HXm" id="5n9-BA-C3r"/>
+                                            <outlet property="equipmentContent" destination="A2e-Od-hrT" id="CdB-Kp-PwV"/>
+                                            <outlet property="equipmentCount" destination="qnh-Dh-ftZ" id="qHO-0F-cH7"/>
+                                            <outlet property="equipmentImage" destination="PQS-oV-ijH" id="nOU-55-iX0"/>
+                                            <outlet property="equipmentName" destination="BjQ-gC-HXm" id="Vuk-Sg-dXE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="2ON-Pq-Aib" customClass="HomeLaptopTableViewCell" customModule="JupJup_admin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeLaptopTableViewCell" rowHeight="120" id="G1J-8Y-xE1" customClass="HomeLaptopTableViewCell" customModule="JupJup_admin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="148" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2ON-Pq-Aib" id="Xuz-r7-sI2">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G1J-8Y-xE1" id="qn1-2r-GBu">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.on.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gEg-Ry-wet">
+                                                    <rect key="frame" x="16" y="18" width="88" height="81"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="88" id="98r-Ng-Yfk"/>
+                                                        <constraint firstAttribute="height" constant="76" id="yV7-jY-eAZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DC 모터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIR-5P-qNQ">
+                                                    <rect key="frame" x="121" y="11" width="263" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJg-dR-xoT">
+                                                    <rect key="frame" x="121" y="48" width="263" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수량 1개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzc-TZ-P5O">
+                                                    <rect key="frame" x="121" y="85" width="223" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gzc-TZ-P5O" firstAttribute="leading" secondItem="gEg-Ry-wet" secondAttribute="trailing" constant="17" id="12G-aq-PYk"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gzc-TZ-P5O" secondAttribute="trailing" constant="50" id="APU-WC-TkW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YJg-dR-xoT" secondAttribute="trailing" constant="10" id="Eb3-Zg-hSn"/>
+                                                <constraint firstItem="YJg-dR-xoT" firstAttribute="leading" secondItem="gEg-Ry-wet" secondAttribute="trailing" constant="17" id="NiX-GP-jc4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GIR-5P-qNQ" secondAttribute="trailing" constant="10" id="VSM-pG-Ka6"/>
+                                                <constraint firstItem="GIR-5P-qNQ" firstAttribute="leading" secondItem="gEg-Ry-wet" secondAttribute="trailing" constant="17" id="eha-jw-leK"/>
+                                                <constraint firstItem="gEg-Ry-wet" firstAttribute="leading" secondItem="qn1-2r-GBu" secondAttribute="leading" constant="16" id="fbY-Mr-oRM"/>
+                                                <constraint firstItem="YJg-dR-xoT" firstAttribute="top" secondItem="GIR-5P-qNQ" secondAttribute="bottom" constant="8" id="nhZ-pk-ohW"/>
+                                                <constraint firstItem="gzc-TZ-P5O" firstAttribute="top" secondItem="YJg-dR-xoT" secondAttribute="bottom" constant="16" id="omM-8b-99k"/>
+                                                <constraint firstItem="GIR-5P-qNQ" firstAttribute="top" secondItem="qn1-2r-GBu" secondAttribute="topMargin" id="qfe-ln-hCB"/>
+                                                <constraint firstItem="gEg-Ry-wet" firstAttribute="top" secondItem="qn1-2r-GBu" secondAttribute="top" constant="20.5" id="zrg-Rq-uic"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="laptopBrand" destination="YJg-dR-xoT" id="ER7-gL-KUa"/>
+                                            <outlet property="laptopImage" destination="gEg-Ry-wet" id="Nbo-ow-68e"/>
+                                            <outlet property="laptopName" destination="GIR-5P-qNQ" id="YQQ-Cn-cxn"/>
+                                            <outlet property="laptopSerialNumber" destination="gzc-TZ-P5O" id="f3R-6F-SJp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
