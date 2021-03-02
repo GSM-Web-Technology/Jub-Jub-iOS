@@ -8,7 +8,6 @@
 import UIKit
 import Alamofire
 import Kingfisher
-import SkeletonView
 
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
@@ -26,29 +25,19 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        if check == true {
-        //            self.searchController()
-        //            apiCall()
-        //        }
-        homeTableView.rowHeight = 120
-        homeTableView.estimatedRowHeight = 120
+        if check == true {
+            self.searchController()
+            apiCall()
+        }
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.homeTableView.isSkeletonable = true
-        self.homeTableView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .link), animation: nil, transition: .crossDissolve(0.25))
-        
-        self.apiCall()
-        self.searchController()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.homeTableView.stopSkeletonAnimation()
-            self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.5))
+        if check == false {
+            self.apiCall()
+            self.searchController()
         }
-        
-        
         
     }
     
@@ -99,7 +88,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-extension HomeViewController: SkeletonTableViewDelegate, SkeletonTableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (isFiltering) {
             return self.searchModel?.data.cellCount ?? 0
@@ -129,10 +118,6 @@ extension HomeViewController: SkeletonTableViewDelegate, SkeletonTableViewDataSo
             cell.homeImageView.kf.setImage(with: url)
         }
         return cell
-    }
-    
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return "HomeTableViewCell"
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
