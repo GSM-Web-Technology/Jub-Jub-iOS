@@ -433,20 +433,20 @@
                                                         <constraint firstAttribute="height" constant="76" id="yV7-jY-eAZ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DC 모터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIR-5P-qNQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한성 노트북" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIR-5P-qNQ">
                                                     <rect key="frame" x="121" y="11" width="263" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJg-dR-xoT">
-                                                    <rect key="frame" x="121" y="48" width="263" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조주혁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzc-TZ-P5O">
+                                                    <rect key="frame" x="121" y="85" width="110" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수량 1개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzc-TZ-P5O">
-                                                    <rect key="frame" x="121" y="85" width="223" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3318" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJg-dR-xoT">
+                                                    <rect key="frame" x="121" y="50" width="110" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -454,23 +454,23 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gzc-TZ-P5O" firstAttribute="leading" secondItem="gEg-Ry-wet" secondAttribute="trailing" constant="17" id="12G-aq-PYk"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gzc-TZ-P5O" secondAttribute="trailing" constant="50" id="APU-WC-TkW"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="YJg-dR-xoT" secondAttribute="trailing" constant="10" id="Eb3-Zg-hSn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gzc-TZ-P5O" secondAttribute="trailing" constant="163" id="APU-WC-TkW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YJg-dR-xoT" secondAttribute="trailing" constant="163" id="Eb3-Zg-hSn"/>
                                                 <constraint firstItem="YJg-dR-xoT" firstAttribute="leading" secondItem="gEg-Ry-wet" secondAttribute="trailing" constant="17" id="NiX-GP-jc4"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="GIR-5P-qNQ" secondAttribute="trailing" constant="10" id="VSM-pG-Ka6"/>
                                                 <constraint firstItem="GIR-5P-qNQ" firstAttribute="leading" secondItem="gEg-Ry-wet" secondAttribute="trailing" constant="17" id="eha-jw-leK"/>
                                                 <constraint firstItem="gEg-Ry-wet" firstAttribute="leading" secondItem="qn1-2r-GBu" secondAttribute="leading" constant="16" id="fbY-Mr-oRM"/>
-                                                <constraint firstItem="YJg-dR-xoT" firstAttribute="top" secondItem="GIR-5P-qNQ" secondAttribute="bottom" constant="8" id="nhZ-pk-ohW"/>
-                                                <constraint firstItem="gzc-TZ-P5O" firstAttribute="top" secondItem="YJg-dR-xoT" secondAttribute="bottom" constant="16" id="omM-8b-99k"/>
+                                                <constraint firstItem="YJg-dR-xoT" firstAttribute="top" secondItem="GIR-5P-qNQ" secondAttribute="bottom" constant="10" id="nhZ-pk-ohW"/>
+                                                <constraint firstItem="gzc-TZ-P5O" firstAttribute="top" secondItem="YJg-dR-xoT" secondAttribute="bottom" constant="14" id="omM-8b-99k"/>
                                                 <constraint firstItem="GIR-5P-qNQ" firstAttribute="top" secondItem="qn1-2r-GBu" secondAttribute="topMargin" id="qfe-ln-hCB"/>
                                                 <constraint firstItem="gEg-Ry-wet" firstAttribute="top" secondItem="qn1-2r-GBu" secondAttribute="top" constant="20.5" id="zrg-Rq-uic"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="laptopBrand" destination="YJg-dR-xoT" id="ER7-gL-KUa"/>
+                                            <outlet property="laotopClassNumber" destination="YJg-dR-xoT" id="QhR-nf-wos"/>
                                             <outlet property="laptopImage" destination="gEg-Ry-wet" id="Nbo-ow-68e"/>
                                             <outlet property="laptopName" destination="GIR-5P-qNQ" id="YQQ-Cn-cxn"/>
-                                            <outlet property="laptopSerialNumber" destination="gzc-TZ-P5O" id="f3R-6F-SJp"/>
+                                            <outlet property="laptopStudentName" destination="gzc-TZ-P5O" id="mYd-kS-BdP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -492,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5i5-GV-92P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="2219"/>
+            <point key="canvasLocation" x="321.73913043478262" y="2218.5267857142858"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6Ud-TO-9s9">

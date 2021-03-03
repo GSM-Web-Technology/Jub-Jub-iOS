@@ -11,8 +11,8 @@ class HomeLaptopTableViewCell: UITableViewCell {
 
     @IBOutlet weak var laptopImage: UIImageView!
     @IBOutlet weak var laptopName: UILabel!
-    @IBOutlet weak var laptopBrand: UILabel!
-    @IBOutlet weak var laptopSerialNumber: UILabel!
+    @IBOutlet weak var laotopClassNumber: UILabel!
+    @IBOutlet weak var laptopStudentName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
