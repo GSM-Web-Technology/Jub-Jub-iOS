@@ -7,23 +7,61 @@
 
 import UIKit
 
+var menuSelected = true
+
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var homeTableView: UITableView! {
+        didSet {
+            homeTableView.delegate = self
+            homeTableView.dataSource = self
+            homeTableView.tableFooterView = UIView()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let equipmentNib = UINib(nibName: "HomeEquipmentTableViewCell", bundle: nil)
+        let laptopNib = UINib(nibName: "HomeLaptopTableViewCell", bundle: nil)
+        homeTableView.register(equipmentNib, forCellReuseIdentifier: "HomeEquipmentTableViewCell")
+        homeTableView.register(laptopNib, forCellReuseIdentifier: "HomeLaptopTableViewCell")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func menuSegmentedControl(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            menuSelected = true
+            homeTableView.reloadData()
+        } else {
+            menuSelected = false
+            homeTableView.reloadData()
+        }
     }
-    */
+    
+}
 
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if menuSelected == true {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeEquipmentTableViewCell", for: indexPath) as! HomeEquipmentTableViewCell
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeLaptopTableViewCell", for: indexPath) as! HomeLaptopTableViewCell
+            
+            return cell
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    
 }

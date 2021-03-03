@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeEquipmentTableViewCell" rowHeight="120" id="bMx-9R-gm5" customClass="HomeEquipmentTableViewCell" customModule="JupJup_admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bMx-9R-gm5" id="1LF-W0-wxh">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.on.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="03d-0w-ogC">
+                        <rect key="frame" x="16" y="18" width="88" height="81"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="88" id="gsm-DG-xDS"/>
+                            <constraint firstAttribute="height" constant="76" id="oh9-tf-E2k"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DC 모터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GN-IP-RhE">
+                        <rect key="frame" x="121" y="11" width="263" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yT-6j-yrL">
+                        <rect key="frame" x="121" y="48" width="263" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수량 1개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVz-5N-rB1">
+                        <rect key="frame" x="121" y="85" width="223" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="03d-0w-ogC" firstAttribute="leading" secondItem="1LF-W0-wxh" secondAttribute="leading" constant="16" id="56L-ad-Pn5"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0GN-IP-RhE" secondAttribute="trailing" constant="10" id="Cjz-UI-2eC"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="6yT-6j-yrL" secondAttribute="trailing" constant="10" id="L9F-A5-jLX"/>
+                    <constraint firstItem="cVz-5N-rB1" firstAttribute="leading" secondItem="03d-0w-ogC" secondAttribute="trailing" constant="17" id="RhG-kb-rsC"/>
+                    <constraint firstItem="6yT-6j-yrL" firstAttribute="leading" secondItem="03d-0w-ogC" secondAttribute="trailing" constant="17" id="aYI-Xy-Obc"/>
+                    <constraint firstItem="cVz-5N-rB1" firstAttribute="top" secondItem="6yT-6j-yrL" secondAttribute="bottom" constant="16" id="and-pv-Fl1"/>
+                    <constraint firstItem="0GN-IP-RhE" firstAttribute="leading" secondItem="03d-0w-ogC" secondAttribute="trailing" constant="17" id="dtL-uw-0rX"/>
+                    <constraint firstItem="6yT-6j-yrL" firstAttribute="top" secondItem="0GN-IP-RhE" secondAttribute="bottom" constant="8" id="nGt-lb-GwL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="cVz-5N-rB1" secondAttribute="trailing" constant="50" id="oaY-XU-sz5"/>
+                    <constraint firstItem="0GN-IP-RhE" firstAttribute="top" secondItem="1LF-W0-wxh" secondAttribute="topMargin" id="sSn-63-6pq"/>
+                    <constraint firstItem="03d-0w-ogC" firstAttribute="top" secondItem="1LF-W0-wxh" secondAttribute="top" constant="20.5" id="vq9-YD-Fng"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="equipmentContent" destination="6yT-6j-yrL" id="pd1-L6-FFg"/>
+                <outlet property="equipmentCount" destination="cVz-5N-rB1" id="3Rf-kz-OjZ"/>
+                <outlet property="equipmentImage" destination="03d-0w-ogC" id="EEa-Ou-xks"/>
+                <outlet property="equipmentName" destination="0GN-IP-RhE" id="Qoa-XR-k7p"/>
+            </connections>
+            <point key="canvasLocation" x="220" y="17"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
+    </resources>
+</document>

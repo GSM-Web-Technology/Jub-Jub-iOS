@@ -21,6 +21,8 @@
 		BD29575F25D806BE006764E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD29575D25D806BE006764E1 /* LaunchScreen.storyboard */; };
 		BD79E89E25DEB995009DB301 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E89D25DEB995009DB301 /* LoginViewController.swift */; };
 		BD79E8A125DEB9A3009DB301 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E8A025DEB9A3009DB301 /* SignUpViewController.swift */; };
+		BDFE9C7E25EFA9090054D7F7 /* HomeEquipmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDFE9C7D25EFA9090054D7F7 /* HomeEquipmentTableViewCell.xib */; };
+		BDFE9C8325EFACCC0054D7F7 /* HomeLaptopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDFE9C8225EFACCC0054D7F7 /* HomeLaptopTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		BD29576025D806BE006764E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD79E89D25DEB995009DB301 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BD79E8A025DEB9A3009DB301 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		BDFE9C7D25EFA9090054D7F7 /* HomeEquipmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeEquipmentTableViewCell.xib; sourceTree = "<group>"; };
+		BDFE9C8225EFACCC0054D7F7 /* HomeLaptopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeLaptopTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				BD29575825D806BC006764E1 /* Main.storyboard */,
 				BD29575D25D806BE006764E1 /* LaunchScreen.storyboard */,
+				BDFE9C7D25EFA9090054D7F7 /* HomeEquipmentTableViewCell.xib */,
+				BDFE9C8225EFACCC0054D7F7 /* HomeLaptopTableViewCell.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -228,7 +234,9 @@
 			files = (
 				BD29575F25D806BE006764E1 /* LaunchScreen.storyboard in Resources */,
 				BD29575C25D806BE006764E1 /* Assets.xcassets in Resources */,
+				BDFE9C7E25EFA9090054D7F7 /* HomeEquipmentTableViewCell.xib in Resources */,
 				BD29575A25D806BC006764E1 /* Main.storyboard in Resources */,
+				BDFE9C8325EFACCC0054D7F7 /* HomeLaptopTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
