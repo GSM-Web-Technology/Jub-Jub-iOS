@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oqY-85-gmc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bu7-Y1-DGg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -27,14 +27,11 @@
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="logInButton:" destination="Bu7-Y1-DGg" eventType="touchUpInside" id="3EW-kZ-9Hv"/>
-                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JubJub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afC-T7-4Yj">
-                                <rect key="frame" x="20" y="64" width="131" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JubJub_Admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afC-T7-4Yj">
+                                <rect key="frame" x="20" y="64" width="253" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="131" id="oLM-uM-B3p"/>
+                                    <constraint firstAttribute="width" constant="253" id="oLM-uM-B3p"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                 <nil key="textColor"/>
@@ -81,6 +78,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="회원가입"/>
+                                <connections>
+                                    <segue destination="kzx-DH-vrN" kind="presentation" modalPresentationStyle="fullScreen" id="MyF-O5-GRY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yQM-3o-JW9"/>
@@ -105,9 +105,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="logInBtn" destination="U5g-NL-YN2" id="AO3-ZE-TJA"/>
-                        <outlet property="logInEmail" destination="3de-yb-s4c" id="IaU-mb-QXa"/>
-                        <outlet property="logInPassword" destination="hhR-Ec-bA1" id="Y9L-yQ-vb1"/>
+                        <outlet property="logInEmailTextField" destination="3de-yb-s4c" id="IvU-Gy-kMz"/>
+                        <outlet property="logInPasswordTextField" destination="hhR-Ec-bA1" id="7yn-6E-5Ef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MeZ-jc-HCm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -133,14 +132,11 @@
                                 <state key="normal" title="회원가입">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="signUpButton:" destination="kzx-DH-vrN" eventType="touchUpInside" id="g3L-EM-oTW"/>
-                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JubJub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bA-nT-2y7">
-                                <rect key="frame" x="20" y="64" width="131" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JubJub_Admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bA-nT-2y7">
+                                <rect key="frame" x="20" y="64" width="250" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="131" id="eZQ-TR-46Z"/>
+                                    <constraint firstAttribute="width" constant="250" id="eZQ-TR-46Z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                 <nil key="textColor"/>
@@ -211,9 +207,6 @@
                                 <state key="normal" title="뒤로">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="backButton:" destination="kzx-DH-vrN" eventType="touchUpInside" id="dHN-e0-Amz"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JQY-9J-I1K"/>
@@ -245,19 +238,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uHo-iW-xLZ"/>
-                    <connections>
-                        <outlet property="backBtn" destination="osa-Dq-gOL" id="Cwi-9g-9Qm"/>
-                        <outlet property="signUpBtn" destination="ING-jL-3hW" id="Mav-mL-gYt"/>
-                        <outlet property="signUpClassNumber" destination="9fe-yV-O1V" id="ckc-P9-T1A"/>
-                        <outlet property="signUpEmail" destination="N4R-2Y-2yq" id="dF5-SD-ex4"/>
-                        <outlet property="signUpName" destination="s0b-1w-cLU" id="Efl-Q8-xTX"/>
-                        <outlet property="signUpPassword" destination="CRz-ik-ycj" id="Gif-jb-Xhz"/>
-                        <outlet property="signUpPasswordCheck" destination="5UE-Bh-tlQ" id="aUR-jU-K4p"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WEU-cU-bfx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-300" y="415"/>
+            <point key="canvasLocation" x="-300" y="414.50892857142856"/>
         </scene>
         <!--승인 대기-->
         <scene sceneID="bXx-e3-KAh">
