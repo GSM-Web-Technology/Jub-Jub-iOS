@@ -15,7 +15,6 @@ struct MyListModel: Codable {
 struct MyList: Codable {
     let amount: Int
     let equipmentEnum: String
-    let isReturn: Bool
     let equipment: Equipment
     let reason: String
 }

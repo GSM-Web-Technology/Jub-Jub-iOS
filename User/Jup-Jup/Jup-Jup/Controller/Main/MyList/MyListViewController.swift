@@ -33,14 +33,13 @@ class MyListViewController: UIViewController {
     func apiCall() {
         let URL = "http://15.165.97.179:8080/v2/myequipment/"
         let token = KeychainManager.getToken()
-        AF.request(URL, headers: ["Authorization": token]).responseData(completionHandler: { data in
+        AF.request(URL,method: .get, headers: ["Authorization": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.model = try? JSONDecoder().decode(MyListModel.self, from: data)
             self.myListTableView.reloadData()
             print(data)
         })
     }
-    
 }
 
 extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -68,18 +67,15 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
             cell.myListStatusLabel.textColor = .black
             cell.myListStatusLabel.layer.borderWidth = 1
         case "ROLE_Accept":
-            switch model?.list[cellCount - indexPath.row].isReturn {
-            case true:
-                cell.myListStatusLabel.text = "반납"
-                cell.myListStatusLabel.backgroundColor = .white
-                cell.myListStatusLabel.textColor = .black
-                cell.myListStatusLabel.layer.borderWidth = 1
-            default:
-                cell.myListStatusLabel.text = "대여"
-                cell.myListStatusLabel.backgroundColor = .white
-                cell.myListStatusLabel.textColor = .black
-                cell.myListStatusLabel.layer.borderWidth = 1
-            }
+            cell.myListStatusLabel.text = "승인"
+            cell.myListStatusLabel.backgroundColor = .white
+            cell.myListStatusLabel.textColor = .black
+            cell.myListStatusLabel.layer.borderWidth = 1
+        case "ROLE_Rental":
+            cell.myListStatusLabel.text = "대여"
+            cell.myListStatusLabel.backgroundColor = .white
+            cell.myListStatusLabel.textColor = .black
+            cell.myListStatusLabel.layer.borderWidth = 1
         default:
             break
         }

@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     var model: EquipmentModel?
     var searchModel: SearchModel?
+    var refreshControl = UIRefreshControl()
     
     @IBOutlet weak var homeTableView: UITableView! {
         didSet {
@@ -29,6 +30,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             self.searchController()
             apiCall()
         }
+        homeTableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
     }
     
@@ -39,6 +42,20 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             self.searchController()
         }
         
+    }
+    
+    @objc func refresh() {
+        homeTableView.reloadData()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if(refreshControl.isRefreshing) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.refreshControl.endRefreshing()
+                self.apiCall()
+            }
+            
+        }
     }
     
     func failAlert() {
