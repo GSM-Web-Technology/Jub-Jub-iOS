@@ -77,7 +77,10 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
             cell.myListStatusLabel.textColor = .black
             cell.myListStatusLabel.layer.borderWidth = 1
         default:
-            break
+            cell.myListStatusLabel.text = "반납"
+            cell.myListStatusLabel.backgroundColor = .white
+            cell.myListStatusLabel.textColor = .black
+            cell.myListStatusLabel.layer.borderWidth = 1
         }
         return cell
     }
