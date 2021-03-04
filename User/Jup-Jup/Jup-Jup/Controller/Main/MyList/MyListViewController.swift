@@ -76,11 +76,13 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
             cell.myListStatusLabel.backgroundColor = .white
             cell.myListStatusLabel.textColor = .black
             cell.myListStatusLabel.layer.borderWidth = 1
-        default:
+        case "ROLE_Return":
             cell.myListStatusLabel.text = "반납"
             cell.myListStatusLabel.backgroundColor = .white
             cell.myListStatusLabel.textColor = .black
             cell.myListStatusLabel.layer.borderWidth = 1
+        default:
+            break
         }
         return cell
     }
