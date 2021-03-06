@@ -9,10 +9,12 @@ import UIKit
 import Alamofire
 import Kingfisher
 import SemiModalViewController
+import NVActivityIndicatorView
 
 class MyListViewController: UIViewController {
     
     var model: MyListModel?
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 50, height: 50), type: .ballPulse, color: .black, padding: 0)
     
     @IBOutlet weak var myListTableView: UITableView! {
         didSet {
@@ -23,11 +25,22 @@ class MyListViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicatorAutolayout()
+        indicator.startAnimating()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         apiCall()
+    }
+    
+    func indicatorAutolayout() {
+        view.addSubview(indicator)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
     }
     
     func apiCall() {
@@ -37,6 +50,7 @@ class MyListViewController: UIViewController {
             guard let data = data.data else { return }
             self.model = try? JSONDecoder().decode(MyListModel.self, from: data)
             self.myListTableView.reloadData()
+            self.indicator.stopAnimating()
             print(data)
         })
     }
@@ -54,10 +68,11 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyListTableViewCell", for: indexPath) as! MyListTableViewCell
         let cellCount = (model?.list.count)! - 1
+        let url = URL(string: model?.list[cellCount - indexPath.row].equipment.img_equipment ?? "")
+        
         cell.myListTitleName.text = model?.list[cellCount - indexPath.row].equipment.name ?? ""
         cell.myListSubName.text = model?.list[cellCount - indexPath.row].equipment.content ?? ""
         cell.myListCount.text = "대여 수량: \(model?.list[cellCount - indexPath.row].amount ?? 0)개"
-        let url = URL(string: model?.list[cellCount - indexPath.row].equipment.img_equipment ?? "")
         cell.myListImageView.kf.setImage(with: url)
         
         switch model?.list[cellCount - indexPath.row].equipmentEnum {
@@ -94,9 +109,10 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
         let identifier = String(describing: MyListReasonViewController.self)
         let controller = storyboard.instantiateViewController(withIdentifier: identifier)
         let cellCount = (model?.list.count)! - 1
-        controller.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200)
         
+        controller.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200)
         reason = self.model?.list[cellCount - indexPath.row].reason ?? ""
+        
         presentSemiViewController(controller, options: options, completion: {
             print("Completed!")
         }, dismissBlock: {

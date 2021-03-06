@@ -34,7 +34,7 @@ class MyPageViewController: UIViewController {
     }
     
     func logOutAlert() {
-        let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let ok = UIAlertAction(title: "로그아웃", style: .destructive) { (_) in
             self.apiCall()
         }
