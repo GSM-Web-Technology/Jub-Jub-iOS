@@ -77,26 +77,28 @@ class HomeEquipmentViewController: UIViewController {
             "reason": reason
         ]
         let token = KeychainManager.getToken()
-        AF.request(encodingURL, method: .post, parameters: PARAM, encoding: JSONEncoding.default, headers: ["Authorization": token]).responseJSON { (response) in
-            switch response.result{
-            case .success:
-                guard let result = response.data else {return}
-                do {
-                    let json = try JSONDecoder().decode(ResponseModel.self, from: result)
-                    if json.success == true{
-                        self.sucessAlert()
+        
+        AF.request(encodingURL, method: .post, parameters: PARAM,encoding: JSONEncoding.default, headers: ["Authorization": token]).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                if let dic = value as? NSDictionary {
+                    if let success = dic["success"] as? Bool {
+                        switch success {
+                        case true:
+                            self.successAlert()
+                        case false:
+                            self.failAlert(message: "대여 실패!")
+                        }
                     }
-                } catch {
-                    self.failAlert(message: "대여 실패!")
                 }
-            default:
-                return
+            case .failure(let e):
+                self.failAlert(message: "네트워크가 원활하지 않습니다.")
+                print(e.localizedDescription)
             }
         }
-
     }
     
-    func sucessAlert() {
+    func successAlert() {
         let alert = UIAlertController(title: "대여 신청 완료", message: "대여 신청되었습니다.", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (_) in
             self.navigationController?.popViewController(animated: true)
