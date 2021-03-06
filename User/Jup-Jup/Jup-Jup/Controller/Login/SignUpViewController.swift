@@ -73,7 +73,6 @@ class SignUpViewController: UIViewController {
         indicator.heightAnchor.constraint(equalToConstant: 50).isActive = true
         indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
-        
     }
     
     func checkTextField() -> Bool {

@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import NVActivityIndicatorView
 
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
@@ -15,6 +16,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     var model: EquipmentModel?
     var searchModel: SearchModel?
     var refreshControl = UIRefreshControl()
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 50, height: 50), type: .ballPulse, color: .black, padding: 0)
     
     @IBOutlet weak var homeTableView: UITableView! {
         didSet {
@@ -26,6 +28,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicatorAutolayout()
+        indicator.startAnimating()
         if check == true {
             self.searchController()
             apiCall()
@@ -50,13 +54,23 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if(refreshControl.isRefreshing) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.refreshControl.endRefreshing()
                 self.apiCall()
             }
             
         }
     }
+    
+    func indicatorAutolayout() {
+        view.addSubview(indicator)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+    }
+
     
     func failAlert() {
         let alert = UIAlertController(title: "네트워크가 원활하지 않습니다.", message: "네트워크 확인 후 다시 접속해주세요.", preferredStyle: UIAlertController.Style.alert)
@@ -81,6 +95,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             guard let data = data.data else { return }
             self.model = try? JSONDecoder().decode(EquipmentModel.self, from: data)
             self.homeTableView.reloadData()
+            self.indicator.stopAnimating()
         })
     }
     
