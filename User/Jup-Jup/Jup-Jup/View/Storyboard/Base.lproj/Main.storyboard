@@ -119,9 +119,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1i-iX-ZHy">
-                                <rect key="frame" x="0.0" y="140" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="190" width="414" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="f63-ON-Kaw"/>
+                                    <constraint firstAttribute="height" constant="50" id="5jh-4i-HPx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -132,13 +132,30 @@
                                     <action selector="signOutButton:" destination="Io0-0c-Qnr" eventType="touchUpInside" id="e3B-r0-R74"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlR-Wa-jv4">
+                                <rect key="frame" x="0.0" y="140" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="U2k-zv-ZFI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="공지사항">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="T2n-wH-p7L" kind="show" id="dEd-Se-plw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xNP-tI-iw5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="t1i-iX-ZHy" firstAttribute="trailing" secondItem="xNP-tI-iw5" secondAttribute="trailing" id="c9f-HV-LLK"/>
-                            <constraint firstItem="t1i-iX-ZHy" firstAttribute="leading" secondItem="xNP-tI-iw5" secondAttribute="leading" id="hai-HZ-Kl4"/>
-                            <constraint firstItem="t1i-iX-ZHy" firstAttribute="top" secondItem="xNP-tI-iw5" secondAttribute="top" id="xFw-Hc-jIb"/>
+                            <constraint firstItem="t1i-iX-ZHy" firstAttribute="trailing" secondItem="xNP-tI-iw5" secondAttribute="trailing" id="Dlg-Nl-7gd"/>
+                            <constraint firstItem="t1i-iX-ZHy" firstAttribute="leading" secondItem="xNP-tI-iw5" secondAttribute="leading" id="NaS-aq-iZO"/>
+                            <constraint firstItem="ZlR-Wa-jv4" firstAttribute="top" secondItem="xNP-tI-iw5" secondAttribute="top" id="ORF-Kr-Z7Z"/>
+                            <constraint firstItem="ZlR-Wa-jv4" firstAttribute="leading" secondItem="xNP-tI-iw5" secondAttribute="leading" id="d5J-AO-DJI"/>
+                            <constraint firstItem="t1i-iX-ZHy" firstAttribute="top" secondItem="ZlR-Wa-jv4" secondAttribute="bottom" id="ffa-le-lmK"/>
+                            <constraint firstItem="ZlR-Wa-jv4" firstAttribute="trailing" secondItem="xNP-tI-iw5" secondAttribute="trailing" id="llg-sA-OG7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="마이페이지" id="3FU-G0-WeJ"/>
@@ -146,6 +163,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0t-v2-0VU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1824.6376811594205" y="2209.8214285714284"/>
+        </scene>
+        <!--공지사항-->
+        <scene sceneID="emQ-YB-JFP">
+            <objects>
+                <viewController id="T2n-wH-p7L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FrM-cf-pOv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Owo-S2-hsj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="공지사항" id="cws-7m-AhW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9cj-iw-xke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2910" y="2210"/>
         </scene>
         <!--홈-->
         <scene sceneID="txr-E1-3dq">
