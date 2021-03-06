@@ -14,6 +14,7 @@ import NVActivityIndicatorView
 class MyListViewController: UIViewController {
     
     var model: MyListModel?
+    var refreshControl = UIRefreshControl()
     let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 50, height: 50), type: .ballPulse, color: .black, padding: 0)
     
     @IBOutlet weak var myListTableView: UITableView! {
@@ -27,11 +28,28 @@ class MyListViewController: UIViewController {
         super.viewDidLoad()
         indicatorAutolayout()
         indicator.startAnimating()
+        
+        myListTableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         apiCall()
+    }
+    
+    @objc func refresh() {
+        myListTableView.reloadData()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if(refreshControl.isRefreshing) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.refreshControl.endRefreshing()
+                self.apiCall()
+            }
+            
+        }
     }
     
     func indicatorAutolayout() {
