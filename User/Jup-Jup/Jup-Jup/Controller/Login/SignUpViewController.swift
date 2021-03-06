@@ -12,7 +12,8 @@ import NVActivityIndicatorView
 class SignUpViewController: UIViewController {
     
     var failMessages = ""
-
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 50, height: 50), type: .ballPulse, color: .black, padding: 0)
+    
     @IBOutlet weak var signUpEmail: UITextField! {
         didSet {
             signUpEmail.layer.cornerRadius = 5
@@ -61,6 +62,18 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicatorAutolayout()
+        
+    }
+    
+    func indicatorAutolayout() {
+        view.addSubview(indicatora)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+        
     }
     
     func checkTextField() -> Bool {
@@ -113,8 +126,10 @@ class SignUpViewController: UIViewController {
                     if let code = dic["code"] as? Int {
                         switch code {
                         case 0:
+                            self.indicator.stopAnimating()
                             self.sucessAlert()
                         case -1000:
+                            self.indicator.stopAnimating()
                             self.failAlert(messages: "이미 가입된 이메일입니다.")
                         default:
                             return
@@ -122,6 +137,7 @@ class SignUpViewController: UIViewController {
                     }
                 }
             case .failure(let e):
+                self.indicator.stopAnimating()
                 self.failAlert(messages: "네트워크가 원활하지 않습니다.")
                 print(e.localizedDescription)
             }
@@ -130,7 +146,9 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: UIButton) {
+        
         if (checkTextField() && emailCheck()) {
+            indicator.startAnimating()
             signUpApi(classNumber: signUpClassNumber.text!, email: signUpEmail.text!, name: signUpName.text!, password: signUpPassword.text!)
         } else {
             if !(checkTextField()) {
