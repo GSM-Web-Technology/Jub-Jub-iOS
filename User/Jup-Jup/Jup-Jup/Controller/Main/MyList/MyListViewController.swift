@@ -98,7 +98,6 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
         
         reason = self.model?.list[cellCount - indexPath.row].reason ?? ""
         presentSemiViewController(controller, options: options, completion: {
-            
             print("Completed!")
         }, dismissBlock: {
             print("Dismissed!")

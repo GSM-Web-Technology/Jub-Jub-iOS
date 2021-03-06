@@ -19,6 +19,7 @@
 		BD5053B125EE2A80002CE4E7 /* MyListReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5053B025EE2A80002CE4E7 /* MyListReasonViewController.swift */; };
 		BD5F66E025AC85D300F6BDC7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */; };
 		BD5F66E325AC85E100F6BDC7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F66E225AC85E100F6BDC7 /* LoginViewController.swift */; };
+		BD672F9325F3874900B56B49 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = BD672F9225F3874900B56B49 /* NVActivityIndicatorView */; };
 		BD79E8A525DEC035009DB301 /* MyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E8A425DEC035009DB301 /* MyListModel.swift */; };
 		BD9554F425A08F8300DB23E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9554F325A08F8300DB23E3 /* AppDelegate.swift */; };
 		BD9554F625A08F8300DB23E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9554F525A08F8300DB23E3 /* SceneDelegate.swift */; };
@@ -66,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDDDDDF325C421080022C635 /* Kingfisher in Frameworks */,
+				BD672F9325F3874900B56B49 /* NVActivityIndicatorView in Frameworks */,
 				BDDDDDEF25C420E20022C635 /* Alamofire in Frameworks */,
 				BD0D5E3925E6831500E1CE32 /* KeychainAccess in Frameworks */,
 				BD5053AE25EE2A04002CE4E7 /* SemiModalViewController in Frameworks */,
@@ -229,6 +231,7 @@
 				BDDDDDF225C421080022C635 /* Kingfisher */,
 				BD0D5E3825E6831500E1CE32 /* KeychainAccess */,
 				BD5053AD25EE2A04002CE4E7 /* SemiModalViewController */,
+				BD672F9225F3874900B56B49 /* NVActivityIndicatorView */,
 			);
 			productName = "Jup-Jup";
 			productReference = BD9554F025A08F8300DB23E3 /* Jup-Jup.app */;
@@ -262,6 +265,7 @@
 				BDDDDDF125C421080022C635 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				BD0D5E3725E6831500E1CE32 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				BD5053AC25EE2A04002CE4E7 /* XCRemoteSwiftPackageReference "SemiModalViewController" */,
+				BD672F9125F3874900B56B49 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = BD9554F125A08F8300DB23E3 /* Products */;
 			projectDirPath = "";
@@ -529,6 +533,14 @@
 				minimumVersion = 1.0.2;
 			};
 		};
+		BD672F9125F3874900B56B49 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 		BDDDDDED25C420E20022C635 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -557,6 +569,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD5053AC25EE2A04002CE4E7 /* XCRemoteSwiftPackageReference "SemiModalViewController" */;
 			productName = SemiModalViewController;
+		};
+		BD672F9225F3874900B56B49 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD672F9125F3874900B56B49 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
 		};
 		BDDDDDEE25C420E20022C635 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
