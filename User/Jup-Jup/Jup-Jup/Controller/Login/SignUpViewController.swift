@@ -67,7 +67,7 @@ class SignUpViewController: UIViewController {
     }
     
     func indicatorAutolayout() {
-        view.addSubview(indicatora)
+        view.addSubview(indicator)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.widthAnchor.constraint(equalToConstant: 50).isActive = true
         indicator.heightAnchor.constraint(equalToConstant: 50).isActive = true
