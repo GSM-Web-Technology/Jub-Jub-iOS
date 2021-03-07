@@ -9,12 +9,12 @@ import Foundation
 
 struct EquipmentModel: Codable {
     let code: Int
-    let list: [List]
+    let list: [EquipmentList]
     let msg: String
     let success: Bool
 }
 
-struct List: Codable {
+struct EquipmentList: Codable {
     let content: String
     let count: Int
     let img_equipment: String
