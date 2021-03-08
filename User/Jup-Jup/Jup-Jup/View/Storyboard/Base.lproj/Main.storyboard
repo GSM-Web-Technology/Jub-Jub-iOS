@@ -224,21 +224,48 @@
             </objects>
             <point key="canvasLocation" x="2908.6956521739135" y="2209.8214285714284"/>
         </scene>
-        <!--View Controller-->
+        <!--Notice Content View Controller-->
         <scene sceneID="fRa-f0-6Tc">
             <objects>
-                <viewController id="beA-o1-Mf4" sceneMemberID="viewController">
+                <viewController id="beA-o1-Mf4" customClass="NoticeContentViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3q2-Ae-uCs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7b-ea-Emy">
+                                <rect key="frame" x="20" y="140" width="374" height="392"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0Y-fF-a1B">
+                                        <rect key="frame" x="0.0" y="9" width="374" height="374"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="392" id="tIV-W4-TQF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KM3-SO-aGZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P7b-ea-Emy" firstAttribute="leading" secondItem="KM3-SO-aGZ" secondAttribute="leading" constant="20" id="587-in-BOq"/>
+                            <constraint firstItem="KM3-SO-aGZ" firstAttribute="trailing" secondItem="P7b-ea-Emy" secondAttribute="trailing" constant="20" id="8u0-IE-6J9"/>
+                            <constraint firstItem="P7b-ea-Emy" firstAttribute="top" secondItem="KM3-SO-aGZ" secondAttribute="top" id="iBC-Gb-NrD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="50Q-pF-m8c"/>
+                    <connections>
+                        <outlet property="noticeContent" destination="Y0Y-fF-a1B" id="yXW-aw-A3m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FcP-Mb-q0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3851" y="2210"/>
+            <point key="canvasLocation" x="3850.7246376811595" y="2209.8214285714284"/>
         </scene>
         <!--홈-->
         <scene sceneID="txr-E1-3dq">

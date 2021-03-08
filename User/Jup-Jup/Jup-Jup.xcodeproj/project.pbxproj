@@ -30,6 +30,7 @@
 		BD95550025A08F8400DB23E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9554FE25A08F8400DB23E3 /* LaunchScreen.storyboard */; };
 		BD9F78DF25CBCA850053852A /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9F78DE25CBCA850053852A /* LogInModel.swift */; };
 		BD9F78E325CBE4320053852A /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9F78E225CBE4320053852A /* EquipmentModel.swift */; };
+		BDAC287225F5B2A80047DFF8 /* NoticeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC287125F5B2A80047DFF8 /* NoticeContentViewController.swift */; };
 		BDDDDDEF25C420E20022C635 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDEE25C420E20022C635 /* Alamofire */; };
 		BDDDDDF325C421080022C635 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDF225C421080022C635 /* Kingfisher */; };
 		BDE6798B25E2B7C70086168B /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE6798A25E2B7C70086168B /* KeychainManager.swift */; };
@@ -60,6 +61,7 @@
 		BD95550125A08F8400DB23E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD9F78DE25CBCA850053852A /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
 		BD9F78E225CBE4320053852A /* EquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentModel.swift; sourceTree = "<group>"; };
+		BDAC287125F5B2A80047DFF8 /* NoticeContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeContentViewController.swift; sourceTree = "<group>"; };
 		BDE6798A25E2B7C70086168B /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		BDEB1F0A25A87B4B00D84ADC /* HomeEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEquipmentViewController.swift; sourceTree = "<group>"; };
 		BDEB1F0E25A88A1C00D84ADC /* MyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				BD41251C25A7465700264EC2 /* MyPageViewController.swift */,
 				BD0202D625F4D0EC003F2A76 /* NoticeViewController.swift */,
 				BD0202D925F4D111003F2A76 /* NoticeTableViewCell.swift */,
+				BDAC287125F5B2A80047DFF8 /* NoticeContentViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				BD41251725A7460D00264EC2 /* HomeViewController.swift in Sources */,
 				BD5053B125EE2A80002CE4E7 /* MyListReasonViewController.swift in Sources */,
 				BD0202D725F4D0EC003F2A76 /* NoticeViewController.swift in Sources */,
+				BDAC287225F5B2A80047DFF8 /* NoticeContentViewController.swift in Sources */,
 				BD79E8A525DEC035009DB301 /* MyListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

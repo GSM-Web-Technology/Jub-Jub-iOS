@@ -52,5 +52,10 @@ extension NoticeViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellCount = (model?.list.count)! - 1
+        noticeTitleData = model?.list[cellCount - indexPath.row].title ?? ""
+        noticeContentData = model?.list[cellCount - indexPath.row].content ?? ""
+    }
     
 }
