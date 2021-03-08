@@ -11,7 +11,7 @@ import Kingfisher
 
 var titleName: String?
 var content: String?
-var imgURL: URL?
+var imgURL: String?
 var count: Int?
 
 class HomeEquipmentViewController: UIViewController {
@@ -53,7 +53,7 @@ class HomeEquipmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = titleName
-        imageView.kf.setImage(with: imgURL)
+        imageView.kf.setImage(with: URL(string: imgURL ?? ""))
     }
     
     @IBAction func countStepper(_ sender: UIStepper) {

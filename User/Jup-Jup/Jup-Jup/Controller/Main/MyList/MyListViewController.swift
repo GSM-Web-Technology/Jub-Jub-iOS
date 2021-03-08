@@ -86,12 +86,13 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyListTableViewCell", for: indexPath) as! MyListTableViewCell
         let cellCount = (model?.list.count)! - 1
-        let url = URL(string: model?.list[cellCount - indexPath.row].equipment.img_equipment ?? "")
+        let url = model?.list[cellCount - indexPath.row].equipment.img_equipment ?? ""
+        let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         cell.myListTitleName.text = model?.list[cellCount - indexPath.row].equipment.name ?? ""
         cell.myListSubName.text = model?.list[cellCount - indexPath.row].equipment.content ?? ""
         cell.myListCount.text = "대여 수량: \(model?.list[cellCount - indexPath.row].amount ?? 0)개"
-        cell.myListImageView.kf.setImage(with: url)
+        cell.myListImageView.kf.setImage(with: URL(string: encodingURL))
         
         switch model?.list[cellCount - indexPath.row].equipmentEnum {
         case "ROLE_Waiting":

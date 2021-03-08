@@ -140,14 +140,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.homeTitleName.text = searchModel?.data.name ?? ""
             cell.homeSubName.text = searchModel?.data.content ?? ""
             cell.homeCount.text = "수량: \(searchModel?.data.count ?? 0)개"
-            let url = URL(string: searchModel?.data.img_equipmentLocation ?? "")
-            cell.homeImageView.kf.setImage(with: url)
+            let url = searchModel?.data.img_equipmentLocation ?? ""
+            let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            cell.homeImageView.kf.setImage(with: URL(string: encodingURL))
         } else {
             cell.homeTitleName.text = model?.list[cellCount - indexPath.row].name ?? ""
             cell.homeSubName.text = model?.list[cellCount - indexPath.row].content ?? ""
             cell.homeCount.text = "수량: \(model?.list[cellCount - indexPath.row].count ?? 0)개"
-            let url = URL(string: model?.list[cellCount - indexPath.row].img_equipment ?? "")
-            cell.homeImageView.kf.setImage(with: url)
+            let url = model?.list[cellCount - indexPath.row].img_equipment ?? ""
+            let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            cell.homeImageView.kf.setImage(with: URL(string: encodingURL))
         }
         return cell
     }
@@ -157,13 +159,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if self.isFiltering {
             titleName = searchModel?.data.name ?? ""
             count = searchModel?.data.count ?? 0
-            let url = URL(string: searchModel?.data.img_equipmentLocation ?? "")
-            imgURL = url
+            let url = searchModel?.data.img_equipmentLocation ?? ""
+            let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            imgURL = encodingURL
         } else {
             titleName = model?.list[cellCount - indexPath.row].name ?? ""
             count = model?.list[cellCount - indexPath.row].count ?? 0
-            let url = URL(string: model?.list[cellCount - indexPath.row].img_equipment ?? "")
-            imgURL = url
+            let url = model?.list[cellCount - indexPath.row].img_equipment ?? ""
+            let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            imgURL = encodingURL
         }
     }
 }
