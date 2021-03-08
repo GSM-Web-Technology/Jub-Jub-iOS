@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0156BB25F6380700C81746 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = BD0156BA25F6380700C81746 /* KeychainAccess */; };
+		BD0156BF25F63A8000C81746 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = BD0156BE25F63A8000C81746 /* NVActivityIndicatorView */; };
 		BD1F46CC25E15C55001D4868 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BD1F46CB25E15C55001D4868 /* Alamofire */; };
 		BD1F46D025E15CCE001D4868 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BD1F46CF25E15CCE001D4868 /* Kingfisher */; };
 		BD1F46D925E15EAE001D4868 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F46D825E15EAE001D4868 /* HomeViewController.swift */; };
@@ -49,8 +51,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD0156BF25F63A8000C81746 /* NVActivityIndicatorView in Frameworks */,
 				BD1F46D025E15CCE001D4868 /* Kingfisher in Frameworks */,
 				BD1F46CC25E15C55001D4868 /* Alamofire in Frameworks */,
+				BD0156BB25F6380700C81746 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +190,8 @@
 			packageProductDependencies = (
 				BD1F46CB25E15C55001D4868 /* Alamofire */,
 				BD1F46CF25E15CCE001D4868 /* Kingfisher */,
+				BD0156BA25F6380700C81746 /* KeychainAccess */,
+				BD0156BE25F63A8000C81746 /* NVActivityIndicatorView */,
 			);
 			productName = JupJup_admin;
 			productReference = BD29574F25D806BC006764E1 /* JupJup_admin.app */;
@@ -217,6 +223,8 @@
 			packageReferences = (
 				BD1F46CA25E15C55001D4868 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				BD1F46CE25E15CCE001D4868 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				BD0156B925F6380700C81746 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				BD0156BD25F63A8000C81746 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = BD29575025D806BC006764E1 /* Products */;
 			projectDirPath = "";
@@ -461,6 +469,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BD0156B925F6380700C81746 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.2;
+			};
+		};
+		BD0156BD25F63A8000C81746 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 		BD1F46CA25E15C55001D4868 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -480,6 +504,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BD0156BA25F6380700C81746 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD0156B925F6380700C81746 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		BD0156BE25F63A8000C81746 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD0156BD25F63A8000C81746 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
 		BD1F46CB25E15C55001D4868 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BD1F46CA25E15C55001D4868 /* XCRemoteSwiftPackageReference "Alamofire" */;
