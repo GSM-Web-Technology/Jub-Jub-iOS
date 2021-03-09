@@ -27,6 +27,9 @@
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logInButton:" destination="Bu7-Y1-DGg" eventType="touchUpInside" id="4ok-PQ-aL5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JubJub_Admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afC-T7-4Yj">
                                 <rect key="frame" x="20" y="64" width="253" height="42"/>
@@ -105,6 +108,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logInBtn" destination="U5g-NL-YN2" id="984-kM-7Lo"/>
                         <outlet property="logInEmailTextField" destination="3de-yb-s4c" id="IvU-Gy-kMz"/>
                         <outlet property="logInPasswordTextField" destination="hhR-Ec-bA1" id="7yn-6E-5Ef"/>
                     </connections>

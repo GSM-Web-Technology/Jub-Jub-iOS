@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
             logInEmailTextField.delegate = self
         }
     }
+    
     @IBOutlet weak var logInPasswordTextField: UITextField! {
         didSet {
             logInPasswordTextField.layer.cornerRadius = 5
@@ -24,9 +25,30 @@ class LoginViewController: UIViewController {
             logInPasswordTextField.delegate = self
         }
     }
+    
+    @IBOutlet weak var logInBtn: UIButton! {
+        didSet {
+            logInBtn.layer.cornerRadius = 5
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    @IBAction func logInButton(_ sender: UIButton) {
+        if (checkTextField()) {
+            apiCall(email: logInEmailTextField.text!, password: logInPasswordTextField.text!)
+        } else {
+            loginFailAlert(messages: "빈칸을 모두 채워주세요.")
+        }
+    }
+    
+    func checkTextField() -> Bool {
+        if (logInEmailTextField.text == "") || (logInPasswordTextField.text == "") {
+            return false
+        }
+        return true
     }
     
     func goMainPage(){
@@ -54,8 +76,8 @@ class LoginViewController: UIViewController {
                                     KeychainManager.saveToken(token: token)
                                 }
                             }
-                            KeychainManager.saveEmail(email: self.logInEmail.text!)
-                            KeychainManager.savePassword(password: self.logInPassword.text!)
+                            KeychainManager.saveEmail(email: self.logInEmailTextField.text!)
+                            KeychainManager.savePassword(password: self.logInPasswordTextField.text!)
                             self.loginSucessAlert()
                         case -1001:
                             self.loginFailAlert(messages: "계정이 존재하지 않거나 이메일 또는 비밀번호가 정확하지 않습니다.")
@@ -93,5 +115,13 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        logInEmailTextField.resignFirstResponder()
+        logInPasswordTextField.resignFirstResponder()
+        
+        return true
+    }
 }
