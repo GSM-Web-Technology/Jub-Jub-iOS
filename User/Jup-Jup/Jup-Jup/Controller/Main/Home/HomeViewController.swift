@@ -99,8 +99,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    func searchApiCall(word: String) {
-        let URL = "http://15.165.97.179:8080/v2/equipment/\(word)"
+    func searchApiCall(name: String) {
+        let URL = "http://15.165.97.179:8080/v2/equipment/findname/\(name)"
         let encodingURL = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let token = KeychainManager.getToken()
         AF.request(encodingURL, method: .get, headers: ["Authorization": token]).responseData(completionHandler: { data in
@@ -174,6 +174,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        searchApiCall(word: searchController.searchBar.text!)
+        searchApiCall(name: searchController.searchBar.text!)
     }
 }
