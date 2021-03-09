@@ -136,6 +136,9 @@
                                 <state key="normal" title="회원가입">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpButton:" destination="kzx-DH-vrN" eventType="touchUpInside" id="Uzh-hX-eeW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JubJub_Admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bA-nT-2y7">
                                 <rect key="frame" x="20" y="64" width="250" height="42"/>
@@ -211,6 +214,9 @@
                                 <state key="normal" title="뒤로">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButton:" destination="kzx-DH-vrN" eventType="touchUpInside" id="Sbh-38-ZfQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JQY-9J-I1K"/>
@@ -242,6 +248,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uHo-iW-xLZ"/>
+                    <connections>
+                        <outlet property="backBtn" destination="osa-Dq-gOL" id="wY9-Dt-ySw"/>
+                        <outlet property="signUpBtn" destination="ING-jL-3hW" id="Otn-O4-NWd"/>
+                        <outlet property="signUpClassNumber" destination="9fe-yV-O1V" id="eXZ-2M-dw2"/>
+                        <outlet property="signUpEmail" destination="N4R-2Y-2yq" id="7un-kM-liL"/>
+                        <outlet property="signUpName" destination="s0b-1w-cLU" id="Bk6-65-FdL"/>
+                        <outlet property="signUpPassword" destination="CRz-ik-ycj" id="sTM-tI-vIp"/>
+                        <outlet property="signUpPasswordCheck" destination="5UE-Bh-tlQ" id="hJs-Ki-Vc5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WEU-cU-bfx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

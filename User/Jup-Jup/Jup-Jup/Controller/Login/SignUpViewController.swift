@@ -131,7 +131,7 @@ class SignUpViewController: UIViewController {
                             self.indicator.stopAnimating()
                             self.failAlert(messages: "이미 가입된 이메일입니다.")
                         default:
-                            return
+                            break
                         }
                     }
                 }
