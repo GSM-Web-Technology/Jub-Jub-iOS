@@ -15,7 +15,7 @@ class MyListViewController: UIViewController {
     
     var model: MyListModel?
     var refreshControl = UIRefreshControl()
-    let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 50, height: 50), type: .ballPulse, color: .black, padding: 0)
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 75, height: 75), type: .ballPulse, color: .black, padding: 0)
     
     @IBOutlet weak var myListTableView: UITableView! {
         didSet {

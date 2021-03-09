@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     var model: EquipmentModel?
     var searchModel: SearchModel?
     var refreshControl = UIRefreshControl()
-    let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 50, height: 50), type: .ballPulse, color: .black, padding: 0)
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 75, height: 75), type: .ballPulse, color: .black, padding: 0)
     
     @IBOutlet weak var homeTableView: UITableView! {
         didSet {

@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import NVActivityIndicatorView
 
 var titleName: String?
 var content: String?
@@ -16,6 +17,7 @@ var count: Int?
 
 class HomeEquipmentViewController: UIViewController {
     
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 75, height: 75), type: .ballPulse, color: .black, padding: 0)
     var rentalAmount = 1
 
     @IBOutlet weak var equipmentCount: UILabel! {
@@ -53,6 +55,7 @@ class HomeEquipmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = titleName
+        indicatorAutolayout()
         imageView.kf.setImage(with: URL(string: imgURL ?? ""))
     }
     
@@ -67,6 +70,15 @@ class HomeEquipmentViewController: UIViewController {
         } else {
             checkAlert(name: titleName!, count: rentalAmount)
         }
+    }
+    
+    func indicatorAutolayout() {
+        view.addSubview(indicator)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
     }
     
     func equipmentAllowAPI(amount: Int, reason: String, name: String) {
@@ -85,13 +97,16 @@ class HomeEquipmentViewController: UIViewController {
                     if let success = dic["success"] as? Bool {
                         switch success {
                         case true:
+                            self.indicator.stopAnimating()
                             self.successAlert()
                         case false:
+                            self.indicator.stopAnimating()
                             self.failAlert(message: "대여 실패!")
                         }
                     }
                 }
             case .failure(let e):
+                self.indicator.stopAnimating()
                 self.failAlert(message: "네트워크가 원활하지 않습니다.")
                 print(e.localizedDescription)
             }
@@ -111,6 +126,7 @@ class HomeEquipmentViewController: UIViewController {
     func checkAlert(name: String, count: Int) {
         let alert = UIAlertController(title: "\(name) \(count)개", message: "대여 신청하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (_) in
+            self.indicator.startAnimating()
             self.equipmentAllowAPI(amount: self.rentalAmount, reason: self.reasonTextView.text, name: titleName!)
         }
         let cancel = UIAlertAction(title: "취소", style: .destructive)
