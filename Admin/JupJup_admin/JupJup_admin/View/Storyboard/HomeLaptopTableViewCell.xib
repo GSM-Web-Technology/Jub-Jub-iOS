@@ -8,63 +8,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeLaptopTableViewCell" rowHeight="120" id="dVN-g3-BRa" customClass="HomeLaptopTableViewCell" customModule="JupJup_admin" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeLaptopTableViewCell" rowHeight="100" id="dVN-g3-BRa" customClass="HomeLaptopTableViewCell" customModule="JupJup_admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dVN-g3-BRa" id="ECo-j4-rYV">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.on.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jbx-6f-rLz">
-                        <rect key="frame" x="16" y="18" width="88" height="81"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="76" id="BgT-U8-sVN"/>
-                            <constraint firstAttribute="width" constant="88" id="GVh-91-aBg"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한성 노트북" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aus-jT-6Vc">
-                        <rect key="frame" x="121" y="11" width="263" height="29"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조주혁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuK-27-TqV">
-                        <rect key="frame" x="121" y="85" width="110" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3318" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQ9-9f-Mp4">
-                        <rect key="frame" x="121" y="50" width="110" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1기 노트북" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aus-jT-6Vc">
+                        <rect key="frame" x="20" y="30" width="263" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="rQ9-9f-Mp4" firstAttribute="leading" secondItem="jbx-6f-rLz" secondAttribute="trailing" constant="17" id="0Ed-JK-SGN"/>
-                    <constraint firstItem="rQ9-9f-Mp4" firstAttribute="top" secondItem="Aus-jT-6Vc" secondAttribute="bottom" constant="10" id="4Wn-pX-KGq"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Aus-jT-6Vc" secondAttribute="trailing" constant="10" id="ILM-18-1Bk"/>
-                    <constraint firstItem="jbx-6f-rLz" firstAttribute="top" secondItem="ECo-j4-rYV" secondAttribute="top" constant="20.5" id="Xfc-re-KhF"/>
-                    <constraint firstItem="Aus-jT-6Vc" firstAttribute="leading" secondItem="jbx-6f-rLz" secondAttribute="trailing" constant="17" id="Y17-g0-zTY"/>
-                    <constraint firstItem="cuK-27-TqV" firstAttribute="top" secondItem="rQ9-9f-Mp4" secondAttribute="bottom" constant="14" id="bhi-jV-sEn"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="cuK-27-TqV" secondAttribute="trailing" constant="163" id="fuG-Cb-LBG"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="rQ9-9f-Mp4" secondAttribute="trailing" constant="163" id="gfd-D6-gpO"/>
-                    <constraint firstItem="Aus-jT-6Vc" firstAttribute="top" secondItem="ECo-j4-rYV" secondAttribute="topMargin" id="kvA-vx-QSv"/>
-                    <constraint firstItem="jbx-6f-rLz" firstAttribute="leading" secondItem="ECo-j4-rYV" secondAttribute="leading" constant="16" id="xNW-qj-rgn"/>
-                    <constraint firstItem="cuK-27-TqV" firstAttribute="leading" secondItem="jbx-6f-rLz" secondAttribute="trailing" constant="17" id="ynw-Gw-QRm"/>
+                    <constraint firstAttribute="trailing" secondItem="Aus-jT-6Vc" secondAttribute="trailing" constant="131" id="0rJ-PP-PwO"/>
+                    <constraint firstItem="Aus-jT-6Vc" firstAttribute="top" secondItem="ECo-j4-rYV" secondAttribute="top" constant="30" id="GCC-DY-DQm"/>
+                    <constraint firstItem="Aus-jT-6Vc" firstAttribute="leading" secondItem="ECo-j4-rYV" secondAttribute="leading" constant="20" id="Gge-yg-XFO"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="laotopClassNumber" destination="rQ9-9f-Mp4" id="8gV-Re-2vf"/>
-                <outlet property="laptopImage" destination="jbx-6f-rLz" id="0tC-2n-hcU"/>
-                <outlet property="laptopName" destination="Aus-jT-6Vc" id="Uav-20-zmL"/>
-                <outlet property="laptopStudentName" destination="cuK-27-TqV" id="BuD-Pj-EnJ"/>
+                <outlet property="laptopSpecName" destination="Aus-jT-6Vc" id="IlS-bD-pEI"/>
             </connections>
-            <point key="canvasLocation" x="251" y="123"/>
+            <point key="canvasLocation" x="250.72463768115944" y="115.84821428571428"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
-    </resources>
 </document>

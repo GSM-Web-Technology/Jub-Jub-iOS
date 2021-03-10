@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AllowListViewController: UIViewController {
 
@@ -21,6 +22,14 @@ class AllowListViewController: UIViewController {
         
     }
     
+    func allowListApiCall() {
+        let URL = "http://15.165.97.179:8080/v2/admin/applyview"
+        let token = KeychainManager.getToken()
+        AF.request(URL, method: .get, headers: ["Authorization": token]).responseData { (data) in
+            guard let data = data.data else { return }
+            
+        }
+    }
 
 }
 

@@ -15,4 +15,19 @@ struct AllowListModel: Codable {
 struct AllowList: Codable {
     let amount: Int
     let reason: String
+    let equipmentEnum: String
+    let equipment: AllowListEquipment
+    let admin: AllowListAdmin
+}
+
+struct AllowListEquipment: Codable {
+    let name: String
+    let content: String
+    let img_equipment: String
+}
+
+struct AllowListAdmin: Codable {
+    let email: String
+    let classNumber: String
+    let name: String
 }

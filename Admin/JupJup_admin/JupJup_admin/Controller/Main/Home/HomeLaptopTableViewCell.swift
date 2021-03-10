@@ -8,11 +8,9 @@
 import UIKit
 
 class HomeLaptopTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var laptopImage: UIImageView!
-    @IBOutlet weak var laptopName: UILabel!
-    @IBOutlet weak var laotopClassNumber: UILabel!
-    @IBOutlet weak var laptopStudentName: UILabel!
+    
+    
+    @IBOutlet weak var laptopSpecName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         

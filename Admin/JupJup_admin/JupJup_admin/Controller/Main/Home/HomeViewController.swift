@@ -57,6 +57,7 @@ class HomeViewController: UIViewController {
             guard let data = data.data else { return }
             self.equipmentModel = try? JSONDecoder().decode(EquipmentModel.self, from: data)
             self.homeTableView.reloadData()
+            print(data)
         }
     }
     
@@ -68,6 +69,7 @@ class HomeViewController: UIViewController {
             guard let data = data.data else { return }
             self.searchModel = try? JSONDecoder().decode(SearchModel.self, from: data)
             self.homeTableView.reloadData()
+            print(data)
         }
     }
     
