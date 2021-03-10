@@ -265,7 +265,7 @@
         <!--승인 대기-->
         <scene sceneID="bXx-e3-KAh">
             <objects>
-                <viewController id="ZvE-9E-ZXe" sceneMemberID="viewController">
+                <viewController id="ZvE-9E-ZXe" customClass="AllowListViewController" customModule="JupJup_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MHZ-N8-LjL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -274,7 +274,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="120" id="1qj-xb-HN8" customClass="HomeTableViewCell" customModule="JupJup_admin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllowListViewController" rowHeight="120" id="1qj-xb-HN8" customClass="AllowListTableViewCell" customModule="JupJup_admin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1qj-xb-HN8" id="d8h-8a-7EE">
@@ -322,10 +322,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="homeCount" destination="QMw-hs-cFO" id="mLR-70-boD"/>
-                                            <outlet property="homeImageView" destination="Mft-kS-a4h" id="DuN-Hd-npV"/>
-                                            <outlet property="homeSubName" destination="4RD-ai-5Al" id="lgS-Q1-GVz"/>
-                                            <outlet property="homeTitleName" destination="cem-Em-7Af" id="uee-Sx-cAR"/>
+                                            <outlet property="allowListContent" destination="4RD-ai-5Al" id="mg8-uP-QP9"/>
+                                            <outlet property="allowListCount" destination="QMw-hs-cFO" id="gZl-rf-oZ9"/>
+                                            <outlet property="allowListImage" destination="Mft-kS-a4h" id="cw0-0B-tIe"/>
+                                            <outlet property="allowListName" destination="cem-Em-7Af" id="GkW-MP-mlL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -341,6 +341,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="승인 대기" id="Grn-Hh-ote"/>
+                    <connections>
+                        <outlet property="allowListTableView" destination="Num-Do-w4G" id="ogu-en-VsP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSy-Yg-BJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -453,30 +456,92 @@
         <!--마이페이지-->
         <scene sceneID="xug-dL-erN">
             <objects>
-                <viewController id="h7K-jL-rBV" sceneMemberID="viewController">
+                <viewController id="h7K-jL-rBV" customClass="MyPageViewController" customModule="JupJup_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RmS-de-VeV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VJS-GK-Bgw">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0d-or-ldX">
+                                <rect key="frame" x="0.0" y="140" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4jt-8y-0pf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="공지사항">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="215-RX-Cpm">
+                                <rect key="frame" x="0.0" y="190" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5Wb-ai-QEC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="기자재 등록">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYy-6i-Hg0">
+                                <rect key="frame" x="0.0" y="240" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oH3-ka-Ffx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="노트북 등록">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRG-Dd-Zs0">
+                                <rect key="frame" x="0.0" y="290" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8dr-t9-N9E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="노트북 사양 등록">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDj-QO-yhn">
+                                <rect key="frame" x="0.0" y="340" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wUI-1n-5fY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="로그아웃">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d8C-Ha-NlU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VJS-GK-Bgw" firstAttribute="top" secondItem="d8C-Ha-NlU" secondAttribute="top" id="5PS-Kg-jx4"/>
-                            <constraint firstItem="d8C-Ha-NlU" firstAttribute="bottom" secondItem="VJS-GK-Bgw" secondAttribute="bottom" id="dbk-NV-zQR"/>
-                            <constraint firstItem="d8C-Ha-NlU" firstAttribute="trailing" secondItem="VJS-GK-Bgw" secondAttribute="trailing" id="iUw-p5-VTC"/>
-                            <constraint firstItem="VJS-GK-Bgw" firstAttribute="leading" secondItem="d8C-Ha-NlU" secondAttribute="leading" id="qr5-tG-j7Z"/>
+                            <constraint firstItem="hDj-QO-yhn" firstAttribute="top" secondItem="cRG-Dd-Zs0" secondAttribute="bottom" id="1ld-Lm-UVY"/>
+                            <constraint firstItem="s0d-or-ldX" firstAttribute="trailing" secondItem="d8C-Ha-NlU" secondAttribute="trailing" id="3cY-iG-fff"/>
+                            <constraint firstItem="cRG-Dd-Zs0" firstAttribute="leading" secondItem="d8C-Ha-NlU" secondAttribute="leading" id="DpA-Rk-F6E"/>
+                            <constraint firstItem="hDj-QO-yhn" firstAttribute="trailing" secondItem="d8C-Ha-NlU" secondAttribute="trailing" id="HVA-3x-ceM"/>
+                            <constraint firstItem="iYy-6i-Hg0" firstAttribute="top" secondItem="215-RX-Cpm" secondAttribute="bottom" id="JwT-MI-g8c"/>
+                            <constraint firstItem="cRG-Dd-Zs0" firstAttribute="top" secondItem="iYy-6i-Hg0" secondAttribute="bottom" id="SWc-eK-2HD"/>
+                            <constraint firstItem="s0d-or-ldX" firstAttribute="top" secondItem="d8C-Ha-NlU" secondAttribute="top" id="Vca-Hn-s98"/>
+                            <constraint firstItem="s0d-or-ldX" firstAttribute="leading" secondItem="d8C-Ha-NlU" secondAttribute="leading" id="Xed-E0-Ao1"/>
+                            <constraint firstItem="hDj-QO-yhn" firstAttribute="leading" secondItem="d8C-Ha-NlU" secondAttribute="leading" id="YdC-hK-abO"/>
+                            <constraint firstItem="iYy-6i-Hg0" firstAttribute="trailing" secondItem="d8C-Ha-NlU" secondAttribute="trailing" id="Z9g-VA-vst"/>
+                            <constraint firstItem="215-RX-Cpm" firstAttribute="top" secondItem="s0d-or-ldX" secondAttribute="bottom" id="aCF-7I-e3y"/>
+                            <constraint firstItem="cRG-Dd-Zs0" firstAttribute="trailing" secondItem="d8C-Ha-NlU" secondAttribute="trailing" id="fZP-cd-7dv"/>
+                            <constraint firstItem="iYy-6i-Hg0" firstAttribute="leading" secondItem="d8C-Ha-NlU" secondAttribute="leading" id="l9S-B4-Toy"/>
+                            <constraint firstItem="215-RX-Cpm" firstAttribute="leading" secondItem="d8C-Ha-NlU" secondAttribute="leading" id="pR1-v5-LVg"/>
+                            <constraint firstItem="215-RX-Cpm" firstAttribute="trailing" secondItem="d8C-Ha-NlU" secondAttribute="trailing" id="pq1-kU-JyD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="마이페이지" id="DzG-cY-7YT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0r-fA-mTr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2441" y="2219"/>
+            <point key="canvasLocation" x="2439.130434782609" y="2218.5267857142858"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="MaJ-ej-gVY">
