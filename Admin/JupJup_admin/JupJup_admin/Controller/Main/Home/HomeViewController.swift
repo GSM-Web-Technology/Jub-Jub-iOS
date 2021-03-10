@@ -13,7 +13,7 @@ var menuSelected = true
 
 class HomeViewController: UIViewController {
     
-    var model: EquipmentModel?
+    var equipmentModel: EquipmentModel?
     var searchModel: SearchModel?
 
     @IBOutlet weak var homeTableView: UITableView! {
@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        apiCall()
+        equipmentApiCall()
     }
     
     @IBAction func menuSegmentedControl(_ sender: UISegmentedControl) {
@@ -50,12 +50,12 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func apiCall() {
+    func equipmentApiCall() {
         let URL = "http://15.165.97.179:8080/v2/equipment/"
         let token = KeychainManager.getToken()
         AF.request(URL, method: .get, headers: ["Authorization": token]).responseData { (data) in
             guard let data = data.data else { return }
-            self.model = try? JSONDecoder().decode(EquipmentModel.self, from: data)
+            self.equipmentModel = try? JSONDecoder().decode(EquipmentModel.self, from: data)
             self.homeTableView.reloadData()
         }
     }
@@ -103,26 +103,26 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if (isFiltering) {
             return self.searchModel?.data.cellCount ?? 0
         } else {
-            return self.model?.list.count ?? 0
+            return self.equipmentModel?.list.count ?? 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellCount = (model?.list.count)! - 1
+        let cellCount = (equipmentModel?.list.count)! - 1
         if menuSelected == true {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeEquipmentTableViewCell", for: indexPath) as! HomeEquipmentTableViewCell
             if (isFiltering) {
                 cell.equipmentName.text = searchModel?.data.name ?? ""
                 cell.equipmentContent.text = searchModel?.data.content ?? ""
-                cell.equipmentCount.text = "수량: \(searchModel?.data.count ?? 0)"
+                cell.equipmentCount.text = "수량: \(searchModel?.data.count ?? 0)개"
                 let url = searchModel?.data.img_equipmentLocation ?? ""
                 let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
                 cell.equipmentImage.kf.setImage(with: URL(string: encodingURL))
             } else {
-                cell.equipmentName.text = model?.list[cellCount - indexPath.row].name ?? ""
-                cell.equipmentContent.text = model?.list[cellCount - indexPath.row].content ?? ""
-                cell.equipmentCount.text = "수량: \(model?.list[cellCount - indexPath.row].count ?? 0)"
-                let url = model?.list[cellCount - indexPath.row].img_equipment ?? ""
+                cell.equipmentName.text = equipmentModel?.list[cellCount - indexPath.row].name ?? ""
+                cell.equipmentContent.text = equipmentModel?.list[cellCount - indexPath.row].content ?? ""
+                cell.equipmentCount.text = "수량: \(equipmentModel?.list[cellCount - indexPath.row].count ?? 0)개"
+                let url = equipmentModel?.list[cellCount - indexPath.row].img_equipment ?? ""
                 let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
                 cell.equipmentImage.kf.setImage(with: URL(string: encodingURL))
             }
