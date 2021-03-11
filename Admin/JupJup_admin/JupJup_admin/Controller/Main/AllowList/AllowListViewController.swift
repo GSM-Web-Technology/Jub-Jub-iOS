@@ -9,6 +9,8 @@ import UIKit
 import Alamofire
 
 class AllowListViewController: UIViewController {
+    
+    var allowListModel: AllowListModel?
 
     @IBOutlet weak var allowListTableView: UITableView! {
         didSet {
@@ -19,6 +21,7 @@ class AllowListViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        allowListApiCall()
         
     }
     
@@ -27,7 +30,9 @@ class AllowListViewController: UIViewController {
         let token = KeychainManager.getToken()
         AF.request(URL, method: .get, headers: ["Authorization": token]).responseData { (data) in
             guard let data = data.data else { return }
-            
+            self.allowListModel = try? JSONDecoder().decode(AllowListModel.self, from: data)
+            self.allowListTableView.reloadData()
+            print(data)
         }
     }
 
@@ -35,15 +40,24 @@ class AllowListViewController: UIViewController {
 
 extension AllowListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return allowListModel?.list.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllowListTableViewCell", for: indexPath) as! AllowListTableViewCell
-        
-        
+        let cellCount = (allowListModel?.list.count)! - 1
+        cell.allowListName.text = allowListModel?.list[cellCount - indexPath.row].equipment.name ?? ""
+        cell.allowListContent.text = allowListModel?.list[cellCount - indexPath.row].equipment.content ?? ""
+        cell.allowListCount.text = "수량: \(allowListModel?.list[cellCount - indexPath.row].amount ?? 0)개"
+        let url = allowListModel?.list[cellCount - indexPath.row].equipment.img_equipment ?? ""
+        let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        cell.allowListImage.kf.setImage(with: URL(string: encodingURL))
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     
     
