@@ -28,6 +28,7 @@
 		BD79E8A125DEB9A3009DB301 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E8A025DEB9A3009DB301 /* SignUpViewController.swift */; };
 		BD9ED7DE25F86F4500FFB253 /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ED7DD25F86F4500FFB253 /* EquipmentModel.swift */; };
 		BD9ED7E125F86F8300FFB253 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ED7E025F86F8300FFB253 /* SearchModel.swift */; };
+		BDAD444D25F9F4B500165C0E /* AllowListContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD444C25F9F4B500165C0E /* AllowListContentViewController.swift */; };
 		BDFE9C7E25EFA9090054D7F7 /* HomeEquipmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDFE9C7D25EFA9090054D7F7 /* HomeEquipmentTableViewCell.xib */; };
 		BDFE9C8325EFACCC0054D7F7 /* HomeLaptopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDFE9C8225EFACCC0054D7F7 /* HomeLaptopTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		BD79E8A025DEB9A3009DB301 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BD9ED7DD25F86F4500FFB253 /* EquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentModel.swift; sourceTree = "<group>"; };
 		BD9ED7E025F86F8300FFB253 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		BDAD444C25F9F4B500165C0E /* AllowListContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowListContentViewController.swift; sourceTree = "<group>"; };
 		BDFE9C7D25EFA9090054D7F7 /* HomeEquipmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeEquipmentTableViewCell.xib; sourceTree = "<group>"; };
 		BDFE9C8225EFACCC0054D7F7 /* HomeLaptopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeLaptopTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 			children = (
 				BD1F46DC25E15EBE001D4868 /* AllowListViewController.swift */,
 				BD5F564E25F8DA740001AEEF /* AllowListTableViewCell.swift */,
+				BDAD444C25F9F4B500165C0E /* AllowListContentViewController.swift */,
 			);
 			path = AllowList;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				BD29575525D806BC006764E1 /* SceneDelegate.swift in Sources */,
 				BD1F46E625E160DF001D4868 /* HomeLaptopTableViewCell.swift in Sources */,
 				BD5F564F25F8DA740001AEEF /* AllowListTableViewCell.swift in Sources */,
+				BDAD444D25F9F4B500165C0E /* AllowListContentViewController.swift in Sources */,
 				BD1F46E325E160AA001D4868 /* HomeEquipmentTableViewCell.swift in Sources */,
 				BD79E8A125DEB9A3009DB301 /* SignUpViewController.swift in Sources */,
 				BD3F26A125F65CD1007C9819 /* KeychainManager.swift in Sources */,

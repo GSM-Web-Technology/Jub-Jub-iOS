@@ -19,6 +19,7 @@ class AllowListViewController: UIViewController {
             allowListTableView.tableFooterView = UIView()
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         allowListApiCall()
