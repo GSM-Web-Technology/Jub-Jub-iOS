@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
             homeTableView.delegate = self
             homeTableView.dataSource = self
             homeTableView.tableFooterView = UIView()
+            homeTableView.separatorInset.left = 0
         }
     }
     
