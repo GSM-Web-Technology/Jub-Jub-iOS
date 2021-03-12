@@ -61,5 +61,9 @@ extension AllowListViewController: UITableViewDelegate, UITableViewDataSource {
         return 120
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellCount = (allowListModel?.list.count)! - 1
+        allowListContentTitle = allowListModel?.list[cellCount - indexPath.row].equipment.name ?? ""
+    }
     
 }
