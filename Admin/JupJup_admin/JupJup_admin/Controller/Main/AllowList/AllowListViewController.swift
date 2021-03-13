@@ -64,6 +64,12 @@ extension AllowListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellCount = (allowListModel?.list.count)! - 1
         allowListContentTitle = allowListModel?.list[cellCount - indexPath.row].equipment.name ?? ""
+        allowListContentStudentNameData = allowListModel?.list[cellCount - indexPath.row].admin.name ?? ""
+        allowListContentImageData = allowListModel?.list[cellCount - indexPath.row].equipment.img_equipment ?? ""
+        allowListContentReasonData = allowListModel?.list[cellCount - indexPath.row].reason ?? ""
+        allowListContentClassNumberData = allowListModel?.list[cellCount - indexPath.row].admin.classNumber ?? ""
+        allowListContentStudentEmailData = allowListModel?.list[cellCount - indexPath.row].admin.email ?? ""
+        
     }
     
 }
