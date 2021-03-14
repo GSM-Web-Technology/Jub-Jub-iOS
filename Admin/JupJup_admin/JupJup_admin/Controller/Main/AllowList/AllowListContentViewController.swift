@@ -22,6 +22,16 @@ class AllowListContentViewController: UIViewController {
     @IBOutlet weak var allowListContentClassNumber: UILabel!
     @IBOutlet weak var allowListContentStudentEmail: UILabel!
     @IBOutlet weak var allowListContentReason: UILabel!
+    @IBOutlet weak var rejectBtn: UIButton! {
+        didSet {
+            rejectBtn.layer.cornerRadius = 5
+        }
+    }
+    @IBOutlet weak var allowBtn: UIButton! {
+        didSet {
+            allowBtn.layer.cornerRadius = 5
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,5 +49,11 @@ class AllowListContentViewController: UIViewController {
         allowListContentStudentEmail.text = allowListContentStudentEmailData
         allowListContentReason.text = allowListContentReasonData
     }
+    
+    @IBAction func rejectButton(_ sender: Any) {
+    }
+    @IBAction func allowButton(_ sender: Any) {
+    }
+    
 
 }
