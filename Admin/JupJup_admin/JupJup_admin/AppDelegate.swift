@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Alamofire
+
+var loginError = false
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,8 +16,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if KeychainManager.keychain["email"] != nil {
+            signInApi(email: KeychainManager.keychain["email"]!, password: KeychainManager.keychain["password"]!)
+        }
+        sleep(3)
         return true
+    }
+    
+    func signInApi(email: String,password: String) {
+        let URL = "http://15.165.97.179:8080/v2/signin"
+        let PARAM: Parameters = [
+            "email": email,
+            "password": password
+        ]
+        AF.request(URL, method: .post, parameters: PARAM, encoding: JSONEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                if let dic = value as? NSDictionary {
+                    if let code = dic["code"] as? Int {
+                        switch code {
+                        case 0:
+                            if let allToken = dic["data"] as? NSDictionary {
+                                if let token = allToken["accessToken"] as? String {
+                                    print(token)
+                                    KeychainManager.saveToken(token: token)
+                                }
+                            }
+                        default:
+                            return
+                        }
+                    }
+                }
+            case .failure(let e):
+                loginError = true
+                print(e.localizedDescription)
+            }
+        }
     }
 
     // MARK: UISceneSession Lifecycle

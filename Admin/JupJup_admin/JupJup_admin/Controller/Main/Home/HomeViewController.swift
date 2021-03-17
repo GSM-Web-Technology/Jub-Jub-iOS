@@ -27,18 +27,25 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if check == true {
+            self.searchController()
+            equipmentApiCall()
+        }
 
         let equipmentNib = UINib(nibName: "HomeEquipmentTableViewCell", bundle: nil)
         let laptopNib = UINib(nibName: "HomeLaptopTableViewCell", bundle: nil)
         homeTableView.register(equipmentNib, forCellReuseIdentifier: "HomeEquipmentTableViewCell")
         homeTableView.register(laptopNib, forCellReuseIdentifier: "HomeLaptopTableViewCell")
         
-        self.searchController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        equipmentApiCall()
+        if check == false {
+            self.equipmentApiCall()
+            self.searchController()
+        }
     }
     
     @IBAction func menuSegmentedControl(_ sender: UISegmentedControl) {
