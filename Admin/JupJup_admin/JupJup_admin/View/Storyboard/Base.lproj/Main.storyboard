@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tUK-oJ-HLk">
             <objects>
-                <viewController id="Bu7-Y1-DGg" customClass="LoginViewController" customModule="JupJup_admin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bu7-Y1-DGg" customClass="LoginViewController" customModule="JupJup_admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SJC-Dk-5nq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -536,6 +536,9 @@
                                 <state key="normal" title="로그아웃">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signOutButton:" destination="h7K-jL-rBV" eventType="touchUpInside" id="DmU-3J-GU0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d8C-Ha-NlU"/>
