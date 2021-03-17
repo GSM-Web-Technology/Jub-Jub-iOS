@@ -18,6 +18,7 @@ struct AllowList: Codable {
     let equipmentEnum: String
     let equipment: AllowListEquipment
     let admin: AllowListAdmin
+    let eqa_Idx: Int
 }
 
 struct AllowListEquipment: Codable {

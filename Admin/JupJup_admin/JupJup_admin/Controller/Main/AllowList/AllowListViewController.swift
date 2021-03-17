@@ -69,6 +69,7 @@ extension AllowListViewController: UITableViewDelegate, UITableViewDataSource {
         allowListContentReasonData = allowListModel?.list[cellCount - indexPath.row].reason ?? ""
         allowListContentClassNumberData = allowListModel?.list[cellCount - indexPath.row].admin.classNumber ?? ""
         allowListContentStudentEmailData = allowListModel?.list[cellCount - indexPath.row].admin.email ?? ""
+        allowListContentEquipmentIndexData = allowListModel?.list[cellCount - indexPath.row].eqa_Idx ?? 0
         
     }
     

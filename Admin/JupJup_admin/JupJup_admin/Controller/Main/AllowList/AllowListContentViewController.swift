@@ -14,6 +14,7 @@ var allowListContentStudentNameData = ""
 var allowListContentClassNumberData = ""
 var allowListContentStudentEmailData = ""
 var allowListContentReasonData = ""
+var allowListContentEquipmentIndexData = 0
 
 class AllowListContentViewController: UIViewController {
 
@@ -48,6 +49,7 @@ class AllowListContentViewController: UIViewController {
         allowListContentClassNumber.text = allowListContentClassNumberData
         allowListContentStudentEmail.text = allowListContentStudentEmailData
         allowListContentReason.text = allowListContentReasonData
+        
     }
     
     @IBAction func rejectButton(_ sender: Any) {
