@@ -4,6 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>NotoSansKR-Light.otf</string>
+		<string>NotoSansKR-Bold.otf</string>
 		<string>Comfortaa-VariableFont_wght.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>

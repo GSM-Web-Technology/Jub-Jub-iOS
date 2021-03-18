@@ -18,11 +18,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     var refreshControl = UIRefreshControl()
     let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 75, height: 75), type: .ballPulse, color: .black, padding: 0)
     
-    @IBOutlet weak var homeTableView: UITableView! {
+    @IBOutlet weak var homeCollectionView: UICollectionView! {
         didSet {
-            homeTableView.delegate = self
-            homeTableView.dataSource = self
-            homeTableView.tableFooterView = UIView()
+            homeCollectionView.delegate = self
+            homeCollectionView.dataSource = self
         }
     }
     
@@ -34,7 +33,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             self.searchController()
             apiCall()
         }
-        homeTableView.refreshControl = refreshControl
+        homeCollectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
     }
@@ -49,7 +48,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func refresh() {
-        homeTableView.reloadData()
+        homeCollectionView.reloadData()
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -93,7 +92,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         AF.request(URL, headers: ["Authorization": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.model = try? JSONDecoder().decode(EquipmentModel.self, from: data)
-            self.homeTableView.reloadData()
+            self.homeCollectionView.reloadData()
             self.indicator.stopAnimating()
         })
     }
@@ -105,7 +104,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         AF.request(encodingURL, method: .get, headers: ["Authorization": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.searchModel = try? JSONDecoder().decode(SearchModel.self, from: data)
-            self.homeTableView.reloadData()
+            self.homeCollectionView.reloadData()
             print(data)
         })
     }
@@ -120,8 +119,17 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+
+extension HomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        searchApiCall(name: searchController.searchBar.text!)
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if (isFiltering) {
             return self.searchModel?.data.cellCount ?? 0
         } else {
@@ -129,32 +137,43 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
+        
+        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.backgroundColor = .white
+        
+        cell.layer.shadowColor = UIColor(red: 0.176, green: 0.341, blue: 0.627, alpha: 0.22).cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        cell.layer.shadowRadius = 8.0
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false
+        
         let cellCount = (model?.list.count)! - 1
         if self.isFiltering {
             cell.homeTitleName.text = searchModel?.data.name ?? ""
-            cell.homeSubName.text = searchModel?.data.content ?? ""
-            cell.homeCount.text = "수량: \(searchModel?.data.count ?? 0)개"
+            cell.homeContentName.text = searchModel?.data.content ?? ""
+            cell.homeAmount.text = "수량: \(searchModel?.data.count ?? 0)개"
             let url = searchModel?.data.img_equipmentLocation ?? ""
             let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             cell.homeImageView.kf.setImage(with: URL(string: encodingURL))
         } else {
             cell.homeTitleName.text = model?.list[cellCount - indexPath.row].name ?? ""
-            cell.homeSubName.text = model?.list[cellCount - indexPath.row].content ?? ""
-            cell.homeCount.text = "수량: \(model?.list[cellCount - indexPath.row].count ?? 0)개"
+            cell.homeContentName.text = model?.list[cellCount - indexPath.row].content ?? ""
+            cell.homeAmount.text = "수량: \(model?.list[cellCount - indexPath.row].count ?? 0)개"
             let url = model?.list[cellCount - indexPath.row].img_equipment ?? ""
             let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             cell.homeImageView.kf.setImage(with: URL(string: encodingURL))
         }
+        
+        
+        
         return cell
+        
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let cellCount = (model?.list.count)! - 1
         if self.isFiltering {
             titleName = searchModel?.data.name ?? ""
@@ -170,10 +189,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             imgURL = encodingURL
         }
     }
-}
-
-extension HomeViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        searchApiCall(name: searchController.searchBar.text!)
-    }
+    
+    
 }

@@ -22,6 +22,9 @@
 		BD5F66E025AC85D300F6BDC7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */; };
 		BD5F66E325AC85E100F6BDC7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F66E225AC85E100F6BDC7 /* LoginViewController.swift */; };
 		BD6235A42603188E00185C1B /* Comfortaa-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD6235A32603188A00185C1B /* Comfortaa-VariableFont_wght.ttf */; };
+		BD6235A8260368BF00185C1B /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6235A7260368BE00185C1B /* HomeCollectionViewCell.swift */; };
+		BD6235AB26036AB200185C1B /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD6235AA26036AAE00185C1B /* NotoSansKR-Bold.otf */; };
+		BD6235AE26036B4000185C1B /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD6235AD26036B4000185C1B /* NotoSansKR-Light.otf */; };
 		BD672F9325F3874900B56B49 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = BD672F9225F3874900B56B49 /* NVActivityIndicatorView */; };
 		BD79E8A525DEC035009DB301 /* MyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E8A425DEC035009DB301 /* MyListModel.swift */; };
 		BD9554F425A08F8300DB23E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9554F325A08F8300DB23E3 /* AppDelegate.swift */; };
@@ -53,6 +56,9 @@
 		BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BD5F66E225AC85E100F6BDC7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BD6235A32603188A00185C1B /* Comfortaa-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-VariableFont_wght.ttf"; path = "../../../../../../../Downloads/Comfortaa/Comfortaa-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		BD6235A7260368BE00185C1B /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		BD6235AA26036AAE00185C1B /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Bold.otf"; path = "../../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		BD6235AD26036B4000185C1B /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Light.otf"; path = "../../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		BD79E8A425DEC035009DB301 /* MyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListModel.swift; sourceTree = "<group>"; };
 		BD9554F025A08F8300DB23E3 /* Jup-Jup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jup-Jup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9554F325A08F8300DB23E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 				BD41251625A7460D00264EC2 /* HomeViewController.swift */,
 				BD41252025A75B7900264EC2 /* HomeTableViewCell.swift */,
 				BDEB1F0A25A87B4B00D84ADC /* HomeEquipmentViewController.swift */,
+				BD6235A7260368BE00185C1B /* HomeCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -164,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				BD6235A32603188A00185C1B /* Comfortaa-VariableFont_wght.ttf */,
+				BD6235AA26036AAE00185C1B /* NotoSansKR-Bold.otf */,
+				BD6235AD26036B4000185C1B /* NotoSansKR-Light.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -301,10 +310,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD6235AE26036B4000185C1B /* NotoSansKR-Light.otf in Resources */,
 				BD95550025A08F8400DB23E3 /* LaunchScreen.storyboard in Resources */,
 				BD9554FD25A08F8400DB23E3 /* Assets.xcassets in Resources */,
 				BD6235A42603188E00185C1B /* Comfortaa-VariableFont_wght.ttf in Resources */,
 				BD9554FB25A08F8300DB23E3 /* Main.storyboard in Resources */,
+				BD6235AB26036AB200185C1B /* NotoSansKR-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +343,7 @@
 				BD5F66E325AC85E100F6BDC7 /* LoginViewController.swift in Sources */,
 				BD0202DD25F4D1CE003F2A76 /* NoticeModel.swift in Sources */,
 				BD41251725A7460D00264EC2 /* HomeViewController.swift in Sources */,
+				BD6235A8260368BF00185C1B /* HomeCollectionViewCell.swift in Sources */,
 				BD5053B125EE2A80002CE4E7 /* MyListReasonViewController.swift in Sources */,
 				BD0202D725F4D0EC003F2A76 /* NoticeViewController.swift in Sources */,
 				BDAC287225F5B2A80047DFF8 /* NoticeContentViewController.swift in Sources */,
