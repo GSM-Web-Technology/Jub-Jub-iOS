@@ -116,6 +116,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.hidesSearchBarWhenScrolling = false
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "검색"
     }
 }
 
