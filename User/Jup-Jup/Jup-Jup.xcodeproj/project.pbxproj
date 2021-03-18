@@ -21,6 +21,7 @@
 		BD5053B125EE2A80002CE4E7 /* MyListReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5053B025EE2A80002CE4E7 /* MyListReasonViewController.swift */; };
 		BD5F66E025AC85D300F6BDC7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */; };
 		BD5F66E325AC85E100F6BDC7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F66E225AC85E100F6BDC7 /* LoginViewController.swift */; };
+		BD6235A42603188E00185C1B /* Comfortaa-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD6235A32603188A00185C1B /* Comfortaa-VariableFont_wght.ttf */; };
 		BD672F9325F3874900B56B49 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = BD672F9225F3874900B56B49 /* NVActivityIndicatorView */; };
 		BD79E8A525DEC035009DB301 /* MyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E8A425DEC035009DB301 /* MyListModel.swift */; };
 		BD9554F425A08F8300DB23E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9554F325A08F8300DB23E3 /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 		BD5053B025EE2A80002CE4E7 /* MyListReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListReasonViewController.swift; sourceTree = "<group>"; };
 		BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BD5F66E225AC85E100F6BDC7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BD6235A32603188A00185C1B /* Comfortaa-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-VariableFont_wght.ttf"; path = "../../../../../../../Downloads/Comfortaa/Comfortaa-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		BD79E8A425DEC035009DB301 /* MyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListModel.swift; sourceTree = "<group>"; };
 		BD9554F025A08F8300DB23E3 /* Jup-Jup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jup-Jup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9554F325A08F8300DB23E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
+		BD6235A22603187900185C1B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BD6235A32603188A00185C1B /* Comfortaa-VariableFont_wght.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		BD9554E725A08F8300DB23E3 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +190,7 @@
 			children = (
 				BD9554F325A08F8300DB23E3 /* AppDelegate.swift */,
 				BD9554F525A08F8300DB23E3 /* SceneDelegate.swift */,
+				BD6235A22603187900185C1B /* Font */,
 				BDE6798925E2B7AB0086168B /* Manager */,
 				BDCC75BB25ADEC8200CB70EB /* Model */,
 				BDCC75BC25ADEC9400CB70EB /* View */,
@@ -292,6 +303,7 @@
 			files = (
 				BD95550025A08F8400DB23E3 /* LaunchScreen.storyboard in Resources */,
 				BD9554FD25A08F8400DB23E3 /* Assets.xcassets in Resources */,
+				BD6235A42603188E00185C1B /* Comfortaa-VariableFont_wght.ttf in Resources */,
 				BD9554FB25A08F8300DB23E3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,23 +12,19 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var logInEmail: UITextField! {
         didSet {
-            logInEmail.layer.cornerRadius = 5
-            logInEmail.layer.borderWidth = 1
             logInEmail.delegate = self
         }
     }
     
     @IBOutlet weak var logInPassword: UITextField! {
         didSet {
-            logInPassword.layer.cornerRadius = 5
-            logInPassword.layer.borderWidth = 1
             logInPassword.delegate = self
         }
     }
     
     @IBOutlet weak var logInBtn: UIButton! {
         didSet {
-            logInBtn.layer.cornerRadius = 5
+            logInBtn.layer.cornerRadius = 10
         }
     }
     
