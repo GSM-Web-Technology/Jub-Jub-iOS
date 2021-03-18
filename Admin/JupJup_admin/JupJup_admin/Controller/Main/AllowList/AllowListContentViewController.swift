@@ -54,8 +54,8 @@ class AllowListContentViewController: UIViewController {
         
     }
     
-    func allowApiCall(eqa_Idx: Int) {
-        let URL = "http://15.165.97.179:8080/v2/admin/approved/\(eqa_Idx)"
+    func allowApiCall(eqa_Idx: Int, status: String) {
+        let URL = "http://15.165.97.179:8080/v2/admin/\(status)/\(eqa_Idx)"
         let token = KeychainManager.getToken()
         
         AF.request(URL, method: .put, headers: ["Authorization": token]).responseJSON { (response) in
@@ -67,7 +67,7 @@ class AllowListContentViewController: UIViewController {
                         case true:
                             self.successAlert(name: allowListContentTitle, amount: allowListContentEquipmentAmountData)
                         default:
-                            self.failAlert(message: "승인 실패하였습니다.")
+                            self.failAlert(message: "실패하였습니다.")
                         }
                     }
                 }
@@ -78,10 +78,10 @@ class AllowListContentViewController: UIViewController {
         }
     }
     
-    func checkAlert(name: String, amount: Int) {
-        let alert = UIAlertController(title: "\(name) \(amount)개", message: "승인하시겠습니까?", preferredStyle: .alert)
+    func checkAlert(name: String, amount: Int, message: String, status: String) {
+        let alert = UIAlertController(title: "\(name) \(amount)개", message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "확인", style: .default) { (_) in
-            self.allowApiCall(eqa_Idx: allowListContentEquipmentIndexData)
+            self.allowApiCall(eqa_Idx: allowListContentEquipmentIndexData, status: status)
         }
         let cancel = UIAlertAction(title: "취소", style: .destructive)
         alert.addAction(ok)
@@ -90,7 +90,7 @@ class AllowListContentViewController: UIViewController {
     }
     
     func successAlert(name: String, amount: Int) {
-        let alert = UIAlertController(title: "\(name) \(amount)개", message: "승인되었습니다.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "\(name) \(amount)개", message: "성공했습니다.", preferredStyle: .alert)
         let ok = UIAlertAction(title: "확인", style: .default) { (_) in
             self.navigationController?.popViewController(animated: true)
         }
@@ -99,16 +99,17 @@ class AllowListContentViewController: UIViewController {
     }
     
     func failAlert(message: String) {
-        let alert = UIAlertController(title: "승인 실패!", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "실패!!", message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "확인", style: .default)
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
     
     @IBAction func rejectButton(_ sender: Any) {
+        checkAlert(name: allowListContentTitle, amount: allowListContentEquipmentAmountData, message: "거절하시겠습니까?", status: "reject")
     }
     @IBAction func allowButton(_ sender: Any) {
-        checkAlert(name: allowListContentTitle, amount: allowListContentEquipmentAmountData)
+        checkAlert(name: allowListContentTitle, amount: allowListContentEquipmentAmountData, message: "승인하시겠습니까?", status: "approved")
     }
     
 
