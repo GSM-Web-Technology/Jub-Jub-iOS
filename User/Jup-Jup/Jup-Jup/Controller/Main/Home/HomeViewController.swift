@@ -70,7 +70,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
     }
-
     
     func failAlert() {
         let alert = UIAlertController(title: "네트워크가 원활하지 않습니다.", message: "네트워크 확인 후 다시 접속해주세요.", preferredStyle: UIAlertController.Style.alert)

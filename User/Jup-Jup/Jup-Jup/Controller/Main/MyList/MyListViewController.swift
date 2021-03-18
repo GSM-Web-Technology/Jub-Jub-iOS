@@ -24,6 +24,7 @@ class MyListViewController: UIViewController {
             myListTableView.tableFooterView = UIView()
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         indicatorAutolayout()
@@ -48,7 +49,6 @@ class MyListViewController: UIViewController {
                 self.refreshControl.endRefreshing()
                 self.apiCall()
             }
-            
         }
     }
     
@@ -125,6 +125,7 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let options: [SemiModalOption : Any] = [
             SemiModalOption.pushParentBack: false
@@ -142,7 +143,6 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
         }, dismissBlock: {
             print("Dismissed!")
         })
-        
     }
     
     
