@@ -115,6 +115,11 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
             cell.myListStatusLabel.backgroundColor = .white
             cell.myListStatusLabel.textColor = .black
             cell.myListStatusLabel.layer.borderWidth = 1
+        case "ROLE_Reject":
+            cell.myListStatusLabel.text = "거절"
+            cell.myListStatusLabel.backgroundColor = .white
+            cell.myListStatusLabel.textColor = .black
+            cell.myListStatusLabel.layer.borderWidth = 1
         default:
             break
         }
