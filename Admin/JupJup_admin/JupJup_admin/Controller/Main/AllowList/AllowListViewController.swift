@@ -22,8 +22,11 @@ class AllowListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         allowListApiCall()
-        
     }
     
     func allowListApiCall() {
@@ -70,6 +73,7 @@ extension AllowListViewController: UITableViewDelegate, UITableViewDataSource {
         allowListContentClassNumberData = allowListModel?.list[cellCount - indexPath.row].admin.classNumber ?? ""
         allowListContentStudentEmailData = allowListModel?.list[cellCount - indexPath.row].admin.email ?? ""
         allowListContentEquipmentIndexData = allowListModel?.list[cellCount - indexPath.row].eqa_Idx ?? 0
+        allowListContentEquipmentAmountData = allowListModel?.list[cellCount - indexPath.row].amount ?? 0
         
     }
     
