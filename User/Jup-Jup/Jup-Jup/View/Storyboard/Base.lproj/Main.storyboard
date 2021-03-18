@@ -115,7 +115,7 @@
                             <constraint firstItem="OJf-87-oQG" firstAttribute="leading" secondItem="bhf-gY-KSw" secondAttribute="leading" id="cIe-qB-VhE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="대여 목록" id="Vt4-qj-DZT"/>
+                    <navigationItem key="navigationItem" title="대여 목록" largeTitleDisplayMode="always" id="Vt4-qj-DZT"/>
                     <connections>
                         <outlet property="myListTableView" destination="vLJ-es-eIm" id="X0K-1V-Fsu"/>
                     </connections>
@@ -377,7 +377,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="kOz-Uc-k9e" secondAttribute="trailing" constant="-20" id="lFv-Vg-hWu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="JubJub" id="9SS-5I-CyN"/>
+                    <navigationItem key="navigationItem" title="JubJub" largeTitleDisplayMode="always" id="9SS-5I-CyN"/>
                     <connections>
                         <outlet property="homeTableView" destination="Qc0-8U-sNY" id="py1-6E-yfl"/>
                     </connections>
@@ -824,10 +824,14 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CeL-To-A5X" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Document" id="S94-xl-X3S"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x5Y-j1-8lQ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="x5Y-j1-8lQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular_Bold" family="Comfortaa" pointSize="40"/>
+                            <color key="textColor" name="Primary Color"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
