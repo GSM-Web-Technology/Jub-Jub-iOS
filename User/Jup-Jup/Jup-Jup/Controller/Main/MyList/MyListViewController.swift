@@ -17,11 +17,10 @@ class MyListViewController: UIViewController {
     var refreshControl = UIRefreshControl()
     let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 75, height: 75), type: .ballPulse, color: .black, padding: 0)
     
-    @IBOutlet weak var myListTableView: UITableView! {
+    @IBOutlet weak var myListCollectionView: UICollectionView! {
         didSet {
-            myListTableView.delegate = self
-            myListTableView.dataSource = self
-            myListTableView.tableFooterView = UIView()
+            myListCollectionView.delegate = self
+            myListCollectionView.dataSource = self
         }
     }
     
@@ -30,7 +29,7 @@ class MyListViewController: UIViewController {
         indicatorAutolayout()
         indicator.startAnimating()
         
-        myListTableView.refreshControl = refreshControl
+        myListCollectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
@@ -40,7 +39,7 @@ class MyListViewController: UIViewController {
     }
     
     @objc func refresh() {
-        myListTableView.reloadData()
+        myListCollectionView.reloadData()
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -67,66 +66,82 @@ class MyListViewController: UIViewController {
         AF.request(URL,method: .get, headers: ["Authorization": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.model = try? JSONDecoder().decode(MyListModel.self, from: data)
-            self.myListTableView.reloadData()
+            self.myListCollectionView.reloadData()
             self.indicator.stopAnimating()
             print(data)
         })
     }
 }
 
-extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension MyListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return self.model?.list.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyListTableViewCell", for: indexPath) as! MyListTableViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyListCollectionViewCell", for: indexPath) as! MyListCollectionViewCell
+        
+        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.backgroundColor = .white
+        
+        cell.layer.shadowColor = UIColor(red: 0.176, green: 0.341, blue: 0.627, alpha: 0.22).cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        cell.layer.shadowRadius = 8.0
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false
+        
+        cell.myListAllowStatus.layer.cornerRadius = 12
+        
         let cellCount = (model?.list.count)! - 1
         let url = model?.list[cellCount - indexPath.row].equipment.img_equipment ?? ""
         let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         cell.myListTitleName.text = model?.list[cellCount - indexPath.row].equipment.name ?? ""
-        cell.myListSubName.text = model?.list[cellCount - indexPath.row].equipment.content ?? ""
-        cell.myListCount.text = "대여 수량: \(model?.list[cellCount - indexPath.row].amount ?? 0)개"
+        cell.myListContent.text = model?.list[cellCount - indexPath.row].equipment.content ?? ""
         cell.myListImageView.kf.setImage(with: URL(string: encodingURL))
         
         switch model?.list[cellCount - indexPath.row].equipmentEnum {
         case "ROLE_Waiting":
-            cell.myListStatusLabel.text = "승인 대기"
-            cell.myListStatusLabel.backgroundColor = .yellow
-            cell.myListStatusLabel.textColor = .black
-            cell.myListStatusLabel.layer.borderWidth = 1
+            cell.myListAllowStatus.text = "승인 대기"
+            cell.myListAllowStatus.backgroundColor = .white
+            cell.myListAllowStatus.textColor = UIColor.init(named: "Return Color")
+            cell.myListAllowStatus.layer.borderWidth = 1
+            cell.myListAllowStatus.layer.borderColor = UIColor.init(named: "Return Color")?.cgColor
         case "ROLE_Accept":
-            cell.myListStatusLabel.text = "승인"
-            cell.myListStatusLabel.backgroundColor = .white
-            cell.myListStatusLabel.textColor = .black
-            cell.myListStatusLabel.layer.borderWidth = 1
+            cell.myListAllowStatus.text = "승인"
+            cell.myListAllowStatus.backgroundColor = .white
+            cell.myListAllowStatus.textColor = UIColor.init(named: "Approve Color")
+            cell.myListAllowStatus.layer.borderWidth = 1
+            cell.myListAllowStatus.layer.borderColor = UIColor.init(named: "Approve Color")?.cgColor
         case "ROLE_Rental":
-            cell.myListStatusLabel.text = "대여"
-            cell.myListStatusLabel.backgroundColor = .white
-            cell.myListStatusLabel.textColor = .black
-            cell.myListStatusLabel.layer.borderWidth = 1
+            cell.myListAllowStatus.text = "대여"
+            cell.myListAllowStatus.backgroundColor = .white
+            cell.myListAllowStatus.textColor = UIColor.init(named: "Allow Color")
+            cell.myListAllowStatus.layer.borderWidth = 1
+            cell.myListAllowStatus.layer.borderColor = UIColor.init(named: "Allow Color")?.cgColor
         case "ROLE_Return":
-            cell.myListStatusLabel.text = "반납"
-            cell.myListStatusLabel.backgroundColor = .white
-            cell.myListStatusLabel.textColor = .black
-            cell.myListStatusLabel.layer.borderWidth = 1
+            cell.myListAllowStatus.text = "반납"
+            cell.myListAllowStatus.backgroundColor = .white
+            cell.myListAllowStatus.textColor = UIColor.init(named: "Return Color")
+            cell.myListAllowStatus.layer.borderWidth = 1
+            cell.myListAllowStatus.layer.borderColor = UIColor.init(named: "Return Color")?.cgColor
         case "ROLE_Reject":
-            cell.myListStatusLabel.text = "거절"
-            cell.myListStatusLabel.backgroundColor = .white
-            cell.myListStatusLabel.textColor = .black
-            cell.myListStatusLabel.layer.borderWidth = 1
+            cell.myListAllowStatus.text = "거절"
+            cell.myListAllowStatus.backgroundColor = .white
+            cell.myListAllowStatus.textColor = UIColor.init(named: "Reject Color")
+            cell.myListAllowStatus.layer.borderWidth = 1
+            cell.myListAllowStatus.layer.borderColor = UIColor.init(named: "Reject Color")?.cgColor
         default:
             break
         }
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let options: [SemiModalOption : Any] = [
             SemiModalOption.pushParentBack: false
         ]

@@ -40,15 +40,15 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rRQ-PR-ZFJ">
                                 <rect key="frame" x="0.0" y="140" width="414" height="670"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="InO-1h-bIE">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="18" minimumInteritemSpacing="0.0" id="InO-1h-bIE">
+                                    <size key="itemSize" width="340" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCollectionViewCell" id="rZg-QY-Oy2" customClass="HomeCollectionViewCell" customModule="Jup_Jup" customModuleProvider="target">
-                                        <rect key="frame" x="37" y="0.0" width="340" height="100"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyListCollectionViewCell" id="rZg-QY-Oy2" customClass="MyListCollectionViewCell" customModule="Jup_Jup" customModuleProvider="target">
+                                        <rect key="frame" x="37" y="10" width="340" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ms7-Cs-9HW">
                                             <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
@@ -85,7 +85,7 @@
                                                         <constraint firstAttribute="width" constant="56" id="3fr-ub-oUa"/>
                                                         <constraint firstAttribute="height" constant="25" id="nxb-4V-TQp"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NotoSansKR-Light" family="Noto Sans KR" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansKR-Light" family="Noto Sans KR" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -105,10 +105,11 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="340" height="100"/>
                                         <connections>
-                                            <outlet property="homeAllowDate" destination="v6F-ls-6a8" id="jwN-Uz-8Um"/>
-                                            <outlet property="homeContentName" destination="xmN-8O-abM" id="2cS-CV-c5u"/>
-                                            <outlet property="homeImageView" destination="hzr-tk-uOs" id="Jap-xs-bhs"/>
-                                            <outlet property="homeTitleName" destination="uOb-5e-WOF" id="1SS-5o-rtA"/>
+                                            <outlet property="myListAllowDate" destination="v6F-ls-6a8" id="6TU-aE-sdg"/>
+                                            <outlet property="myListAllowStatus" destination="Pyj-mc-Jq0" id="wPF-cg-8G6"/>
+                                            <outlet property="myListContent" destination="xmN-8O-abM" id="xwe-Cq-5QN"/>
+                                            <outlet property="myListImageView" destination="hzr-tk-uOs" id="y18-88-qbg"/>
+                                            <outlet property="myListTitleName" destination="uOb-5e-WOF" id="My4-Vd-gTl"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -127,6 +128,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="대여 목록" largeTitleDisplayMode="always" id="Vt4-qj-DZT"/>
+                    <connections>
+                        <outlet property="myListCollectionView" destination="rRQ-PR-ZFJ" id="Q6L-23-ZnN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hV-dJ-sNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1013,7 +1017,7 @@
         <image name="Profile" width="24" height="24"/>
         <image name="square.and.arrow.up.on.square.fill" catalog="system" width="117" height="128"/>
         <namedColor name="Primary Color">
-            <color red="0.1764705882352941" green="0.3411764705882353" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.17599999904632568" green="0.34099999070167542" blue="0.62699997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

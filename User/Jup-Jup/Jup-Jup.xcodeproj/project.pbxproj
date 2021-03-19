@@ -12,11 +12,11 @@
 		BD0202DD25F4D1CE003F2A76 /* NoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0202DC25F4D1CE003F2A76 /* NoticeModel.swift */; };
 		BD0D5E3925E6831500E1CE32 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = BD0D5E3825E6831500E1CE32 /* KeychainAccess */; };
 		BD1F46C725E15320001D4868 /* LogOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F46C625E15320001D4868 /* LogOutModel.swift */; };
+		BD31652F2604257D00A26612 /* MyListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31652E2604257D00A26612 /* MyListCollectionViewCell.swift */; };
 		BD39BA1225CD6B1C00F97107 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39BA1125CD6B1C00F97107 /* SearchModel.swift */; };
 		BD41251725A7460D00264EC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41251625A7460D00264EC2 /* HomeViewController.swift */; };
 		BD41251A25A7463F00264EC2 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41251925A7463F00264EC2 /* MyListViewController.swift */; };
 		BD41251D25A7465700264EC2 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41251C25A7465700264EC2 /* MyPageViewController.swift */; };
-		BD41252125A75B7A00264EC2 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41252025A75B7900264EC2 /* HomeTableViewCell.swift */; };
 		BD5053AE25EE2A04002CE4E7 /* SemiModalViewController in Frameworks */ = {isa = PBXBuildFile; productRef = BD5053AD25EE2A04002CE4E7 /* SemiModalViewController */; };
 		BD5053B125EE2A80002CE4E7 /* MyListReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5053B025EE2A80002CE4E7 /* MyListReasonViewController.swift */; };
 		BD5F66E025AC85D300F6BDC7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */; };
@@ -47,11 +47,11 @@
 		BD0202D925F4D111003F2A76 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		BD0202DC25F4D1CE003F2A76 /* NoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeModel.swift; sourceTree = "<group>"; };
 		BD1F46C625E15320001D4868 /* LogOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutModel.swift; sourceTree = "<group>"; };
+		BD31652E2604257D00A26612 /* MyListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD39BA1125CD6B1C00F97107 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		BD41251625A7460D00264EC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BD41251925A7463F00264EC2 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		BD41251C25A7465700264EC2 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		BD41252025A75B7900264EC2 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		BD5053B025EE2A80002CE4E7 /* MyListReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListReasonViewController.swift; sourceTree = "<group>"; };
 		BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BD5F66E225AC85E100F6BDC7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				BD41251625A7460D00264EC2 /* HomeViewController.swift */,
-				BD41252025A75B7900264EC2 /* HomeTableViewCell.swift */,
 				BDEB1F0A25A87B4B00D84ADC /* HomeEquipmentViewController.swift */,
 				BD6235A7260368BE00185C1B /* HomeCollectionViewCell.swift */,
 			);
@@ -152,6 +151,7 @@
 				BD41251925A7463F00264EC2 /* MyListViewController.swift */,
 				BDEB1F0E25A88A1C00D84ADC /* MyListTableViewCell.swift */,
 				BD5053B025EE2A80002CE4E7 /* MyListReasonViewController.swift */,
+				BD31652E2604257D00A26612 /* MyListCollectionViewCell.swift */,
 			);
 			path = MyList;
 			sourceTree = "<group>";
@@ -328,8 +328,8 @@
 			files = (
 				BD39BA1225CD6B1C00F97107 /* SearchModel.swift in Sources */,
 				BDE6798B25E2B7C70086168B /* KeychainManager.swift in Sources */,
+				BD31652F2604257D00A26612 /* MyListCollectionViewCell.swift in Sources */,
 				BD9F78E325CBE4320053852A /* EquipmentModel.swift in Sources */,
-				BD41252125A75B7A00264EC2 /* HomeTableViewCell.swift in Sources */,
 				BDEB1F0F25A88A1C00D84ADC /* MyListTableViewCell.swift in Sources */,
 				BD9554F425A08F8300DB23E3 /* AppDelegate.swift in Sources */,
 				BD9554F625A08F8300DB23E3 /* SceneDelegate.swift in Sources */,
