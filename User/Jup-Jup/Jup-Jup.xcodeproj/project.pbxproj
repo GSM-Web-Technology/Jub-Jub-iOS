@@ -35,6 +35,7 @@
 		BD9F78DF25CBCA850053852A /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9F78DE25CBCA850053852A /* LogInModel.swift */; };
 		BD9F78E325CBE4320053852A /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9F78E225CBE4320053852A /* EquipmentModel.swift */; };
 		BDAC287225F5B2A80047DFF8 /* NoticeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC287125F5B2A80047DFF8 /* NoticeContentViewController.swift */; };
+		BDD341EB2605FE3600821FD1 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BDD341EA2605FE3600821FD1 /* NotoSansKR-Medium.otf */; };
 		BDDDDDEF25C420E20022C635 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDEE25C420E20022C635 /* Alamofire */; };
 		BDDDDDF325C421080022C635 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDF225C421080022C635 /* Kingfisher */; };
 		BDE6798B25E2B7C70086168B /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE6798A25E2B7C70086168B /* KeychainManager.swift */; };
@@ -70,6 +71,7 @@
 		BD9F78DE25CBCA850053852A /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
 		BD9F78E225CBE4320053852A /* EquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentModel.swift; sourceTree = "<group>"; };
 		BDAC287125F5B2A80047DFF8 /* NoticeContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeContentViewController.swift; sourceTree = "<group>"; };
+		BDD341EA2605FE3600821FD1 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Medium.otf"; path = "../../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		BDE6798A25E2B7C70086168B /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		BDEB1F0A25A87B4B00D84ADC /* HomeEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEquipmentViewController.swift; sourceTree = "<group>"; };
 		BDEB1F0E25A88A1C00D84ADC /* MyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListTableViewCell.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				BD6235A32603188A00185C1B /* Comfortaa-VariableFont_wght.ttf */,
 				BD6235AA26036AAE00185C1B /* NotoSansKR-Bold.otf */,
 				BD6235AD26036B4000185C1B /* NotoSansKR-Light.otf */,
+				BDD341EA2605FE3600821FD1 /* NotoSansKR-Medium.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			files = (
 				BD6235AE26036B4000185C1B /* NotoSansKR-Light.otf in Resources */,
 				BD95550025A08F8400DB23E3 /* LaunchScreen.storyboard in Resources */,
+				BDD341EB2605FE3600821FD1 /* NotoSansKR-Medium.otf in Resources */,
 				BD9554FD25A08F8400DB23E3 /* Assets.xcassets in Resources */,
 				BD6235A42603188E00185C1B /* Comfortaa-VariableFont_wght.ttf in Resources */,
 				BD9554FB25A08F8300DB23E3 /* Main.storyboard in Resources */,

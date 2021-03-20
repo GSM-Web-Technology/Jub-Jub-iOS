@@ -27,6 +27,15 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarController?.tabBar.shadowImage = UIImage()
+        self.tabBarController?.tabBar.backgroundImage = UIImage()
+        self.tabBarController?.tabBar.clipsToBounds = true
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.clipsToBounds = true
+        
         indicatorAutolayout()
         indicator.startAnimating()
         if check == true {

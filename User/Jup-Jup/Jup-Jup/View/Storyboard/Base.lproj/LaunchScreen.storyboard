@@ -23,15 +23,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JubJub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCq-8n-2mU">
-                                <rect key="frame" x="123.5" y="382" width="167" height="58.5"/>
+                                <rect key="frame" x="106.5" y="383" width="201.5" height="56"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular_Bold" family="Comfortaa" pointSize="50"/>
                                 <color key="textColor" name="Primary Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 3" translatesAutoresizingMaskIntoConstraints="NO" id="n5G-JD-K3a">
-                                <rect key="frame" x="0.0" y="662" width="414" height="234"/>
+                                <rect key="frame" x="0.0" y="646" width="414" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="234" id="Dva-Id-eHQ"/>
+                                    <constraint firstAttribute="height" constant="250" id="Dva-Id-eHQ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -54,7 +54,7 @@
     <resources>
         <image name="Group 3" width="375" height="185"/>
         <namedColor name="Primary Color">
-            <color red="0.1764705882352941" green="0.3411764705882353" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.17599999904632568" green="0.34099999070167542" blue="0.62699997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
