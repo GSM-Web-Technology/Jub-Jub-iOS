@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JubJub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCq-8n-2mU">
-                                <rect key="frame" x="106.5" y="383" width="201.5" height="56"/>
+                                <rect key="frame" x="123.5" y="382" width="167" height="58.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular_Bold" family="Comfortaa" pointSize="50"/>
                                 <color key="textColor" name="Primary Color"/>
                                 <nil key="highlightedColor"/>

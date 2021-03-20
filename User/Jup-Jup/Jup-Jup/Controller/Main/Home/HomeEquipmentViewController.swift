@@ -17,7 +17,7 @@ var count: Int?
 
 class HomeEquipmentViewController: UIViewController {
     
-    let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 75, height: 75), type: .ballPulse, color: .black, padding: 0)
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 75, height: 75), type: .ballPulse, color: UIColor.init(named: "Primary Color"), padding: 0)
     var rentalAmount = 1
 
     @IBOutlet weak var equipmentCount: UILabel! {
