@@ -54,7 +54,7 @@ class HomeEquipmentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = titleName
+        
         indicatorAutolayout()
         imageView.kf.setImage(with: URL(string: imgURL ?? ""))
     }

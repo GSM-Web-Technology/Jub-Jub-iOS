@@ -175,8 +175,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.homeImageView.kf.setImage(with: URL(string: encodingURL))
         }
         
-        
-        
         return cell
         
     }
