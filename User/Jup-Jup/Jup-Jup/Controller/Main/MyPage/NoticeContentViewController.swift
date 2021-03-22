@@ -13,6 +13,7 @@ var noticeContentData = ""
 class NoticeContentViewController: UIViewController {
 
     @IBOutlet weak var noticeContent: UILabel!
+    @IBOutlet weak var noticeTitle: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,7 +21,8 @@ class NoticeContentViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = noticeTitleData
+        
+        noticeTitle.text = noticeTitleData
         noticeContent.text = noticeContentData
         noticeContent.sizeToFit()
     }
