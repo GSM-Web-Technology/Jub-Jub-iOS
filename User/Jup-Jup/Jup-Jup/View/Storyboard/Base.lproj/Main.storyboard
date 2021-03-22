@@ -249,46 +249,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MHo-Gc-lya">
-                                <rect key="frame" x="0.0" y="122" width="414" height="691"/>
+                                <rect key="frame" x="38" y="198" width="338" height="615"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeTableViewCell" rowHeight="60" id="gyq-sd-9zs" customClass="NoticeTableViewCell" customModule="Jup_Jup" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeTableViewCell" rowHeight="70" id="gyq-sd-9zs" customClass="NoticeTableViewCell" customModule="Jup_Jup" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="338" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gyq-sd-9zs" id="7XV-Su-2bI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="338" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지사항 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75g-jy-dHv">
-                                                    <rect key="frame" x="20" y="12" width="374" height="36"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연체된 학생들 얼른 반납해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdM-6i-ysf">
+                                                    <rect key="frame" x="5" y="15" width="197.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
                                                     <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.02.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxj-Fe-OA9">
+                                                    <rect key="frame" x="5" y="40.5" width="52" height="14.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="10"/>
+                                                    <color key="textColor" red="0.41960784313725491" green="0.41960784313725491" blue="0.41960784313725491" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="75g-jy-dHv" firstAttribute="leading" secondItem="7XV-Su-2bI" secondAttribute="leadingMargin" id="HHA-zd-6Ho"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="75g-jy-dHv" secondAttribute="bottom" constant="1" id="IeE-VK-BlA"/>
-                                                <constraint firstItem="75g-jy-dHv" firstAttribute="trailing" secondItem="7XV-Su-2bI" secondAttribute="trailingMargin" id="aAx-nF-lFq"/>
-                                                <constraint firstItem="75g-jy-dHv" firstAttribute="top" secondItem="7XV-Su-2bI" secondAttribute="topMargin" constant="1" id="rMk-JJ-Knm"/>
+                                                <constraint firstItem="yxj-Fe-OA9" firstAttribute="top" secondItem="wdM-6i-ysf" secondAttribute="bottom" constant="5" id="49W-Fp-meR"/>
+                                                <constraint firstItem="wdM-6i-ysf" firstAttribute="top" secondItem="7XV-Su-2bI" secondAttribute="top" constant="15" id="NeG-Bv-JqF"/>
+                                                <constraint firstItem="wdM-6i-ysf" firstAttribute="leading" secondItem="7XV-Su-2bI" secondAttribute="leading" constant="5" id="fHZ-6v-PRN"/>
+                                                <constraint firstItem="yxj-Fe-OA9" firstAttribute="leading" secondItem="7XV-Su-2bI" secondAttribute="leading" constant="5" id="qx3-iA-p1w"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="noticeTitle" destination="75g-jy-dHv" id="SAm-bG-BAX"/>
+                                            <outlet property="noticeTitle" destination="wdM-6i-ysf" id="GIn-hP-jHU"/>
                                             <segue destination="beA-o1-Mf4" kind="show" id="6iw-a7-ZQJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pg0-88-FDa">
+                                <rect key="frame" x="170" y="146" width="74" height="29"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Owo-S2-hsj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MHo-Gc-lya" firstAttribute="top" secondItem="Owo-S2-hsj" secondAttribute="top" id="KPF-SB-Rti"/>
-                            <constraint firstItem="Owo-S2-hsj" firstAttribute="bottom" secondItem="MHo-Gc-lya" secondAttribute="bottom" id="USs-Da-MTe"/>
-                            <constraint firstItem="Owo-S2-hsj" firstAttribute="trailing" secondItem="MHo-Gc-lya" secondAttribute="trailing" id="jG7-9n-Igj"/>
-                            <constraint firstItem="MHo-Gc-lya" firstAttribute="leading" secondItem="Owo-S2-hsj" secondAttribute="leading" id="sii-rT-89r"/>
+                            <constraint firstItem="pg0-88-FDa" firstAttribute="centerX" secondItem="FrM-cf-pOv" secondAttribute="centerX" id="4Lt-Yd-r2t"/>
+                            <constraint firstItem="Owo-S2-hsj" firstAttribute="trailing" secondItem="MHo-Gc-lya" secondAttribute="trailing" constant="38" id="4bz-NJ-8HM"/>
+                            <constraint firstItem="pg0-88-FDa" firstAttribute="top" secondItem="Owo-S2-hsj" secondAttribute="top" constant="24" id="Mmt-FN-q35"/>
+                            <constraint firstItem="Owo-S2-hsj" firstAttribute="bottom" secondItem="MHo-Gc-lya" secondAttribute="bottom" id="ZQR-gQ-nPc"/>
+                            <constraint firstItem="MHo-Gc-lya" firstAttribute="top" secondItem="pg0-88-FDa" secondAttribute="bottom" constant="23" id="aYy-ao-Zve"/>
+                            <constraint firstItem="MHo-Gc-lya" firstAttribute="leading" secondItem="Owo-S2-hsj" secondAttribute="leading" constant="38" id="ljB-3P-hjj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="JubJub" prompt=" " id="cws-7m-AhW">

@@ -17,6 +17,7 @@ class NoticeViewController: UIViewController {
             noticeTableView.delegate = self
             noticeTableView.dataSource = self
             noticeTableView.tableFooterView = UIView()
+            noticeTableView.separatorInset.left = 0
         }
     }
     override func viewDidLoad() {
@@ -56,6 +57,10 @@ extension NoticeViewController: UITableViewDataSource, UITableViewDelegate {
         let cellCount = (model?.list.count)! - 1
         noticeTitleData = model?.list[cellCount - indexPath.row].title ?? ""
         noticeContentData = model?.list[cellCount - indexPath.row].content ?? ""
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
     
 }
