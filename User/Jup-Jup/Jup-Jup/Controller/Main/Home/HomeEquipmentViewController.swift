@@ -21,6 +21,8 @@ class HomeEquipmentViewController: UIViewController {
     let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 75, height: 75), type: .ballPulse, color: UIColor.init(named: "Primary Color"), padding: 0)
     var rentalAmount = 1
     
+    @IBOutlet weak var equipmentName: UILabel!
+    @IBOutlet weak var equipmentContent: UILabel!
     @IBOutlet weak var equipmentCount: UILabel! {
         didSet {
             equipmentCount.text = "수량: \(count!)개"
@@ -46,6 +48,9 @@ class HomeEquipmentViewController: UIViewController {
         didSet {
             reasonTextField.delegate = self
             reasonTextField.layer.cornerRadius = 10
+            
+            reasonTextField.layer.borderWidth = 0.5
+            reasonTextField.layer.borderColor = UIColor.init(named: "Primary Color")?.cgColor
         }
     }
     @IBOutlet weak var imageView: UIImageView!
@@ -55,6 +60,13 @@ class HomeEquipmentViewController: UIViewController {
         
         indicatorAutolayout()
         imageView.kf.setImage(with: URL(string: imgURL ?? ""))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        equipmentName.text = titleName
+        equipmentContent.text = content
     }
     
     @IBAction func countStepper(_ sender: GMStepper) {

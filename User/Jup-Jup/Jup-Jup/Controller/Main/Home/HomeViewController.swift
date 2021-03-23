@@ -184,12 +184,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cellCount = (model?.list.count)! - 1
         if self.isFiltering {
             titleName = searchModel?.data.name ?? ""
+            content = searchModel?.data.content ?? ""
             count = searchModel?.data.count ?? 0
             let url = searchModel?.data.img_equipmentLocation ?? ""
             let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             imgURL = encodingURL
         } else {
             titleName = model?.list[cellCount - indexPath.row].name ?? ""
+            content = model?.list[cellCount - indexPath.row].content ?? ""
             count = model?.list[cellCount - indexPath.row].count ?? 0
             let url = model?.list[cellCount - indexPath.row].img_equipment ?? ""
             let encodingURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
