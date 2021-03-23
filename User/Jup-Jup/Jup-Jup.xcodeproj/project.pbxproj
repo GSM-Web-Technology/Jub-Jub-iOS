@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E9A47C0AAFBA2FD8D25A83A /* Pods_Jup_Jup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEFBC580EEDBB9B0E3C8DFF /* Pods_Jup_Jup.framework */; };
 		BD0202D725F4D0EC003F2A76 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0202D625F4D0EC003F2A76 /* NoticeViewController.swift */; };
 		BD0202DA25F4D111003F2A76 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0202D925F4D111003F2A76 /* NoticeTableViewCell.swift */; };
 		BD0202DD25F4D1CE003F2A76 /* NoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0202DC25F4D1CE003F2A76 /* NoticeModel.swift */; };
-		BD0D5E3925E6831500E1CE32 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = BD0D5E3825E6831500E1CE32 /* KeychainAccess */; };
+		BD0D5E3925E6831500E1CE32 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = BD0D5E3825E6831500E1CE32 /* SwiftPackageProductDependency */; };
 		BD1F46C725E15320001D4868 /* LogOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F46C625E15320001D4868 /* LogOutModel.swift */; };
 		BD31652F2604257D00A26612 /* MyListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31652E2604257D00A26612 /* MyListCollectionViewCell.swift */; };
 		BD39BA1225CD6B1C00F97107 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39BA1125CD6B1C00F97107 /* SearchModel.swift */; };
 		BD41251725A7460D00264EC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41251625A7460D00264EC2 /* HomeViewController.swift */; };
 		BD41251A25A7463F00264EC2 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41251925A7463F00264EC2 /* MyListViewController.swift */; };
 		BD41251D25A7465700264EC2 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41251C25A7465700264EC2 /* MyPageViewController.swift */; };
-		BD5053AE25EE2A04002CE4E7 /* SemiModalViewController in Frameworks */ = {isa = PBXBuildFile; productRef = BD5053AD25EE2A04002CE4E7 /* SemiModalViewController */; };
+		BD5053AE25EE2A04002CE4E7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = BD5053AD25EE2A04002CE4E7 /* SwiftPackageProductDependency */; };
 		BD5053B125EE2A80002CE4E7 /* MyListReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5053B025EE2A80002CE4E7 /* MyListReasonViewController.swift */; };
 		BD5F66E025AC85D300F6BDC7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F66DF25AC85D300F6BDC7 /* SignUpViewController.swift */; };
 		BD5F66E325AC85E100F6BDC7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F66E225AC85E100F6BDC7 /* LoginViewController.swift */; };
@@ -25,7 +26,7 @@
 		BD6235A8260368BF00185C1B /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6235A7260368BE00185C1B /* HomeCollectionViewCell.swift */; };
 		BD6235AB26036AB200185C1B /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD6235AA26036AAE00185C1B /* NotoSansKR-Bold.otf */; };
 		BD6235AE26036B4000185C1B /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD6235AD26036B4000185C1B /* NotoSansKR-Light.otf */; };
-		BD672F9325F3874900B56B49 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = BD672F9225F3874900B56B49 /* NVActivityIndicatorView */; };
+		BD672F9325F3874900B56B49 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = BD672F9225F3874900B56B49 /* SwiftPackageProductDependency */; };
 		BD79E8A525DEC035009DB301 /* MyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E8A425DEC035009DB301 /* MyListModel.swift */; };
 		BD9554F425A08F8300DB23E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9554F325A08F8300DB23E3 /* AppDelegate.swift */; };
 		BD9554F625A08F8300DB23E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9554F525A08F8300DB23E3 /* SceneDelegate.swift */; };
@@ -36,14 +37,17 @@
 		BD9F78E325CBE4320053852A /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9F78E225CBE4320053852A /* EquipmentModel.swift */; };
 		BDAC287225F5B2A80047DFF8 /* NoticeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC287125F5B2A80047DFF8 /* NoticeContentViewController.swift */; };
 		BDD341EB2605FE3600821FD1 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BDD341EA2605FE3600821FD1 /* NotoSansKR-Medium.otf */; };
-		BDDDDDEF25C420E20022C635 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDEE25C420E20022C635 /* Alamofire */; };
-		BDDDDDF325C421080022C635 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDF225C421080022C635 /* Kingfisher */; };
+		BDDDDDEF25C420E20022C635 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDEE25C420E20022C635 /* SwiftPackageProductDependency */; };
+		BDDDDDF325C421080022C635 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = BDDDDDF225C421080022C635 /* SwiftPackageProductDependency */; };
 		BDE6798B25E2B7C70086168B /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE6798A25E2B7C70086168B /* KeychainManager.swift */; };
 		BDEB1F0B25A87B4B00D84ADC /* HomeEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB1F0A25A87B4B00D84ADC /* HomeEquipmentViewController.swift */; };
 		BDEB1F0F25A88A1C00D84ADC /* MyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB1F0E25A88A1C00D84ADC /* MyListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55835A352D24FD8F10EABC98 /* Pods-Jup-Jup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jup-Jup.debug.xcconfig"; path = "Target Support Files/Pods-Jup-Jup/Pods-Jup-Jup.debug.xcconfig"; sourceTree = "<group>"; };
+		7BEFBC580EEDBB9B0E3C8DFF /* Pods_Jup_Jup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jup_Jup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF3E20E28B87365209739D91 /* Pods-Jup-Jup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jup-Jup.release.xcconfig"; path = "Target Support Files/Pods-Jup-Jup/Pods-Jup-Jup.release.xcconfig"; sourceTree = "<group>"; };
 		BD0202D625F4D0EC003F2A76 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		BD0202D925F4D111003F2A76 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		BD0202DC25F4D1CE003F2A76 /* NoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeModel.swift; sourceTree = "<group>"; };
@@ -82,11 +86,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDDDDDF325C421080022C635 /* Kingfisher in Frameworks */,
-				BD672F9325F3874900B56B49 /* NVActivityIndicatorView in Frameworks */,
-				BDDDDDEF25C420E20022C635 /* Alamofire in Frameworks */,
-				BD0D5E3925E6831500E1CE32 /* KeychainAccess in Frameworks */,
-				BD5053AE25EE2A04002CE4E7 /* SemiModalViewController in Frameworks */,
+				BDDDDDF325C421080022C635 /* BuildFile in Frameworks */,
+				BD672F9325F3874900B56B49 /* BuildFile in Frameworks */,
+				BDDDDDEF25C420E20022C635 /* BuildFile in Frameworks */,
+				BD0D5E3925E6831500E1CE32 /* BuildFile in Frameworks */,
+				BD5053AE25EE2A04002CE4E7 /* BuildFile in Frameworks */,
+				8E9A47C0AAFBA2FD8D25A83A /* Pods_Jup_Jup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +101,7 @@
 		743C9B8AB959C15D87326F69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7BEFBC580EEDBB9B0E3C8DFF /* Pods_Jup_Jup.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 				BD9554F225A08F8300DB23E3 /* Jup-Jup */,
 				BD9554F125A08F8300DB23E3 /* Products */,
 				743C9B8AB959C15D87326F69 /* Frameworks */,
+				DDCEF1D7F1CB59602FDF5BD8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,6 +249,16 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		DDCEF1D7F1CB59602FDF5BD8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55835A352D24FD8F10EABC98 /* Pods-Jup-Jup.debug.xcconfig */,
+				AF3E20E28B87365209739D91 /* Pods-Jup-Jup.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,9 +266,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD95550425A08F8400DB23E3 /* Build configuration list for PBXNativeTarget "Jup-Jup" */;
 			buildPhases = (
+				21ADE09B466FA03F5011E19F /* [CP] Check Pods Manifest.lock */,
 				BD9554EC25A08F8300DB23E3 /* Sources */,
 				BD9554ED25A08F8300DB23E3 /* Frameworks */,
 				BD9554EE25A08F8300DB23E3 /* Resources */,
+				09961E458C9D89D8641EC883 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,11 +278,11 @@
 			);
 			name = "Jup-Jup";
 			packageProductDependencies = (
-				BDDDDDEE25C420E20022C635 /* Alamofire */,
-				BDDDDDF225C421080022C635 /* Kingfisher */,
-				BD0D5E3825E6831500E1CE32 /* KeychainAccess */,
-				BD5053AD25EE2A04002CE4E7 /* SemiModalViewController */,
-				BD672F9225F3874900B56B49 /* NVActivityIndicatorView */,
+				BDDDDDEE25C420E20022C635 /* SwiftPackageProductDependency */,
+				BDDDDDF225C421080022C635 /* SwiftPackageProductDependency */,
+				BD0D5E3825E6831500E1CE32 /* SwiftPackageProductDependency */,
+				BD5053AD25EE2A04002CE4E7 /* SwiftPackageProductDependency */,
+				BD672F9225F3874900B56B49 /* SwiftPackageProductDependency */,
 			);
 			productName = "Jup-Jup";
 			productReference = BD9554F025A08F8300DB23E3 /* Jup-Jup.app */;
@@ -293,11 +312,11 @@
 			);
 			mainGroup = BD9554E725A08F8300DB23E3;
 			packageReferences = (
-				BDDDDDED25C420E20022C635 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				BDDDDDF125C421080022C635 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				BD0D5E3725E6831500E1CE32 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
-				BD5053AC25EE2A04002CE4E7 /* XCRemoteSwiftPackageReference "SemiModalViewController" */,
-				BD672F9125F3874900B56B49 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				BDDDDDED25C420E20022C635 /* RemoteSwiftPackageReference */,
+				BDDDDDF125C421080022C635 /* RemoteSwiftPackageReference */,
+				BD0D5E3725E6831500E1CE32 /* RemoteSwiftPackageReference */,
+				BD5053AC25EE2A04002CE4E7 /* RemoteSwiftPackageReference */,
+				BD672F9125F3874900B56B49 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = BD9554F125A08F8300DB23E3 /* Products */;
 			projectDirPath = "";
@@ -324,6 +343,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09961E458C9D89D8641EC883 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jup-Jup/Pods-Jup-Jup-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jup-Jup/Pods-Jup-Jup-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jup-Jup/Pods-Jup-Jup-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21ADE09B466FA03F5011E19F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jup-Jup-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BD9554EC25A08F8300DB23E3 /* Sources */ = {
@@ -495,6 +556,7 @@
 		};
 		BD95550525A08F8400DB23E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55835A352D24FD8F10EABC98 /* Pods-Jup-Jup.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -515,6 +577,7 @@
 		};
 		BD95550625A08F8400DB23E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF3E20E28B87365209739D91 /* Pods-Jup-Jup.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -557,7 +620,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BD0D5E3725E6831500E1CE32 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+		BD0D5E3725E6831500E1CE32 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
 			requirement = {
@@ -565,7 +628,7 @@
 				minimumVersion = 4.2.1;
 			};
 		};
-		BD5053AC25EE2A04002CE4E7 /* XCRemoteSwiftPackageReference "SemiModalViewController" */ = {
+		BD5053AC25EE2A04002CE4E7 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/muyexi/SemiModalViewController";
 			requirement = {
@@ -573,7 +636,7 @@
 				minimumVersion = 1.0.2;
 			};
 		};
-		BD672F9125F3874900B56B49 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+		BD672F9125F3874900B56B49 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView";
 			requirement = {
@@ -581,7 +644,7 @@
 				minimumVersion = 5.1.1;
 			};
 		};
-		BDDDDDED25C420E20022C635 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		BDDDDDED25C420E20022C635 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -589,7 +652,7 @@
 				minimumVersion = 5.4.1;
 			};
 		};
-		BDDDDDF125C421080022C635 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		BDDDDDF125C421080022C635 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
@@ -600,29 +663,29 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BD0D5E3825E6831500E1CE32 /* KeychainAccess */ = {
+		BD0D5E3825E6831500E1CE32 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BD0D5E3725E6831500E1CE32 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			package = BD0D5E3725E6831500E1CE32 /* RemoteSwiftPackageReference */;
 			productName = KeychainAccess;
 		};
-		BD5053AD25EE2A04002CE4E7 /* SemiModalViewController */ = {
+		BD5053AD25EE2A04002CE4E7 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BD5053AC25EE2A04002CE4E7 /* XCRemoteSwiftPackageReference "SemiModalViewController" */;
+			package = BD5053AC25EE2A04002CE4E7 /* RemoteSwiftPackageReference */;
 			productName = SemiModalViewController;
 		};
-		BD672F9225F3874900B56B49 /* NVActivityIndicatorView */ = {
+		BD672F9225F3874900B56B49 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BD672F9125F3874900B56B49 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			package = BD672F9125F3874900B56B49 /* RemoteSwiftPackageReference */;
 			productName = NVActivityIndicatorView;
 		};
-		BDDDDDEE25C420E20022C635 /* Alamofire */ = {
+		BDDDDDEE25C420E20022C635 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BDDDDDED25C420E20022C635 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = BDDDDDED25C420E20022C635 /* RemoteSwiftPackageReference */;
 			productName = Alamofire;
 		};
-		BDDDDDF225C421080022C635 /* Kingfisher */ = {
+		BDDDDDF225C421080022C635 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BDDDDDF125C421080022C635 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = BDDDDDF125C421080022C635 /* RemoteSwiftPackageReference */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

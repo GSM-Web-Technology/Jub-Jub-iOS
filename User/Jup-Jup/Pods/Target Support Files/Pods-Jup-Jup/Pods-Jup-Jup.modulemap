@@ -1,0 +1,6 @@
+framework module Pods_Jup_Jup {
+  umbrella header "Pods-Jup-Jup-umbrella.h"
+
+  export *
+  module * { export * }
+}

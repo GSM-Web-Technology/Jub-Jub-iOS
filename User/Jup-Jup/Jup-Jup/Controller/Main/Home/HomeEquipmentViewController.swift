@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import Kingfisher
 import NVActivityIndicatorView
+import GMStepper
 
 var titleName: String?
 var content: String?
@@ -19,10 +20,13 @@ class HomeEquipmentViewController: UIViewController {
     
     let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 75, height: 75), type: .ballPulse, color: UIColor.init(named: "Primary Color"), padding: 0)
     var rentalAmount = 1
-
+    
     @IBOutlet weak var equipmentCount: UILabel! {
         didSet {
             equipmentCount.text = "수량: \(count!)개"
+            equipmentCount.layer.borderWidth = 1
+            equipmentCount.layer.borderColor = UIColor.init(named: "Primary Color")?.cgColor
+            equipmentCount.layer.cornerRadius = 13
         }
     }
     @IBOutlet weak var doneButton: UIButton! {
@@ -30,24 +34,18 @@ class HomeEquipmentViewController: UIViewController {
             doneButton.layer.cornerRadius = 5
         }
     }
-    @IBOutlet weak var stepper: UIStepper! {
+    @IBOutlet weak var stepper: GMStepper! {
         didSet {
             stepper.minimumValue = 1
             stepper.maximumValue = Double(count!)
+            stepper.labelFont = UIFont(name: "NotoSansKR-Light", size: 12)!
+            stepper.buttonsFont = UIFont(name: "NotoSansKR-Light", size: 15)!
         }
     }
-    @IBOutlet weak var reasonTextView: UITextView! {
+    @IBOutlet weak var reasonTextField: UITextField! {
         didSet {
-            reasonTextView.layer.cornerRadius = 5
-            reasonTextView.delegate = self
-        }
-    }
-    @IBOutlet weak var rentalCount: UILabel! {
-        didSet {
-            if count == 0 {
-                rentalAmount = 0
-            }
-            rentalCount.text = "대여 수량: \(rentalAmount)개"
+            reasonTextField.delegate = self
+            reasonTextField.layer.cornerRadius = 10
         }
     }
     @IBOutlet weak var imageView: UIImageView!
@@ -59,13 +57,13 @@ class HomeEquipmentViewController: UIViewController {
         imageView.kf.setImage(with: URL(string: imgURL ?? ""))
     }
     
-    @IBAction func countStepper(_ sender: UIStepper) {
+    @IBAction func countStepper(_ sender: GMStepper) {
         rentalAmount = Int(sender.value)
-        rentalCount.text = "대여 수량: \(rentalAmount)개"
+        print(rentalAmount)
     }
     
     @IBAction func doneBtn(_ sender: UIButton) {
-        if reasonTextView.text == "" {
+        if reasonTextField.text == "" {
             failAlert(message: "대여 사유를 적으십시오.")
         } else {
             checkAlert(name: titleName!, count: rentalAmount)
@@ -127,7 +125,7 @@ class HomeEquipmentViewController: UIViewController {
         let alert = UIAlertController(title: "\(name) \(count)개", message: "대여 신청하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (_) in
             self.indicator.startAnimating()
-            self.equipmentAllowAPI(amount: self.rentalAmount, reason: self.reasonTextView.text, name: titleName!)
+            self.equipmentAllowAPI(amount: self.rentalAmount, reason: self.reasonTextField.text!, name: titleName!)
         }
         let cancel = UIAlertAction(title: "취소", style: .destructive)
         alert.addAction(ok)
@@ -143,7 +141,7 @@ class HomeEquipmentViewController: UIViewController {
     }
 }
 
-extension HomeEquipmentViewController: UITextViewDelegate {
+extension HomeEquipmentViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }

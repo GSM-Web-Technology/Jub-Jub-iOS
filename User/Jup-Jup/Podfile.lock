@@ -1,0 +1,16 @@
+PODS:
+  - GMStepper (2.2)
+
+DEPENDENCIES:
+  - GMStepper
+
+SPEC REPOS:
+  trunk:
+    - GMStepper
+
+SPEC CHECKSUMS:
+  GMStepper: 89fb106944dfcc3aa3add7164e3ebd463ea2104b
+
+PODFILE CHECKSUM: 45af61e639c120764dff33d37a540e02bbd11482
+
+COCOAPODS: 1.9.3
