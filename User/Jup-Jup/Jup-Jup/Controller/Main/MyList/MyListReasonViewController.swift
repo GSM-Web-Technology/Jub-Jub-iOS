@@ -14,8 +14,25 @@ class MyListReasonViewController: UIViewController {
     
     @IBOutlet weak var reasonView: UIView! {
         didSet {
-            reasonView.clipsToBounds = true
-            reasonView.layer.cornerRadius = 10
+            let innerShadow = CALayer()
+            innerShadow.frame = reasonView.bounds
+            
+            // Shadow path (1pt ring around bounds)
+            let radius = 10
+            let path = UIBezierPath(roundedRect: innerShadow.bounds.insetBy(dx: -5, dy: -5), cornerRadius:CGFloat(radius))
+            let cutout = UIBezierPath(roundedRect: innerShadow.bounds, cornerRadius:CGFloat(radius)).reversing()
+            
+            
+            path.append(cutout)
+            innerShadow.shadowPath = path.cgPath
+            innerShadow.masksToBounds = true
+            // Shadow properties
+            innerShadow.shadowColor = UIColor.init(named: "Primary Color")?.cgColor
+            innerShadow.shadowOffset = CGSize(width: 1, height: 1)
+            innerShadow.shadowOpacity = 1
+            innerShadow.shadowRadius = 10
+            innerShadow.cornerRadius = 10
+            reasonView.layer.addSublayer(innerShadow)
         }
     }
     @IBOutlet weak var reasonLabel: UILabel!
