@@ -19,7 +19,7 @@ class MyListReasonViewController: UIViewController {
             
             // Shadow path (1pt ring around bounds)
             let radius = 10
-            let path = UIBezierPath(roundedRect: innerShadow.bounds.insetBy(dx: -5, dy: -5), cornerRadius:CGFloat(radius))
+            let path = UIBezierPath(roundedRect: innerShadow.bounds.insetBy(dx: -1, dy: -1), cornerRadius:CGFloat(radius))
             let cutout = UIBezierPath(roundedRect: innerShadow.bounds, cornerRadius:CGFloat(radius)).reversing()
             
             
