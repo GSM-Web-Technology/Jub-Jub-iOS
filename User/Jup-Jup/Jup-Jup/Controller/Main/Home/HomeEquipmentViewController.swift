@@ -66,10 +66,6 @@ class HomeEquipmentViewController: UIViewController {
             innerShadow.shadowRadius = 10
             innerShadow.cornerRadius = 10
             reasonTextField.layer.addSublayer(innerShadow)
-//            reasonTextField.layer.cornerRadius = 10
-//
-//            reasonTextField.layer.borderWidth = 0.5
-//            reasonTextField.layer.borderColor = UIColor.init(named: "Primary Color")?.cgColor
         }
     }
     @IBOutlet weak var imageView: UIImageView!
@@ -83,9 +79,19 @@ class HomeEquipmentViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "Comfortaa-Regular_Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.init(named: "Primary Color")!]
+        
+        self.addKeyboardNotifications()
         
         equipmentName.text = titleName
         equipmentContent.text = content
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.removeKeyboardNotifications()
+        
     }
     
     @IBAction func countStepper(_ sender: GMStepper) {
@@ -170,9 +176,47 @@ class HomeEquipmentViewController: UIViewController {
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
+    
+    
+    // 노티피케이션을 추가하는 메서드
+    func addKeyboardNotifications(){
+        // 키보드가 나타날 때 앱에게 알리는 메서드 추가
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification , object: nil)
+        // 키보드가 사라질 때 앱에게 알리는 메서드 추가
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // 노티피케이션을 제거하는 메서드
+    func removeKeyboardNotifications(){
+        // 키보드가 나타날 때 앱에게 알리는 메서드 제거
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification , object: nil)
+        // 키보드가 사라질 때 앱에게 알리는 메서드 제거
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // 키보드가 나타났다는 알림을 받으면 실행할 메서드
+    @objc func keyboardWillShow(_ noti: NSNotification){
+        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.view.frame.origin.y -= (keyboardHeight-(self.tabBarController?.tabBar.frame.size.height)!)
+        }
+    }
+
+    @objc func keyboardWillHide(_ noti: NSNotification){
+        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.view.frame.origin.y += (keyboardHeight-(self.tabBarController?.tabBar.frame.size.height)!)
+        }
+    }
+    
 }
 
 extension HomeEquipmentViewController: UITextFieldDelegate {
+    
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }

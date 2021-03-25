@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var logInEmail: UITextField! {
         didSet {
             logInEmail.delegate = self
+            logInEmail.keyboardType = .emailAddress
         }
     }
     

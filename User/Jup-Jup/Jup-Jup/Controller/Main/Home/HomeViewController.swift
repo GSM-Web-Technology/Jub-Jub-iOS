@@ -47,8 +47,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "Comfortaa-Regular_Bold", size: 35)!, NSAttributedString.Key.foregroundColor: UIColor.init(named: "Primary Color")!]
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         if check == false {
             self.apiCall()
             self.searchController()

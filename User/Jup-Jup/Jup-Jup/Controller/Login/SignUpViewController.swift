@@ -13,10 +13,12 @@ class SignUpViewController: UIViewController {
     
     var failMessages = ""
     let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 50, height: 50), type: .ballPulse, color: UIColor.init(named: "Primary Color"), padding: 0)
+    var restorFramValue: CGFloat = 0.0
     
     @IBOutlet weak var signUpEmail: UITextField! {
         didSet {
             signUpEmail.delegate = self
+            signUpEmail.keyboardType = .emailAddress
         }
     }
     @IBOutlet weak var signUpPassword: UITextField! {
@@ -37,6 +39,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpClassNumber: UITextField! {
         didSet {
             signUpClassNumber.delegate = self
+            signUpClassNumber.keyboardType = .numberPad
         }
     }
     @IBOutlet weak var signUpBtn: UIButton! {
@@ -47,8 +50,21 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         indicatorAutolayout()
-        
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+//
+//
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+//    }
     
     func indicatorAutolayout() {
         view.addSubview(indicator)
@@ -150,7 +166,32 @@ class SignUpViewController: UIViewController {
 }
 
 extension SignUpViewController: UITextFieldDelegate {
+    
+    
+    
+//    @objc func keyboardWillAppear(noti: NSNotification) {
+//        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//            let keyboardRectangle = keyboardFrame.cgRectValue
+//            let keyboardHeight = keyboardRectangle.height
+//            self.view.frame.origin.y -= keyboardHeight
+//        }
+//        print("keyboard Will appear Execute")
+//    }
+//
+//    @objc func keyboardWillDisappear(noti: NSNotification) {
+//        if self.view.frame.origin.y != restorFramValue {
+//            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//                let keyboardRectangle = keyboardFrame.cgRectValue
+//                let keyboardHeight = keyboardRectangle.height
+//                self.view.frame.origin.y += keyboardHeight
+//            }
+//            print("keyboard Will Disappear Execute")
+//        }
+//    }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.view.frame.origin.y = restorFramValue
         view.endEditing(true)
     }
     
@@ -162,5 +203,10 @@ extension SignUpViewController: UITextFieldDelegate {
         signUpClassNumber.resignFirstResponder()
         return true
     }
+    
+//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+//        self.view.frame.origin.y = restorFramValue
+//        return true
+//    }
 }
 
