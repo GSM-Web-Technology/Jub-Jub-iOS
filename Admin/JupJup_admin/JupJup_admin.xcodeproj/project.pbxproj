@@ -26,6 +26,10 @@
 		BD5F564F25F8DA740001AEEF /* AllowListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5F564E25F8DA740001AEEF /* AllowListTableViewCell.swift */; };
 		BD79E89E25DEB995009DB301 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E89D25DEB995009DB301 /* LoginViewController.swift */; };
 		BD79E8A125DEB9A3009DB301 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E8A025DEB9A3009DB301 /* SignUpViewController.swift */; };
+		BD8B055326109299000C4E23 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD8B054F26109299000C4E23 /* NotoSansKR-Medium.otf */; };
+		BD8B055426109299000C4E23 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD8B055026109299000C4E23 /* NotoSansKR-Light.otf */; };
+		BD8B055526109299000C4E23 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD8B055126109299000C4E23 /* NotoSansKR-Bold.otf */; };
+		BD8B055626109299000C4E23 /* Comfortaa-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD8B055226109299000C4E23 /* Comfortaa-VariableFont_wght.ttf */; };
 		BD9ED7DE25F86F4500FFB253 /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ED7DD25F86F4500FFB253 /* EquipmentModel.swift */; };
 		BD9ED7E125F86F8300FFB253 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ED7E025F86F8300FFB253 /* SearchModel.swift */; };
 		BDAD444D25F9F4B500165C0E /* AllowListContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD444C25F9F4B500165C0E /* AllowListContentViewController.swift */; };
@@ -51,6 +55,10 @@
 		BD5F564E25F8DA740001AEEF /* AllowListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowListTableViewCell.swift; sourceTree = "<group>"; };
 		BD79E89D25DEB995009DB301 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BD79E8A025DEB9A3009DB301 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		BD8B054F26109299000C4E23 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Medium.otf"; path = "../../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		BD8B055026109299000C4E23 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Light.otf"; path = "../../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		BD8B055126109299000C4E23 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Bold.otf"; path = "../../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		BD8B055226109299000C4E23 /* Comfortaa-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-VariableFont_wght.ttf"; path = "../../../../../../../Downloads/Comfortaa/Comfortaa-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		BD9ED7DD25F86F4500FFB253 /* EquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentModel.swift; sourceTree = "<group>"; };
 		BD9ED7E025F86F8300FFB253 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		BDAD444C25F9F4B500165C0E /* AllowListContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowListContentViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +160,7 @@
 			children = (
 				BD29575225D806BC006764E1 /* AppDelegate.swift */,
 				BD29575425D806BC006764E1 /* SceneDelegate.swift */,
+				BD8B054E26109272000C4E23 /* Font */,
 				BD3F269F25F65CB9007C9819 /* Manager */,
 				BD29576A25D8075F006764E1 /* Model */,
 				BD29576925D80757006764E1 /* View */,
@@ -195,6 +204,17 @@
 				BD3F26A025F65CD1007C9819 /* KeychainManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		BD8B054E26109272000C4E23 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BD8B055226109299000C4E23 /* Comfortaa-VariableFont_wght.ttf */,
+				BD8B055126109299000C4E23 /* NotoSansKR-Bold.otf */,
+				BD8B055026109299000C4E23 /* NotoSansKR-Light.otf */,
+				BD8B054F26109299000C4E23 /* NotoSansKR-Medium.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +286,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8B055326109299000C4E23 /* NotoSansKR-Medium.otf in Resources */,
+				BD8B055626109299000C4E23 /* Comfortaa-VariableFont_wght.ttf in Resources */,
 				BD29575F25D806BE006764E1 /* LaunchScreen.storyboard in Resources */,
+				BD8B055526109299000C4E23 /* NotoSansKR-Bold.otf in Resources */,
+				BD8B055426109299000C4E23 /* NotoSansKR-Light.otf in Resources */,
 				BD29575C25D806BE006764E1 /* Assets.xcassets in Resources */,
 				BDFE9C7E25EFA9090054D7F7 /* HomeEquipmentTableViewCell.xib in Resources */,
 				BD29575A25D806BC006764E1 /* Main.storyboard in Resources */,
