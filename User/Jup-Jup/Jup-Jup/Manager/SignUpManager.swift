@@ -63,20 +63,4 @@ class SignUpManager {
         keychain["name"] = nil
     }
     
-    // classNumber
-    class func saveClassNumber(classNumber: String) {
-        keychain["classNumber"] = classNumber
-    }
-    
-    class func getClassNumber() -> String {
-        if let classNumber = keychain["classNumber"] {
-            return classNumber
-        } else {
-            return ""
-        }
-    }
-    
-    class func removeClassNumber() {
-        keychain["classNumber"] = nil
-    }
 }

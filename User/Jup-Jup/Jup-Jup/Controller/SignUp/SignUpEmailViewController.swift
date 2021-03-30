@@ -28,9 +28,22 @@ class SignUpEmailViewController: UIViewController {
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: signUpEmailTextField.text)
     }
 
+    func failAlert(messages: String) {
+        let alert = UIAlertController(title: messages, message: nil, preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func signUpEmailContinueButton(_ sender: UIButton) {
-        if checkTextField() && emailCheck() {
+        if (checkTextField() && emailCheck()) {
             SignUpManager.saveEmail(email: signUpEmailTextField.text!)
+            let nextController = self.storyboard?.instantiateViewController(withIdentifier: "SignUpPasswordViewController") as! SignUpPasswordViewController
+            navigationController?.pushViewController(nextController, animated: true)
+        } else if !(checkTextField()) {
+            failAlert(messages: "빈칸을 모두 채우세요.")
+        } else {
+            failAlert(messages: "이메일 형식이 맞지 않습니다.")
         }
         
     }

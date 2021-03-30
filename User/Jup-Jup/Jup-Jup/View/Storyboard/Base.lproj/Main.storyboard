@@ -1189,13 +1189,13 @@
         <!--JubJub-->
         <scene sceneID="jvR-nt-yFz">
             <objects>
-                <viewController id="iVg-CO-B4H" customClass="SignUpPasswordViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpPasswordViewController" id="iVg-CO-B4H" customClass="SignUpPasswordViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lxt-re-CaM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 입력하세요." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3a-9g-z6O">
-                                <rect key="frame" x="40" y="98" width="125" height="80"/>
+                                <rect key="frame" x="40" y="20" width="125" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="5E5-el-bev"/>
                                     <constraint firstAttribute="width" constant="125" id="jZW-AC-wOf"/>
@@ -1205,23 +1205,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zNT-BT-7Pu">
-                                <rect key="frame" x="42" y="224.5" width="293" height="30"/>
+                                <rect key="frame" x="42" y="146.5" width="293" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="pfP-29-c6K"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHf-If-Ish">
-                                <rect key="frame" x="40" y="257.5" width="295" height="2"/>
+                                <rect key="frame" x="40" y="179.5" width="295" height="2"/>
                                 <color key="backgroundColor" name="Primary Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="qAf-rM-nmX"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hZ-0e-Eqz">
-                                <rect key="frame" x="40" y="208" width="66.5" height="17.5"/>
+                                <rect key="frame" x="40" y="130" width="66.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="15"/>
                                 <color key="textColor" name="Primary Color"/>
                                 <nil key="highlightedColor"/>
@@ -1238,26 +1238,26 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpButton:" destination="SC0-nd-hBV" eventType="touchUpInside" id="Q2s-ga-Jp8"/>
-                                    <segue destination="jFi-aq-uEa" kind="show" id="MGj-qh-gVl"/>
+                                    <action selector="signUpPasswordContinueButton:" destination="iVg-CO-B4H" eventType="touchUpInside" id="QkV-9J-6jE"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 한 번 더 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="85G-s0-9Wn">
-                                <rect key="frame" x="42" y="306" width="293" height="30"/>
+                                <rect key="frame" x="42" y="228" width="293" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ekj-uY-Bvv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bb-3w-zQG">
-                                <rect key="frame" x="40" y="289.5" width="114" height="17.5"/>
+                                <rect key="frame" x="40" y="211.5" width="114" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="15"/>
                                 <color key="textColor" name="Primary Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd3-Ah-PK0">
-                                <rect key="frame" x="40" y="339" width="295" height="2"/>
+                                <rect key="frame" x="40" y="261" width="295" height="2"/>
                                 <color key="backgroundColor" name="Primary Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="U8v-jV-ZVP"/>
@@ -1293,6 +1293,10 @@
                     <navigationItem key="navigationItem" title="JubJub" prompt=" " id="Ge0-XQ-VNP">
                         <barButtonItem key="backBarButtonItem" title=" " id="LMd-LV-XMM"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="signUpCheckPasswordTextField" destination="85G-s0-9Wn" id="Upu-Fu-xhQ"/>
+                        <outlet property="signUpPasswordTextField" destination="zNT-BT-7Pu" id="OdZ-fn-IJg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ny8-QA-xie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1301,13 +1305,13 @@
         <!--JubJub-->
         <scene sceneID="NEw-P3-Ti4">
             <objects>
-                <viewController id="7xM-DA-FeA" customClass="SignUpClassNumberViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpClassNumberViewController" id="7xM-DA-FeA" customClass="SignUpClassNumberViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4TX-L3-TpU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반, 번호를 입력하세요." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjv-37-DPe">
-                                <rect key="frame" x="40" y="98" width="125" height="80"/>
+                                <rect key="frame" x="40" y="20" width="125" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="Mku-hr-W0A"/>
                                     <constraint firstAttribute="height" constant="80" id="qgS-XI-gVH"/>
@@ -1317,7 +1321,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="반, 번호를 입력하세요. ex) 2211" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEA-d3-y8X">
-                                <rect key="frame" x="42" y="224.5" width="293" height="30"/>
+                                <rect key="frame" x="42" y="146.5" width="293" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="oSg-ES-uWT"/>
@@ -1326,7 +1330,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class &amp; Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSC-S6-5m4">
-                                <rect key="frame" x="40" y="208" width="109" height="17.5"/>
+                                <rect key="frame" x="40" y="130" width="109" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="15"/>
                                 <color key="textColor" name="Primary Color"/>
                                 <nil key="highlightedColor"/>
@@ -1343,10 +1347,11 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpButton:" destination="SC0-nd-hBV" eventType="touchUpInside" id="xzV-ga-KhZ"/>
+                                    <action selector="signUpClassNumberDoneButton:" destination="7xM-DA-FeA" eventType="touchUpInside" id="eBH-7C-v8w"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmI-43-HHW">
-                                <rect key="frame" x="40" y="257.5" width="295" height="2"/>
+                                <rect key="frame" x="40" y="179.5" width="295" height="2"/>
                                 <color key="backgroundColor" name="Primary Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="kx3-KG-toU"/>
@@ -1372,6 +1377,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="JubJub" prompt=" " id="FDN-gN-VMd"/>
+                    <connections>
+                        <outlet property="signUpClassNumberTextField" destination="CEA-d3-y8X" id="fSj-8Z-n7L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akJ-C4-i55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1423,7 +1431,6 @@
                                 <connections>
                                     <action selector="signUpButton:" destination="SC0-nd-hBV" eventType="touchUpInside" id="nKK-wW-5MT"/>
                                     <action selector="signUpEmailContinueButton:" destination="r1K-xd-OKo" eventType="touchUpInside" id="fqA-Vd-BrR"/>
-                                    <segue destination="iVg-CO-B4H" kind="show" id="KRU-vj-qnv"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNx-16-Fel">
@@ -1466,13 +1473,13 @@
         <!--JubJub-->
         <scene sceneID="rPQ-s3-iOu">
             <objects>
-                <viewController id="jFi-aq-uEa" customClass="SignUpNameViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpNameViewController" id="jFi-aq-uEa" customClass="SignUpNameViewController" customModule="Jup_Jup" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3pi-hd-Tln">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름을 입력하세요." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydB-bx-xIS">
-                                <rect key="frame" x="40" y="98" width="125" height="80"/>
+                                <rect key="frame" x="40" y="20" width="125" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="8Kd-2H-ntC"/>
                                     <constraint firstAttribute="width" constant="125" id="flt-tD-QXd"/>
@@ -1482,7 +1489,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aln-wx-cqo">
-                                <rect key="frame" x="40" y="224.5" width="295" height="30"/>
+                                <rect key="frame" x="40" y="146.5" width="295" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NUQ-g1-0TB"/>
@@ -1491,7 +1498,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPu-rd-EIq">
-                                <rect key="frame" x="40" y="208" width="40" height="17.5"/>
+                                <rect key="frame" x="40" y="130" width="40" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="15"/>
                                 <color key="textColor" name="Primary Color"/>
                                 <nil key="highlightedColor"/>
@@ -1508,11 +1515,11 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpButton:" destination="SC0-nd-hBV" eventType="touchUpInside" id="J8d-xJ-mc9"/>
-                                    <segue destination="7xM-DA-FeA" kind="show" id="tJX-XQ-YKn"/>
+                                    <action selector="signUpNameContinueButton:" destination="jFi-aq-uEa" eventType="touchUpInside" id="UEN-rk-i4B"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8T-Rj-vLO">
-                                <rect key="frame" x="40" y="257.5" width="295" height="2"/>
+                                <rect key="frame" x="40" y="179.5" width="295" height="2"/>
                                 <color key="backgroundColor" name="Primary Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="L7m-md-0Dw"/>
@@ -1540,6 +1547,9 @@
                     <navigationItem key="navigationItem" title="JubJub" prompt=" " id="9ok-dP-D5o">
                         <barButtonItem key="backBarButtonItem" title=" " id="OhQ-X5-lxq"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="signUpNameTextField" destination="Aln-wx-cqo" id="Kkm-Qm-K0n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZ4-0m-KkO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
