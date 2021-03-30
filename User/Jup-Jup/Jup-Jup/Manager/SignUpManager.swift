@@ -1,0 +1,82 @@
+//
+//  SignUpManager.swift
+//  Jup-Jup
+//
+//  Created by 조주혁 on 2021/03/30.
+//
+
+import Foundation
+import KeychainAccess
+
+class SignUpManager {
+    static let keychain = Keychain(service: "com.yourcompany.Jup-Jup")
+    
+    // email
+    class func saveEmail(email: String) {
+        keychain["email"] = email
+    }
+    
+    class func getEmail() -> String {
+        if let email = keychain["email"] {
+            return email
+        } else {
+            return ""
+        }
+    }
+    
+    class func removeEmail() {
+        keychain["email"] = nil
+    }
+    
+    
+    // password
+    class func savePassword(password: String) {
+        keychain["password"] = password
+    }
+    
+    class func getPassword() -> String {
+        if let password = keychain["password"] {
+            return password
+        } else {
+            return ""
+        }
+    }
+    
+    class func removePassword() {
+        keychain["password"] = nil
+    }
+    
+    // name
+    class func saveName(name: String) {
+        keychain["name"] = name
+    }
+    
+    class func getName() -> String {
+        if let name = keychain["name"] {
+            return name
+        } else {
+            return ""
+        }
+    }
+    
+    class func removeName() {
+        keychain["name"] = nil
+    }
+    
+    // classNumber
+    class func saveClassNumber(classNumber: String) {
+        keychain["classNumber"] = classNumber
+    }
+    
+    class func getClassNumber() -> String {
+        if let classNumber = keychain["classNumber"] {
+            return classNumber
+        } else {
+            return ""
+        }
+    }
+    
+    class func removeClassNumber() {
+        keychain["classNumber"] = nil
+    }
+}
