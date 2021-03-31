@@ -9,7 +9,16 @@ import UIKit
 
 class SignUpEmailViewController: UIViewController {
 
-    @IBOutlet weak var signUpEmailTextField: UITextField!
+    @IBOutlet weak var signUpEmailTextField: UITextField! {
+        didSet {
+            signUpEmailTextField.delegate = self
+        }
+    }
+    @IBOutlet weak var signUpEmailBtn: UIButton! {
+        didSet {
+            signUpEmailBtn.layer.cornerRadius = 10
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,4 +57,37 @@ class SignUpEmailViewController: UIViewController {
         
     }
     
+}
+
+extension SignUpEmailViewController: UITextFieldDelegate {
+    @objc func keyboardWillAppear(noti: NSNotification) {
+        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.view.frame.origin.y -= keyboardHeight
+        }
+        print("keyboard Will appear Execute")
+    }
+
+    @objc func keyboardWillDisappear(noti: NSNotification) {
+        if self.view.frame.origin.y != 0.0 {
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                self.view.frame.origin.y += keyboardHeight
+            }
+            print("keyboard Will Disappear Execute")
+        }
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.frame.origin.y = 0.0
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        signUpEmailTextField.resignFirstResponder()
+        return true
+    }
 }

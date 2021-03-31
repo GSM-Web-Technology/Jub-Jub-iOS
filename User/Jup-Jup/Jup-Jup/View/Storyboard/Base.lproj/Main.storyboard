@@ -1463,6 +1463,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="FYu-3Q-39h"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="signUpEmailBtn" destination="rer-JE-pQC" id="K69-08-Pc6"/>
                         <outlet property="signUpEmailTextField" destination="ETw-6f-Kh2" id="QmE-x3-SN7"/>
                     </connections>
                 </viewController>

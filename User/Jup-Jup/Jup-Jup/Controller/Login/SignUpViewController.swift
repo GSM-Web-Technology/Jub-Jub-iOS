@@ -169,25 +169,25 @@ extension SignUpViewController: UITextFieldDelegate {
     
     
     
-//    @objc func keyboardWillAppear(noti: NSNotification) {
-//        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-//            let keyboardRectangle = keyboardFrame.cgRectValue
-//            let keyboardHeight = keyboardRectangle.height
-//            self.view.frame.origin.y -= keyboardHeight
-//        }
-//        print("keyboard Will appear Execute")
-//    }
-//
-//    @objc func keyboardWillDisappear(noti: NSNotification) {
-//        if self.view.frame.origin.y != restorFramValue {
-//            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-//                let keyboardRectangle = keyboardFrame.cgRectValue
-//                let keyboardHeight = keyboardRectangle.height
-//                self.view.frame.origin.y += keyboardHeight
-//            }
-//            print("keyboard Will Disappear Execute")
-//        }
-//    }
+    @objc func keyboardWillAppear(noti: NSNotification) {
+        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.view.frame.origin.y -= keyboardHeight
+        }
+        print("keyboard Will appear Execute")
+    }
+
+    @objc func keyboardWillDisappear(noti: NSNotification) {
+        if self.view.frame.origin.y != restorFramValue {
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                self.view.frame.origin.y += keyboardHeight
+            }
+            print("keyboard Will Disappear Execute")
+        }
+    }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
