@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if KeychainManager.keychain["email"] != nil {
+        if KeychainManager.keychain["autoEmail"] != nil {
             check = false
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainPage")
             self.window?.rootViewController = initialViewController

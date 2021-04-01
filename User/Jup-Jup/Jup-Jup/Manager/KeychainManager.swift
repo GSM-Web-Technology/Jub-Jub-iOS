@@ -32,11 +32,11 @@ class KeychainManager {
     
     // email
     class func saveEmail(email: String) {
-        keychain["email"] = email
+        keychain["autoEmail"] = email
     }
     
     class func getEmail() -> String {
-        if let email = keychain["email"] {
+        if let email = keychain["autoEmail"] {
             return email
         } else {
             return ""
@@ -44,17 +44,17 @@ class KeychainManager {
     }
     
     class func removeEmail() {
-        keychain["email"] = nil
+        keychain["autoEmail"] = nil
     }
     
     
     // password
     class func savePassword(password: String) {
-        keychain["password"] = password
+        keychain["autoPassword"] = password
     }
     
     class func getPassword() -> String {
-        if let password = keychain["password"] {
+        if let password = keychain["autoPassword"] {
             return password
         } else {
             return ""
@@ -62,7 +62,7 @@ class KeychainManager {
     }
     
     class func removePassword() {
-        keychain["password"] = nil
+        keychain["autoPassword"] = nil
     }
     
 }

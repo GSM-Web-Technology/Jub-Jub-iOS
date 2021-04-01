@@ -14,8 +14,9 @@ var loginError = false
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if KeychainManager.keychain["email"] != nil {
-            signInApi(email: KeychainManager.keychain["email"]!, password: KeychainManager.keychain["password"]!)
+        
+        if KeychainManager.keychain["autoEmail"] != nil {
+            signInApi(email: KeychainManager.keychain["autoEmail"]!, password: KeychainManager.keychain["autoPassword"]!)
         }
         sleep(3)
         return true

@@ -13,10 +13,37 @@ class SignUpClassNumberViewController: UIViewController {
 
     let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 50, height: 50), type: .ballPulse, color: UIColor.init(named: "Primary Color"), padding: 0)
     
-    @IBOutlet weak var signUpClassNumberTextField: UITextField!
+    @IBOutlet weak var signUpClassNumberTextField: UITextField! {
+        didSet {
+            signUpClassNumberTextField.delegate = self
+            signUpClassNumberTextField.keyboardType = .numberPad
+        }
+    }
+    
+    @IBOutlet weak var signUpClassNumberBtn: UIButton! {
+        didSet {
+            signUpClassNumberBtn.layer.cornerRadius = 10
+        }
+    }
+    
+    @IBOutlet weak var signUpClassNumberBtnBottom: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         indicatorAutolayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver( self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil )
+        NotificationCenter.default.addObserver( self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil )
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func indicatorAutolayout() {
@@ -108,5 +135,39 @@ class SignUpClassNumberViewController: UIViewController {
             indicator.startAnimating()
             signUpApi(classNumber: signUpClassNumberTextField.text!, email: SignUpManager.getEmail(), name: SignUpManager.getName(), password: SignUpManager.getPassword())
         }
+    }
+}
+
+extension SignUpClassNumberViewController: UITextFieldDelegate {
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keybaordRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keybaordRectangle.height
+            
+            if self.signUpClassNumberBtnBottom.constant == 25 {
+                self.signUpClassNumberBtnBottom.constant += (keyboardHeight - 20)
+                self.view.layoutIfNeeded()
+            }
+            
+        }
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        if self.signUpClassNumberBtnBottom.constant != 25 {
+            self.signUpClassNumberBtnBottom.constant = 25
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        signUpClassNumberTextField.resignFirstResponder()
+        
+        return true
     }
 }
