@@ -7,9 +7,12 @@
 
 import UIKit
 import Alamofire
+import NVActivityIndicatorView
 
 class LoginViewController: UIViewController {
 
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 75, height: 75), type: .ballPulse, color: UIColor.init(named: "Primary Color"), padding: 0)
+    
     @IBOutlet weak var logInEmail: UITextField! {
         didSet {
             logInEmail.delegate = self
@@ -32,9 +35,19 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        indicatorAutolayout()
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.clipsToBounds = true
+    }
+    
+    func indicatorAutolayout() {
+        view.addSubview(indicator)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
     }
     
     func goMainPage(){
@@ -87,10 +100,13 @@ class LoginViewController: UIViewController {
                             }
                             KeychainManager.saveEmail(email: self.logInEmail.text!)
                             KeychainManager.savePassword(password: self.logInPassword.text!)
+                            self.indicator.stopAnimating()
                             self.loginSucessAlert()
                         case -1001:
+                            self.indicator.stopAnimating()
                             self.loginFailAlert(messages: "계정이 존재하지 않거나 이메일 또는 비밀번호가 정확하지 않습니다.")
                         case -947:
+                            self.indicator.stopAnimating()
                             self.loginFailAlert(messages: "이메일 인증을 해주세요!")
                         default:
                             return
@@ -98,6 +114,7 @@ class LoginViewController: UIViewController {
                     }
                 }
             case .failure(let e):
+                self.indicator.stopAnimating()
                 self.loginFailAlert(messages: "네트워크가 원활하지 않습니다.")
                 print(e.localizedDescription)
             }
@@ -106,6 +123,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func logInButton(_ sender: UIButton) {
         if (checkTextField()) {
+            indicator.startAnimating()
             signInApi(email: logInEmail.text!, password: logInPassword.text!)
         } else {
             loginFailAlert(messages: "빈칸을 모두 채워주세요.")
