@@ -26,7 +26,7 @@ class MyPageViewController: UIViewController {
     }
     
     func apiCall() {
-        let URL = "http://15.165.97.179:8080/v2/logout"
+        let URL = "http://10.53.68.170:8081/v2/logout"
         let token = KeychainManager.getToken()
         AF.request(URL, method: .post, headers: ["Authorization": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }

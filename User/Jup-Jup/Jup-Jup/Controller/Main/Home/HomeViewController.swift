@@ -104,7 +104,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     func apiCall() {
-        let URL = "http://15.165.97.179:8080/v2/equipment/"
+        let URL = "http://10.53.68.170:8081/v2/equipment/"
         let token = KeychainManager.getToken()
         AF.request(URL, headers: ["Authorization": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
@@ -115,7 +115,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     func searchApiCall(name: String) {
-        let URL = "http://15.165.97.179:8080/v2/equipment/findname/\(name)"
+        let URL = "http://10.53.68.170:8081/v2/equipment/findname/\(name)"
         let encodingURL = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let token = KeychainManager.getToken()
         AF.request(encodingURL, method: .get, headers: ["Authorization": token]).responseData(completionHandler: { data in

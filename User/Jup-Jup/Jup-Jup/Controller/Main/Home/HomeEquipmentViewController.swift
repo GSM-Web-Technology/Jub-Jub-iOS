@@ -117,7 +117,7 @@ class HomeEquipmentViewController: UIViewController {
     }
     
     func equipmentAllowAPI(amount: Int, reason: String, name: String) {
-        let URL = "http://15.165.97.179:8080/v2/equipmentallow/\(name)"
+        let URL = "http://10.53.68.170:8081/v2/equipmentallow/\(name)"
         let encodingURL = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let PARAM: Parameters = [
             "amount": amount,
