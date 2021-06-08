@@ -106,6 +106,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     func apiCall() {
         let URL = "http://10.53.68.170:8081/v2/equipment/"
         let token = KeychainManager.getToken()
+        print(KeychainManager.getToken())
         AF.request(URL, headers: ["Authorization": token]).responseData(completionHandler: { data in
             guard let data = data.data else { return }
             self.model = try? JSONDecoder().decode(EquipmentModel.self, from: data)

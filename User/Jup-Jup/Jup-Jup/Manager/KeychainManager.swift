@@ -14,7 +14,7 @@ class KeychainManager {
     
     // token
     class func saveToken(token: String) {
-        keychain["token"] = token
+        keychain["token"] = "Bearer \(token)"
     }
     
     class func getToken() -> String {

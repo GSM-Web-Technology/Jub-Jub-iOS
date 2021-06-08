@@ -93,7 +93,7 @@ class LoginViewController: UIViewController {
                         switch code {
                         case 0:
                             if let allToken = dic["data"] as? NSDictionary {
-                                if let token = allToken["accessToken"] as? String {
+                                if let token = allToken["AccessToken"] as? String {
                                     print(token)
                                     KeychainManager.saveToken(token: token)
                                 }
