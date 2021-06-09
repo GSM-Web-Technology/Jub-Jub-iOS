@@ -200,6 +200,7 @@ class HomeEquipmentViewController: UIViewController {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
             self.view.frame.origin.y -= (keyboardHeight-(self.tabBarController?.tabBar.frame.size.height)!)
+            view.layoutIfNeeded()
         }
     }
 
@@ -207,15 +208,16 @@ class HomeEquipmentViewController: UIViewController {
         if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            self.view.frame.origin.y += (keyboardHeight-(self.tabBarController?.tabBar.frame.size.height)!)
+            if view.frame.origin.y != 0.0 {
+                self.view.frame.origin.y += (keyboardHeight-(self.tabBarController?.tabBar.frame.size.height)!)
+                view.layoutIfNeeded()
+            }
         }
     }
     
 }
 
 extension HomeEquipmentViewController: UITextFieldDelegate {
-    
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
