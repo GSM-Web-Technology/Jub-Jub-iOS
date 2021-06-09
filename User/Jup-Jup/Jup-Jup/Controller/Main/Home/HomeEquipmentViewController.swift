@@ -47,6 +47,7 @@ class HomeEquipmentViewController: UIViewController {
     @IBOutlet weak var reasonTextField: UITextField! {
         didSet {
             reasonTextField.delegate = self
+            reasonTextField.addLeftPadding()
             let innerShadow = CALayer()
             innerShadow.frame = reasonTextField.bounds
             
@@ -221,5 +222,13 @@ extension HomeEquipmentViewController: UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+}
+
+extension UITextField {
+   func addLeftPadding() {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
+        self.leftView = paddingView
+        self.leftViewMode = ViewMode.always
     }
 }

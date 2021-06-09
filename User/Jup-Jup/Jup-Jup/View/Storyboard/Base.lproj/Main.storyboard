@@ -38,7 +38,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rRQ-PR-ZFJ">
-                                <rect key="frame" x="0.0" y="167" width="414" height="643"/>
+                                <rect key="frame" x="0.0" y="201" width="414" height="609"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="18" minimumInteritemSpacing="0.0" id="InO-1h-bIE">
                                     <size key="itemSize" width="340" height="100"/>
@@ -115,7 +115,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대여목록" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aS-tM-jNP">
-                                <rect key="frame" x="170" y="108" width="74" height="29"/>
+                                <rect key="frame" x="170" y="142" width="74" height="29"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="20"/>
                                 <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -135,7 +135,7 @@
                             <constraint firstItem="rRQ-PR-ZFJ" firstAttribute="leading" secondItem="fqP-7u-l5q" secondAttribute="leading" id="nLt-Lw-KCl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="JubJub" largeTitleDisplayMode="never" id="Vt4-qj-DZT"/>
+                    <navigationItem key="navigationItem" title="JubJub" prompt=" " largeTitleDisplayMode="never" id="Vt4-qj-DZT"/>
                     <connections>
                         <outlet property="myListCollectionView" destination="rRQ-PR-ZFJ" id="Q6L-23-ZnN"/>
                     </connections>
@@ -159,13 +159,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이페이지" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2P-cD-Bjm">
-                                <rect key="frame" x="161" y="108" width="92.5" height="29"/>
+                                <rect key="frame" x="161" y="142" width="92.5" height="29"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="20"/>
                                 <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFN-Nh-jU3">
-                                <rect key="frame" x="0.0" y="177" width="414" height="25"/>
+                                <rect key="frame" x="0.0" y="211" width="414" height="25"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-ZR-F9F">
                                         <rect key="frame" x="157" y="0.0" width="100" height="25"/>
@@ -204,7 +204,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1i-iX-ZHy">
-                                <rect key="frame" x="175.5" y="222" width="63" height="37"/>
+                                <rect key="frame" x="175.5" y="256" width="63" height="37"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="17"/>
                                 <state key="normal" title="로그아웃">
                                     <color key="titleColor" red="0.85490196078431369" green="0.44705882352941173" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -229,7 +229,7 @@
                             <constraint firstItem="cLE-Xi-gk5" firstAttribute="bottom" secondItem="xNP-tI-iw5" secondAttribute="bottom" id="z0m-zy-UVd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="JubJub" largeTitleDisplayMode="never" id="3FU-G0-WeJ">
+                    <navigationItem key="navigationItem" title="JubJub" prompt=" " largeTitleDisplayMode="never" id="3FU-G0-WeJ">
                         <barButtonItem key="backBarButtonItem" title=" " id="FoH-qP-YST"/>
                     </navigationItem>
                 </viewController>
@@ -631,7 +631,7 @@
                                 <color key="textColor" name="Primary Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="   대여사유를 작성해주세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldc-ZT-sKj">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="대여사유를 작성해주세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldc-ZT-sKj">
                                 <rect key="frame" x="57" y="466.5" width="300" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
