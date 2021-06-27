@@ -11,11 +11,6 @@ import Kingfisher
 import NVActivityIndicatorView
 import GMStepper
 
-var titleName: String?
-var content: String?
-var imgURL: String?
-var count: Int?
-
 class HomeEquipmentViewController: UIViewController {
     
     let indicator = NVActivityIndicatorView(frame: CGRect(x: 182, y: 423, width: 75, height: 75), type: .ballPulse, color: UIColor.init(named: "Primary Color"), padding: 0)
@@ -25,7 +20,7 @@ class HomeEquipmentViewController: UIViewController {
     @IBOutlet weak var equipmentContent: UILabel!
     @IBOutlet weak var equipmentCount: UILabel! {
         didSet {
-            equipmentCount.text = "수량: \(count!)개"
+            equipmentCount.text = "수량: \(EquipmentManager.getEquipmentCount())개"
             equipmentCount.layer.borderWidth = 1
             equipmentCount.layer.borderColor = UIColor.init(named: "Primary Color")?.cgColor
             equipmentCount.layer.cornerRadius = 13
@@ -39,7 +34,7 @@ class HomeEquipmentViewController: UIViewController {
     @IBOutlet weak var stepper: GMStepper! {
         didSet {
             stepper.minimumValue = 1
-            stepper.maximumValue = Double(count!)
+            stepper.maximumValue = Double(EquipmentManager.getEquipmentCount())
             stepper.labelFont = UIFont(name: "NotoSansKR-Light", size: 12)!
             stepper.buttonsFont = UIFont(name: "NotoSansKR-Light", size: 15)!
         }
@@ -75,7 +70,7 @@ class HomeEquipmentViewController: UIViewController {
         super.viewDidLoad()
         
         indicatorAutolayout()
-        imageView.kf.setImage(with: URL(string: imgURL ?? ""))
+        imageView.kf.setImage(with: URL(string: EquipmentManager.getEquipmentImgURL()))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,8 +79,8 @@ class HomeEquipmentViewController: UIViewController {
         
         self.addKeyboardNotifications()
         
-        equipmentName.text = titleName
-        equipmentContent.text = content
+        equipmentName.text = EquipmentManager.getEquipmentTitle()
+        equipmentContent.text = EquipmentManager.getEquipmentKind()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -104,7 +99,7 @@ class HomeEquipmentViewController: UIViewController {
         if reasonTextField.text == "" {
             failAlert(message: "대여 사유를 적으십시오.")
         } else {
-            checkAlert(name: titleName!, count: rentalAmount)
+            checkAlert(name: EquipmentManager.getEquipmentTitle(), count: rentalAmount)
         }
     }
     
@@ -163,7 +158,7 @@ class HomeEquipmentViewController: UIViewController {
         let alert = UIAlertController(title: "\(name) \(count)개", message: "대여 신청하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (_) in
             self.indicator.startAnimating()
-            self.equipmentAllowAPI(amount: self.rentalAmount, reason: self.reasonTextField.text!, name: titleName!)
+            self.equipmentAllowAPI(amount: self.rentalAmount, reason: self.reasonTextField.text!, name: EquipmentManager.getEquipmentTitle())
         }
         let cancel = UIAlertAction(title: "취소", style: .destructive)
         alert.addAction(ok)
