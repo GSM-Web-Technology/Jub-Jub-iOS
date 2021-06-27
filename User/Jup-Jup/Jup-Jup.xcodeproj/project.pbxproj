@@ -31,6 +31,7 @@
 		BD6235A8260368BF00185C1B /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6235A7260368BE00185C1B /* HomeCollectionViewCell.swift */; };
 		BD6235AB26036AB200185C1B /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD6235AA26036AAE00185C1B /* NotoSansKR-Bold.otf */; };
 		BD6235AE26036B4000185C1B /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD6235AD26036B4000185C1B /* NotoSansKR-Light.otf */; };
+		BD62E420268873D2009B7D51 /* EquipmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD62E41F268873D2009B7D51 /* EquipmentManager.swift */; };
 		BD672F9325F3874900B56B49 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = BD672F9225F3874900B56B49 /* NVActivityIndicatorView */; };
 		BD79E8A525DEC035009DB301 /* MyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E8A425DEC035009DB301 /* MyListModel.swift */; };
 		BD9554F425A08F8300DB23E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9554F325A08F8300DB23E3 /* AppDelegate.swift */; };
@@ -74,6 +75,7 @@
 		BD6235A7260368BE00185C1B /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD6235AA26036AAE00185C1B /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Bold.otf"; path = "../../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		BD6235AD26036B4000185C1B /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Light.otf"; path = "../../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		BD62E41F268873D2009B7D51 /* EquipmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManager.swift; sourceTree = "<group>"; };
 		BD79E8A425DEC035009DB301 /* MyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListModel.swift; sourceTree = "<group>"; };
 		BD9554F025A08F8300DB23E3 /* Jup-Jup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jup-Jup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9554F325A08F8300DB23E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			children = (
 				BDE6798A25E2B7C70086168B /* KeychainManager.swift */,
 				BD4B154226131D9200860583 /* SignUpManager.swift */,
+				BD62E41F268873D2009B7D51 /* EquipmentManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				BD41251725A7460D00264EC2 /* HomeViewController.swift in Sources */,
 				BD6235A8260368BF00185C1B /* HomeCollectionViewCell.swift in Sources */,
 				BD5053B125EE2A80002CE4E7 /* MyListReasonViewController.swift in Sources */,
+				BD62E420268873D2009B7D51 /* EquipmentManager.swift in Sources */,
 				BD0202D725F4D0EC003F2A76 /* NoticeViewController.swift in Sources */,
 				BDAC287225F5B2A80047DFF8 /* NoticeContentViewController.swift in Sources */,
 				BD79E8A525DEC035009DB301 /* MyListModel.swift in Sources */,
