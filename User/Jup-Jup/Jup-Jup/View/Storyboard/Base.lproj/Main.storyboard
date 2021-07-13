@@ -724,6 +724,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tji-wE-o5X"/>
+                    <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="reasonLabel" destination="lsE-SQ-QDN" id="BGc-Xc-fT2"/>
                         <outlet property="reasonView" destination="Iig-iI-VkA" id="mNG-Ua-fPi"/>
